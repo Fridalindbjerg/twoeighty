@@ -4,5 +4,84 @@ import Layout from "../layouts/Layout.astro";
 ---
 
 <Layout>
-  <Socials />
+  <main>
+    <section>
+      <div class="grid_5_1">
+        <h1 class="center">
+          <div>we are</div>
+          twoeighty
+          <div>production co.</div>
+        </h1>
+        <p class="center">A Copenhagen-based production company crafting bold, human stories across film, photography, and creative direction....</p>
+      </div>
+      <img src="https://picsum.photos/seed/picsum/900/1600" alt="" />
+    </section>
+    <h2>
+      Selected cases
+
+      <div>KNAPNKAPKNAPKNAPKNAP</div>
+    </h2>
+    <article>
+      <h3>thykassen</h3>
+      <p>We created a visual identity for Thykassen that captures the raw, natural beauty of the West Jutland landscape. Through authentic imagery and film, we told a story about simplicity, sustainability, and local produce. Our goal was to highlight what’s real – no filters, no fuss – and let the atmosphere speak for itself.</p>
+      <img src="https://picsum.photos/seed/picsum/1500/1000" alt="" />
+      <div class="grid_2_1">
+        <img src="https://picsum.photos/seed/picsum/900/1600" alt="" />
+        <div>
+          <p>With a warm, human-centered aesthetic, we developed a campaign that works across platforms – from website and social media to print and video. We aimed to showcase both the product and the people behind it in a relatable and honest way. All content was crafted with attention to the local spirit and subtle moments, helping Thykassen attract new customers while building stronger connections within their community.</p>
+          <a href="XXX">Full project</a>
+        </div>
+      </div>
+    </article>
+    <Socials />
+  </main>
 </Layout>
+
+<style>
+  h2 {
+    text-align: center;
+  }
+  .center {
+    text-align: center;
+  }
+
+  img {
+    max-width: 100%;
+  }
+
+  @media (width >= 800px) {
+    section,
+    .grid_2_1 {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+    }
+    img {
+      grid-column: 1/2;
+      grid-row: 1/3;
+    }
+
+    .grid_5_1 {
+      margin-top: 8rem;
+    }
+    .center {
+      text-align: left;
+      margin-left: 2rem;
+    }
+  }
+
+  @media (width >= 800px) {
+    section {
+      grid-template-columns: repeat(5, 1fr);
+    }
+
+    img {
+      grid-column: 1/3;
+      grid-row: 1/3;
+    }
+
+    .grid_5_1 {
+      grid-column: 3/6;
+      grid-row: span 2;
+    }
+  }
+</style>
