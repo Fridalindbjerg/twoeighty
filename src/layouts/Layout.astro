@@ -1,3 +1,7 @@
+---
+import "/src/css/base.css";
+---
+
 <!doctype html>
 <html lang="en">
   <head>
@@ -5,18 +9,59 @@
     <meta name="viewport" content="width=device-width" />
     <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
     <meta name="generator" content={Astro.generator} />
-    <title>Astro Basics</title>
+    <title>About</title>
   </head>
   <body>
     <header>
       <ul>
-        <li><a href="../pages/about.astro">ABOUT</a></li>
-        <li><a href="../pages/archive.astro">ARCHIVE</a></li>
-        <li><img src="/logo.png" alt="280 logo" /></li>
+        <div class="menu">
+          <li><a href="/about.astro">ABOUT</a></li>
+          <li><a href="/archive.astro">ARCHIVE</a></li>
+        </div>
+        <li><a href="/index.astro"><img src="/logo.png" alt="280 logo" /></a></li>
+        <li>
+          <button onclick="window.location.href='/contact.astro'" class="corner-button">
+            <span class="corner top-left"></span>
+            <span class="corner top-right"></span>
+            <span class="corner bottom-left"></span>
+            <span class="corner bottom-right"></span>
+            GET IN TOUCH
+          </button>
+        </li>
       </ul>
     </header>
-    <slot />
-    <Footer />
+    <main>
+      <slot />
+    </main>
+    <footer>
+      <section>
+        <h5>Twoeighty production co.</h5>
+        <div class="group1">
+          <a href="/about.astro">ABOUT</a>
+          <a href="/archive.astro">ARCHIVE</a>
+        </div>
+        <div class="group2">
+          <p>CONTACT</p>
+          <p>mail: <br />info@280.dk</p>
+          <p>phone: <br />+45 31 46 20 10</p>
+        </div>
+        <div class="group3">
+          <p>SOCIALS</p>
+          <img src="" alt="Instagram logo" />
+          <img src="" alt="Vimeo logo" />
+          <img src="" alt="LinkedIn logo" />
+        </div>
+        <div class="button">
+          <button onclick="window.location.href='/contact.astro'" class="corner1-button">
+            <span class="corner1 top-left1"></span>
+            <span class="corner1 top-right1"></span>
+            <span class="corner1 bottom-left1"></span>
+            <span class="corner1 bottom-right1"></span>
+            GET IN TOUCH
+          </button>
+        </div>
+      </section>
+    </footer>
   </body>
 </html>
 
@@ -26,5 +71,244 @@
     margin: 0;
     width: 100%;
     height: 100%;
+    background-color: var(--backgroundcolor);
+  }
+
+  /**** HEADER ****/
+  header {
+    margin-left: 5px;
+    margin-right: 5px;
+    background-color: var(--backgroundcolor);
+  }
+
+  a {
+    font-family: Diatype;
+    color: black;
+    text-decoration: none;
+    cursor: pointer;
+  }
+
+  li img {
+    width: 50px;
+  }
+
+  ul {
+    font-size: 12px;
+    list-style-type: none;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+  }
+
+  .menu {
+    display: flex;
+    flex-direction: row;
+    gap: 15px;
+  }
+
+  .corner-button {
+    position: relative;
+    background: transparent;
+    border: none;
+    font-size: 12px;
+    font-weight: 500;
+    padding: 7px 9px;
+    cursor: pointer;
+    margin-right: 30px;
+  }
+
+  .corner {
+    position: absolute;
+    width: 7px;
+    height: 7px;
+    border: 1.5px solid black;
+  }
+
+  .top-left {
+    top: 0;
+    left: 0;
+    border-right: none;
+    border-bottom: none;
+  }
+
+  .top-right {
+    top: 0;
+    right: 0;
+    border-left: none;
+    border-bottom: none;
+  }
+
+  .bottom-left {
+    bottom: 0;
+    left: 0;
+    border-right: none;
+    border-top: none;
+  }
+
+  .bottom-right {
+    bottom: 0;
+    right: 0;
+    border-left: none;
+    border-top: none;
+  }
+
+  li:hover {
+    font-size: 14px;
+  }
+
+  /**** FOOTER ****/
+  footer {
+    background-color: var(--black);
+  }
+
+  section {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    max-width: 375px;
+    margin: auto;
+  }
+
+  .group1,
+  .group2,
+  .group3 {
+    padding-left: 30px;
+  }
+
+  .group1,
+  .group2 {
+    display: flex;
+    flex-direction: column;
+  }
+
+  .group1 a {
+    color: white;
+    font-size: 12px;
+    text-decoration: underline;
+    padding-bottom: 20px;
+  }
+
+  h5 {
+    color: white;
+    font-family: Friz;
+    text-transform: uppercase;
+    grid-column: 1 / span 3;
+    text-align: center;
+    font-size: 15px;
+    padding-bottom: 10px;
+  }
+
+  .group2 p,
+  .group3 p {
+    color: white;
+    font-family: Diatype;
+    font-size: 12px;
+  }
+
+  .button {
+    padding-bottom: 20px;
+    padding-top: 20px;
+    grid-column: 1 / span 3;
+    text-align: center;
+  }
+
+  .corner1-button {
+    position: relative;
+    background: transparent;
+    border: none;
+    font-size: 12px;
+    font-weight: 500;
+    padding: 7px 9px;
+    cursor: pointer;
+    color: white;
+  }
+
+  .corner1 {
+    position: absolute;
+    width: 7px;
+    height: 7px;
+    border: 1.5px solid white;
+  }
+
+  .top-left1 {
+    top: 0;
+    left: 0;
+    border-right: none;
+    border-bottom: none;
+  }
+
+  .top-right1 {
+    top: 0;
+    right: 0;
+    border-left: none;
+    border-bottom: none;
+  }
+
+  .bottom-left1 {
+    bottom: 0;
+    left: 0;
+    border-right: none;
+    border-top: none;
+  }
+
+  .bottom-right1 {
+    bottom: 0;
+    right: 0;
+    border-left: none;
+    border-top: none;
+  }
+  /**** MEDIA QURIES ****/
+
+  @media (width >= 500px) {
+    ul,
+    .group1 a,
+    .group2 p,
+    .group3 p,
+    .corner-button,
+    .corner1-button {
+      font-size: 14px;
+    }
+  }
+  @media (width >= 700px) {
+    ul,
+    .group1 a,
+    .group2 p,
+    .group3 p,
+    .corner-button,
+    .corner1-button {
+      font-size: 16px;
+    }
+    section {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      max-width: 800px;
+      margin: auto;
+      padding-bottom: 40px;
+    }
+
+    h5 {
+      grid-column: 1 / span 4;
+      font-size: 20px;
+    }
+
+    .button {
+      grid-column: 4 / 5;
+      grid-row: 2;
+      margin-top: 40px;
+    }
+  }
+  @media (width >= 1000px) {
+    ul,
+    .group1 a,
+    .group2 p,
+    .group3 p,
+    .corner-button,
+    .corner1-button {
+      font-size: 18px;
+    }
+
+    h5 {
+      font-size: 36px;
+    }
   }
 </style>
