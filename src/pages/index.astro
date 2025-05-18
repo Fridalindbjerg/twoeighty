@@ -70,29 +70,37 @@ import Layout from "../layouts/Layout.astro";
         </div>
       </div>
     </article>
-    <article>
+    <article class="grid_3_1 black">
       <div>
         <p>We are TWOEIGHTY — a Copenhagen-based production company driven by curiosity, collaboration and craft. We work with brands, agencies and artists to create visually striking, emotionally honest storytelling — from commercials and branded content to music videos and experimental formats. Our work is rooted in a playful, conceptual approach and a belief in the power of real people and real moments.</p>
         <a href="XXX">Learn more</a>
       </div>
-      <div class="flex">
+      <div class="grid_9_1">
         <img src="https://picsum.photos/seed/picsum/900/1600" alt="" />
         <p class="vertical">twoeighty</p>
       </div>
-      <p>Behind every frame is a team that values process as much as product. We’re not just here to deliver — we’re here to co-create. With strong emphasis on creative sparring, visual identity and human connection, we strive to make every collaboration feel intuitive, transparent and full of energy.</p>
+      <p class="bottom margin_l">Behind every frame is a team that values process as much as product. We’re not just here to deliver — we’re here to co-create. With strong emphasis on creative sparring, visual identity and human connection, we strive to make every collaboration feel intuitive, transparent and full of energy.</p>
     </article>
     <Socials />
   </main>
 
   <style>
-    .flex {
+    .black {
+      background-color: var(--black);
+      color: white;
+      padding: 10% 5%;
+    }
+
+    .grid_9_1 {
       display: grid;
       grid-template-columns: 9fr 1fr;
+      margin: auto 0;
     }
     .vertical {
       writing-mode: vertical-rl;
       font-size: 6em;
-      margin: 0;
+      margin-right: 0;
+      margin-left: -2rem;
       font-family: Friz;
       text-transform: uppercase;
     }
@@ -172,6 +180,13 @@ import Layout from "../layouts/Layout.astro";
       }
     }
 
+    @media (width >= 900px) {
+      .grid_3_1 {
+        display: grid;
+        grid-template-columns: 1fr 2fr 1fr;
+      }
+    }
+
     @media (width >= 1000px) {
       section {
         grid-template-columns: repeat(5, 1fr);
@@ -185,6 +200,16 @@ import Layout from "../layouts/Layout.astro";
       .grid_5_1 {
         grid-column: 3/6;
         grid-row: span 2;
+      }
+    }
+
+    @media (width >= 1130px) {
+      .margin_l {
+        margin-left: -5em;
+      }
+
+      .grid_3_1 {
+        margin: 0;
       }
     }
   </style>
