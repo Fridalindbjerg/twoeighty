@@ -49,9 +49,9 @@ import "/src/css/base.css";
         </div>
         <div class="group3">
           <p>SOCIALS</p>
-          <img src="" alt="Instagram logo" />
-          <img src="" alt="Vimeo logo" />
-          <img src="" alt="LinkedIn logo" />
+          <a href="https://www.instagram.com/280cph/"><img src="/insta-white.png" alt="Instagram logo" /></a>
+          <a href="https://vimeo.com/280cph"><img src="vimeo-white.png" alt="Vimeo logo" /></a>
+          <a href="https://www.linkedin.com/company/280cph/?originalSubdomain=dk"><img src="linkedin-white.png" alt="LinkedIn logo" /></a>
         </div>
         <div class="button">
           <button onclick="window.location.href='/contact.astro'" class="corner1-button">
@@ -74,6 +74,10 @@ import "/src/css/base.css";
     width: 100%;
     height: 100%;
     background-color: var(--backgroundcolor);
+  }
+
+  main {
+    margin: 7%;
   }
 
   /**** HEADER ****/
@@ -190,6 +194,10 @@ import "/src/css/base.css";
     padding-bottom: 20px;
   }
 
+  .group3 a {
+    padding-right: 5px;
+  }
+
   h5 {
     color: white;
     font-family: Friz;
@@ -280,6 +288,11 @@ import "/src/css/base.css";
     .corner1-button {
       font-size: 16px;
     }
+
+    .group3 a {
+      width: 5px;
+    }
+
     section {
       display: grid;
       grid-template-columns: repeat(4, 1fr);
