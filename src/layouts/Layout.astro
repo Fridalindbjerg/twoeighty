@@ -13,22 +13,24 @@ import "/src/css/base.css";
   </head>
   <body>
     <header>
-      <ul>
-        <div class="menu">
-          <li><a href="/about.astro">ABOUT</a></li>
-          <li><a href="/archive.astro">ARCHIVE</a></li>
-        </div>
-        <li><a href="/index.astro"><img src="/logo.png" alt="280 logo" /></a></li>
-        <li>
-          <button onclick="window.location.href='/contact.astro'" class="corner-button">
-            <span class="corner top-left"></span>
-            <span class="corner top-right"></span>
-            <span class="corner bottom-left"></span>
-            <span class="corner bottom-right"></span>
-            GET IN TOUCH
-          </button>
-        </li>
-      </ul>
+      <nav>
+        <ul>
+          <div class="menu">
+            <li><a href="/about.astro">ABOUT</a></li>
+            <li><a href="/archive.astro">ARCHIVE</a></li>
+          </div>
+          <li><a href="/index.astro"><img src="/logo.png" alt="280 logo" /></a></li>
+          <li>
+            <button onclick="window.location.href='/contact.astro'" class="corner-button">
+              <span class="corner top-left"></span>
+              <span class="corner top-right"></span>
+              <span class="corner bottom-left"></span>
+              <span class="corner bottom-right"></span>
+              GET IN TOUCH
+            </button>
+          </li>
+        </ul>
+      </nav>
     </header>
     <main>
       <slot />

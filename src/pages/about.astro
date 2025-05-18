@@ -34,14 +34,24 @@ import Layout from "../layouts/Layout.astro";
       <p class="title">SERVICES</p>
     </div>
     <section class="background">
-      <div class="img_rul full_width">
-        <img src="/banner/commercials.png" alt="Television commercials" />
-        <img src="/banner/content.png" alt="Content creation" />
-        <img src="/banner/corporate.png" alt="Corporate videos" />
-        <img src="/banner/creative.png" alt="Creative direction" />
-        <img src="/banner/filmproduction.png" alt="Creative film production" />
-        <img src="/banner/interviews.png" alt="High end interviews" />
-        <img src="/banner/photograph.png" alt="Lifestyle photography" />
+      <div class="slider-container">
+        <div class="slider-track">
+          <img src="/banner/commercials.png" alt="Television commercials" />
+          <img src="/banner/content.png" alt="Content creation" />
+          <img src="/banner/corporate.png" alt="Corporate videos" />
+          <img src="/banner/creative.png" alt="Creative direction" />
+          <img src="/banner/filmproduction.png" alt="Creative film production" />
+          <img src="/banner/interviews.png" alt="High end interviews" />
+          <img src="/banner/photograph.png" alt="Lifestyle photography" />
+
+          <img src="/banner/commercials.png" alt="Television commercials" />
+          <img src="/banner/content.png" alt="Content creation" />
+          <img src="/banner/corporate.png" alt="Corporate videos" />
+          <img src="/banner/creative.png" alt="Creative direction" />
+          <img src="/banner/filmproduction.png" alt="Creative film production" />
+          <img src="/banner/interviews.png" alt="High end interviews" />
+          <img src="/banner/photograph.png" alt="Lifestyle photography" />
+        </div>
       </div>
     </section>
     <section class="grid_2">
@@ -189,27 +199,31 @@ import Layout from "../layouts/Layout.astro";
         background-color: black;
         max-width: 100%;
         height: 310px;
+        overflow: hidden;
       }
 
-      .img_rul {
-        display: flex;
-        white-space: nowrap;
-        width: max-content;
-        animation: scroll-right 15s linear infinite;
-        align-items: center;
-        margin: 20px;
+      .slider-container {
+        width: 100%;
+        overflow: hidden;
       }
-      .img_rul img {
+
+      .slider-track {
+        display: flex;
+        width: max-content;
+        animation: scroll 15s linear infinite;
+      }
+      .slider-track img {
         width: 10em;
         padding-left: 0.6em;
+        height: auto;
       }
 
-      @keyframes scroll-right {
+      @keyframes scroll {
         0% {
-          transform: translateX(100vw);
+          transform: translateX(0);
         }
         100% {
-          transform: translateX(-355%);
+          transform: translateX(-50%);
         }
       }
     </style>
