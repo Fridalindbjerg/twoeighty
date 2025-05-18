@@ -1,8 +1,8 @@
-
 main {
+  margin: 0 auto;
   max-width: 90%;
   background-color: var(--background-color);
-
+}
 @font-face {
   font-family: Friz;
   src: url("../assets/fonts/Friz/friz-quadrata-std-bold-587034a220f9f-kopi.otf");
