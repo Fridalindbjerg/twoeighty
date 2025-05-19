@@ -6,8 +6,7 @@ import Layout from "../layouts/Layout.astro";
   <section class="intro">
     <img src="/about.png" alt="Morten and Anders" />
     <div>
-      <p class="title">ABOUT</p>
-      <h1>Twoeighty <br />production co.</h1>
+      <h1><span class="title">ABOUT </span> <br />Twoeighty <br />production co.</h1>
     </div>
   </section>
 
@@ -32,8 +31,7 @@ import Layout from "../layouts/Layout.astro";
 
   <section>
     <div class="services">
-      <h2>Twoeighty's</h2>
-      <p class="title">SERVICES</p>
+      <h2>Twoeighty's <br /> <span class="span1">SERVICES</span></h2>
     </div>
     <section class="background">
       <div class="slider-container">
@@ -108,16 +106,6 @@ import Layout from "../layouts/Layout.astro";
     </section>
 
     <style>
-      @font-face {
-        font-family: Friz;
-        src: url("../assets/fonts/Friz/friz-quadrata-std-bold-587034a220f9f-kopi.otf");
-      }
-
-      @font-face {
-        font-family: Diatype;
-        src: url("../assets/fonts/Diatype/abc-diatype-regular-2-kopi.otf");
-      }
-
       .intro {
         display: grid;
         grid-template-columns: repeat(3, 1fr);
@@ -140,9 +128,6 @@ import Layout from "../layouts/Layout.astro";
         font-size: 20px;
         font-family: Diatype;
         color: red;
-      }
-
-      .title {
       }
 
       main {
@@ -226,6 +211,7 @@ import Layout from "../layouts/Layout.astro";
       ul {
         list-style: none;
         text-align: left;
+        padding: 0;
       }
 
       li {

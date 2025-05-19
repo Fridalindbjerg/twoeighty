@@ -1,6 +1,16 @@
+@font-face {
+  font-family: Friz;
+  src: url("../assets/fonts/Friz/friz-quadrata-std-bold-587034a220f9f-kopi.otf");
+}
+
+@font-face {
+  font-family: Diatype;
+  src: url("../assets/fonts/Diatype/abc-diatype-regular-2-kopi.otf");
+}
+
 main {
   margin: 0 auto;
-  max-width: 90%;
+  /* max-width: 90%; */
   background-color: var(--background-color);
 }
 
@@ -17,49 +27,49 @@ h4 {
   text-transform: uppercase;
 }
 
-h1 {
+h1,
+h2 {
   font-family: Friz;
+}
+
+h1 {
+  margin: 0;
+  line-height: 25px;
+  text-align: center;
 }
 
 h2 {
+  font-size: 30px;
+  line-height: 25px;
+}
+
+.title {
+  text-align: center;
+  font-size: 12px;
+}
+h3,
+h4,
+.title {
   font-family: Diatype;
-}
-
-p {
-  font-family: Arial, Helvetica, sans-serif;
-}
-
-@font-face {
-  font-family: Friz;
-  src: url("../assets/fonts/Friz/friz-quadrata-std-bold-587034a220f9f-kopi.otf");
-}
-
-@font-face {
-  font-family: Diatype;
-  src: url("../assets/fonts/Diatype/abc-diatype-regular-2-kopi.otf");
-}
-
-html {
-  --backgroundcolor: #fcfcfb;
-  --redfont: #fd0002;
-  --black: #040404;
 }
 
 h1,
 h2,
 h3,
-h4 {
-  text-transform: uppercase;
+.title {
+  color: var(--redfont);
 }
 
-h1 {
-  font-family: Friz;
+p,
+li {
+  font-family: Arial, Helvetica, sans-serif;
 }
 
-h2 {
+.menu li {
   font-family: Diatype;
 }
 
-p {
-  font-family: Arial, Helvetica, sans-serif;
+.span1 {
+  font-family: Diatype;
+  font-size: 20px;
 }
