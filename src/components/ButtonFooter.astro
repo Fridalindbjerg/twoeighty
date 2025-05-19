@@ -1,0 +1,59 @@
+---
+import "/src/css/base.css";
+---
+
+<button onclick="window.location.href='/contact.astro'" class="corner1-button">
+  <span class="corner1 top-left1"></span>
+  <span class="corner1 top-right1"></span>
+  <span class="corner1 bottom-left1"></span>
+  <span class="corner1 bottom-right1"></span>
+  GET IN TOUCH
+</button>
+
+<style>
+  .corner1-button {
+    position: relative;
+    background: transparent;
+    border: none;
+    font-size: 12px;
+    font-weight: 500;
+    padding: 7px 9px;
+    cursor: pointer;
+    color: white;
+  }
+
+  .corner1 {
+    position: absolute;
+    width: 7px;
+    height: 7px;
+    border: 1.5px solid white;
+  }
+
+  .top-left1 {
+    top: 0;
+    left: 0;
+    border-right: none;
+    border-bottom: none;
+  }
+
+  .top-right1 {
+    top: 0;
+    right: 0;
+    border-left: none;
+    border-bottom: none;
+  }
+
+  .bottom-left1 {
+    bottom: 0;
+    left: 0;
+    border-right: none;
+    border-top: none;
+  }
+
+  .bottom-right1 {
+    bottom: 0;
+    right: 0;
+    border-left: none;
+    border-top: none;
+  }
+</style>
