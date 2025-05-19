@@ -6,7 +6,7 @@ import Layout from "../layouts/Layout.astro";
 <Layout>
   <section class="header_img">
     <p class="title">Introducing</p>
-    <h1>Twoeighty production co.</h1>
+    <h1>Twoeighty <br /> production co.</h1>
   </section>
   <section class="form_background">
     <h3>Send a message</h3>
@@ -59,7 +59,7 @@ import Layout from "../layouts/Layout.astro";
     background-image: url("/contact.png");
     background-repeat: no-repeat;
     background-size: cover;
-    background-position: center;
+    /* background-position: center; */
     width: 100%;
     height: 70vh;
     position: relative;
@@ -177,6 +177,10 @@ import Layout from "../layouts/Layout.astro";
     textarea {
       font-size: 14px;
     }
+
+    h1 {
+      font-size: 30px;
+    }
   }
 
   @media (width >= 600px) {
@@ -195,12 +199,26 @@ import Layout from "../layouts/Layout.astro";
     textarea {
       font-size: 16px;
     }
+
+    h1 {
+      font-size: 37px;
+    }
+    .title {
+      font-size: 17px;
+    }
   }
   @media (width >= 1000px) {
     .corner-button,
     input,
     textarea {
       font-size: 18px;
+    }
+
+    h1 {
+      font-size: 59px;
+    }
+    .title {
+      font-size: 20px;
     }
   }
 </style>
