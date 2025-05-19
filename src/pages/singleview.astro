@@ -31,8 +31,10 @@ import Layout from "../layouts/Layout.astro";
       <img class="right" src="https://picsum.photos/seed/picsum/900/900" alt="" />
     </section>
     <section>
-      <h3>process</h3>
-      <p>We spent crisp mornings walking fields with local growers and golden evenings in rustic barns, capturing every genuine gesture—from hands selecting ripe produce to careful crate assembly. Using handheld cameras and natural light, we focused on unscripted moments that reveal Thykassen’s commitment to quality and community.</p>
+      <div class="centertext">
+        <h3>process</h3>
+        <p>We spent crisp mornings walking fields with local growers and golden evenings in rustic barns, capturing every genuine gesture—from hands selecting ripe produce to careful crate assembly. Using handheld cameras and natural light, we focused on unscripted moments that reveal Thykassen’s commitment to quality and community.</p>
+      </div>
       <div class="flex_row">
         <a class="margin_r none" href="XXX">
           <img src="https://picsum.photos/seed/picsum/500/500" alt="" />
@@ -118,20 +120,32 @@ import Layout from "../layouts/Layout.astro";
     }
 
     .image_right {
-      margin-top: 7em;
+      margin-top: 11em;
     }
 
     .flex {
       display: flex;
-      justify-content: center;
+      justify-content: space-between;
+
       align-items: center;
-      margin-top: -5em;
+      margin-top: -7em;
+    }
+    .center_text {
+      flex: 2;
     }
 
     .image_left,
-    .center_text,
     .image_right {
       flex: 1; /* Eller sæt faste width hvis du vil */
+      position: relative;
+      z-index: 1;
+      max-width: 350px;
+    }
+
+    h1 {
+      margin: -3rem;
+      position: relative;
+      z-index: 2;
     }
 
     .centertext {
@@ -139,9 +153,14 @@ import Layout from "../layouts/Layout.astro";
     }
 
     @media (width >= 750px) {
-      .margin_t {
-        margin-top: 7rem;
+      .image_right {
+        margin-top: 17rem;
       }
+
+      .flex {
+        margin-top: -11rem;
+      }
+
       .none {
         display: block;
       }
@@ -165,15 +184,18 @@ import Layout from "../layouts/Layout.astro";
     }
 
     @media (width >= 900px) {
-      .margin_t {
-        margin-top: 2rem;
-      }
       .none {
         display: block;
       }
 
       .flex_col {
         margin: 5rem 0.8rem; /* fx 1rem mellem hvert logo */
+      }
+    }
+
+    @media (width >= 1000px) {
+      .flex {
+        margin-top: -13rem;
       }
     }
   </style>
