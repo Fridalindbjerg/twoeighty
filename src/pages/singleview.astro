@@ -1,0 +1,180 @@
+---
+import Layout from "../layouts/Layout.astro";
+---
+
+<Layout>
+  <main>
+    <div class="flex">
+      <div class="image_left">
+        <img src="https://picsum.photos/seed/picsum/900/1600" alt="" />
+      </div>
+
+      <div class="centertext">
+        <h1>
+          <span class="title">introducing </span><br />
+          thykassen
+        </h1>
+      </div>
+
+      <div class="image_right">
+        <img class="margin_top" src="https://picsum.photos/seed/picsum/900/1600" alt="" />
+      </div>
+    </div>
+    <section class="grid_2_1">
+      <div class="left">
+        <h3>brief</h3>
+        <p>
+          We partnered with Thykassen to capture the essence of their farm-to-table promise. Over early-morning shoots on local farms and hands-on packing sessions, we documented every authentic moment—from harvest to doorstep. Our goal was to translate that sensory experience into film and photography that feels warm, genuine, and unfiltered. By focusing on real people, natural light, and unscripted interaction, we created a narrative that brings Thykassen’s values of sustainability, community,
+          and craftsmanship vividly to life.
+        </p>
+      </div>
+      <img class="right" src="https://picsum.photos/seed/picsum/900/900" alt="" />
+    </section>
+    <section>
+      <h3>process</h3>
+      <p>We spent crisp mornings walking fields with local growers and golden evenings in rustic barns, capturing every genuine gesture—from hands selecting ripe produce to careful crate assembly. Using handheld cameras and natural light, we focused on unscripted moments that reveal Thykassen’s commitment to quality and community.</p>
+      <div class="flex_row">
+        <a class="margin_r none" href="XXX">
+          <img src="https://picsum.photos/seed/picsum/500/500" alt="" />
+        </a>
+        <a class="max" href="XXX">
+          <img src="https://picsum.photos/seed/picsum/900/1600
+            " alt="" />
+        </a>
+
+        <div class="flex_col">
+          <div>
+            <a href="XXX">
+              <img class="margin_b" src="https://picsum.photos/seed/picsum/400/250" alt="" />
+            </a>
+            <a href="XXX">
+              <img src="https://picsum.photos/seed/picsum/400/400" alt="" />
+            </a>
+          </div>
+        </div>
+
+        <a class="max" href="XXX"> <img src="https://picsum.photos/seed/picsum/900/1600" alt="" /></a>
+        <a class="margin_l none" href="XXX">
+          <img src="https://picsum.photos/seed/picsum/500/500" alt="" />
+        </a>
+      </div>
+    </section>
+    <section class="grid_2_1">
+      <div class="margin_r">
+        <h3>results</h3>
+
+        <p>The final deliverables include a hero film for the website, a suite of short social videos, and a curated gallery of lifestyle photographs. Each asset reflects Thykassen’s values of community, simplicity, and quality. Early feedback shows a clear uptick in new subscriptions on Thy-Kassen.dk and meaningful conversations sparked on social channels—proof that authentic storytelling drives real connection.</p>
+        <img src="https://picsum.photos/seed/picsum/600/400" alt="" />
+      </div>
+      <img class="margin_t" src="https://picsum.photos/seed/picsum/600/400" alt="" />
+    </section>
+  </main>
+
+  <style>
+    .margin_r {
+      margin-right: 0.6rem;
+    }
+
+    .max {
+      max-width: 300px;
+    }
+
+    .margin_b {
+      margin-bottom: 0.6rem;
+    }
+
+    .margin_r {
+      margin-right: 0.6rem;
+      margin-top: 15%;
+    }
+
+    .margin_l {
+      margin-left: 0.6rem;
+      margin-top: 10%;
+    }
+
+    .none {
+      display: none;
+    }
+    .center {
+      display: flex;
+      gap: 0.2rem;
+      margin: 0 10%; /* fx 1rem mellem hvert logo */
+    }
+
+    .flex_col {
+      display: flex;
+      flex-direction: column;
+      margin: 2rem 0.8rem; /* fx 1rem mellem hvert logo */
+    }
+
+    img {
+      max-width: 100%;
+    }
+    .flex_row {
+      display: flex;
+      flex-direction: row;
+      justify-content: space-between;
+    }
+
+    .image_right {
+      margin-top: 7em;
+    }
+
+    .flex {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      margin-top: -5em;
+    }
+
+    .image_left,
+    .center_text,
+    .image_right {
+      flex: 1; /* Eller sæt faste width hvis du vil */
+    }
+
+    .centertext {
+      text-align: center;
+    }
+
+    @media (width >= 750px) {
+      .margin_t {
+        margin-top: 7rem;
+      }
+      .none {
+        display: block;
+      }
+
+      .flex_col {
+        margin: 3rem 0.8rem; /* fx 1rem mellem hvert logo */
+      }
+
+      .right {
+        /* grid-column: 1/2; */
+        grid-row: 1/2;
+      }
+      .left {
+        margin-left: 0.6rem;
+        grid-column: 2/3;
+      }
+      .grid_2_1 {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+      }
+    }
+
+    @media (width >= 900px) {
+      .margin_t {
+        margin-top: 2rem;
+      }
+      .none {
+        display: block;
+      }
+
+      .flex_col {
+        margin: 5rem 0.8rem; /* fx 1rem mellem hvert logo */
+      }
+    }
+  </style>
+</Layout>

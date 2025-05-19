@@ -44,83 +44,81 @@ import "/src/css/base.css";
       <img src="https://picsum.photos/seed/picsum/500/500" alt="" />
     </a>
   </div>
+</section>
 
-  <style>
-    section {
-    }
-    .max {
-      max-width: 300px;
-    }
+<style>
+  .max {
+    max-width: 300px;
+  }
 
-    .margin_b {
-      margin-bottom: 0.6rem;
-    }
+  .margin_b {
+    margin-bottom: 0.6rem;
+  }
 
-    .margin_r {
-      margin-right: 0.6rem;
-      margin-top: 15%;
-    }
+  .margin_r {
+    margin-right: 0.6rem;
+    margin-top: 15%;
+  }
 
-    .margin_l {
-      margin-left: 0.6rem;
-      margin-top: 10%;
-    }
+  .margin_l {
+    margin-left: 0.6rem;
+    margin-top: 10%;
+  }
 
+  .none {
+    display: none;
+  }
+  .center {
+    display: flex;
+    gap: 0.2rem;
+    margin: 0 10%; /* fx 1rem mellem hvert logo */
+  }
+
+  .flex_col {
+    display: flex;
+    flex-direction: column;
+    margin: 2rem 0.8rem; /* fx 1rem mellem hvert logo */
+  }
+
+  img {
+    max-width: 100%;
+  }
+  .flex_row {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+  }
+
+  h2,
+  h3 {
+    text-align: center;
+  }
+
+  h3 {
+    margin: 0;
+  }
+
+  h2 {
+    margin-bottom: 0;
+  }
+
+  @media (width >= 750px) {
     .none {
-      display: none;
-    }
-    .center {
-      display: flex;
-      gap: 0.2rem;
-      margin: 0 10%; /* fx 1rem mellem hvert logo */
+      display: block;
     }
 
     .flex_col {
-      display: flex;
-      flex-direction: column;
-      margin: 2rem 0.8rem; /* fx 1rem mellem hvert logo */
+      margin: 3rem 0.8rem; /* fx 1rem mellem hvert logo */
+    }
+  }
+
+  @media (width >= 900px) {
+    .none {
+      display: block;
     }
 
-    img {
-      max-width: 100%;
+    .flex_col {
+      margin: 5rem 0.8rem; /* fx 1rem mellem hvert logo */
     }
-    .flex_row {
-      display: flex;
-      flex-direction: row;
-      justify-content: space-between;
-    }
-
-    h2,
-    h3 {
-      text-align: center;
-    }
-
-    h3 {
-      margin: 0;
-    }
-
-    h2 {
-      margin-bottom: 0;
-    }
-
-    @media (width >= 750px) {
-      .none {
-        display: block;
-      }
-
-      .flex_col {
-        margin: 3rem 0.8rem; /* fx 1rem mellem hvert logo */
-      }
-    }
-
-    @media (width >= 900px) {
-      .none {
-        display: block;
-      }
-
-      .flex_col {
-        margin: 5rem 0.8rem; /* fx 1rem mellem hvert logo */
-      }
-    }
-  </style>
-</section>
+  }
+</style>
