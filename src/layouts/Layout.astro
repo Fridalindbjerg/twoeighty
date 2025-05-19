@@ -9,29 +9,28 @@ import "/src/css/base.css";
     <meta name="viewport" content="width=device-width" />
     <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
     <meta name="generator" content={Astro.generator} />
-    <title>About</title>
+    <title>280</title>
   </head>
   <body>
-
-    <!-- <Header /> -->
-
     <header>
-      <ul>
-        <div class="menu">
-          <li><a href="/about.astro">ABOUT</a></li>
-          <li><a href="/archive.astro">ARCHIVE</a></li>
-        </div>
-        <li><a href="/index.astro"><img src="/logo.png" alt="280 logo" /></a></li>
-        <li>
-          <button onclick="window.location.href='/contact.astro'" class="corner-button">
-            <span class="corner top-left"></span>
-            <span class="corner top-right"></span>
-            <span class="corner bottom-left"></span>
-            <span class="corner bottom-right"></span>
-            GET IN TOUCH
-          </button>
-        </li>
-      </ul>
+      <nav>
+        <ul>
+          <div class="menu">
+            <li><a href="/about.astro">ABOUT</a></li>
+            <li><a href="/archive.astro">ARCHIVE</a></li>
+          </div>
+          <li><a href="/index.astro"><img src="/logo.png" alt="280 logo" /></a></li>
+          <li>
+            <button onclick="window.location.href='/contact.astro'" class="corner-button">
+              <span class="corner top-left"></span>
+              <span class="corner top-right"></span>
+              <span class="corner bottom-left"></span>
+              <span class="corner bottom-right"></span>
+              GET IN TOUCH
+            </button>
+          </li>
+        </ul>
+      </nav>
     </header>
     <main>
       <slot />
@@ -50,9 +49,9 @@ import "/src/css/base.css";
         </div>
         <div class="group3">
           <p>SOCIALS</p>
-          <img src="" alt="Instagram logo" />
-          <img src="" alt="Vimeo logo" />
-          <img src="" alt="LinkedIn logo" />
+          <a href="https://www.instagram.com/280cph/"><img src="/insta-white.png" alt="Instagram logo" /></a>
+          <a href="https://vimeo.com/280cph"><img src="vimeo-white.png" alt="Vimeo logo" /></a>
+          <a href="https://www.linkedin.com/company/280cph/?originalSubdomain=dk"><img src="linkedin-white.png" alt="LinkedIn logo" /></a>
         </div>
         <div class="button">
           <button onclick="window.location.href='/contact.astro'" class="corner1-button">
@@ -75,6 +74,10 @@ import "/src/css/base.css";
     width: 100%;
     height: 100%;
     background-color: var(--backgroundcolor);
+  }
+
+  main {
+    margin: 7%;
   }
 
   /**** HEADER ****/
@@ -162,7 +165,7 @@ import "/src/css/base.css";
 
   /**** FOOTER ****/
   footer {
-    background-color: var(--black);
+    background-color: #040404;
   }
 
   section {
@@ -189,6 +192,10 @@ import "/src/css/base.css";
     font-size: 12px;
     text-decoration: underline;
     padding-bottom: 20px;
+  }
+
+  .group3 a {
+    padding-right: 5px;
   }
 
   h5 {
@@ -281,6 +288,11 @@ import "/src/css/base.css";
     .corner1-button {
       font-size: 16px;
     }
+
+    .group3 a {
+      width: 5px;
+    }
+
     section {
       display: grid;
       grid-template-columns: repeat(4, 1fr);

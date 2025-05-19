@@ -2,4 +2,417 @@
 import Layout from "../layouts/Layout.astro";
 ---
 
-<Layout />
+<Layout>
+  <section class="intro">
+    <img src="/about.png" alt="Morten and Anders" />
+    <div>
+      <p class="title">ABOUT</p>
+      <h1>Twoeighty <br />production co.</h1>
+    </div>
+  </section>
+
+  <section class="grid_1">
+    <article class="who">
+      <h3>Who is 280</h3>
+      <p>
+        We, Morten and Anders, are a Copenhagen‐based duo with over a decade of experience in creative direction, film production, and still imagery. From intimate branded shorts to large‐scale campaigns, we thrive on transforming bold ideas into
+        compelling visual narratives. Having collaborated with both local artisans and global corporations, we’ve learned to balance high‐level strategy with hands‐on execution—whether that means sketching storyboards over coffee or fine-tuning
+        camera settings at dawn.
+      </p>
+    </article>
+    <article class="philosophy">
+      <h3>Our philosophy</h3>
+      <p>
+        At our core lies a belief in the power of genuine human stories. We don’t just make images; we seek out the thoughts, emotions, and subtle moments that resonate beneath the surface. Every project begins with listening—understanding what moves
+        you, what challenges you, and what makes your brand unique. From there, we craft honest, relevant narratives that connect people to people, not just products to pixels. Authenticity for us isn’t a trend—it’s the only way to create work that
+        truly matters.
+      </p>
+    </article>
+  </section>
+
+  <section>
+    <div class="services">
+      <h2>Twoeighty's</h2>
+      <p class="title">SERVICES</p>
+    </div>
+    <section class="background">
+      <div class="slider-container">
+        <div class="slider-track">
+          <img src="/banner/commercials.png" alt="Television commercials" />
+          <img src="/banner/content.png" alt="Content creation" />
+          <img src="/banner/corporate.png" alt="Corporate videos" />
+          <img src="/banner/creative.png" alt="Creative direction" />
+          <img src="/banner/filmproduction.png" alt="Creative film production" />
+          <img src="/banner/interviews.png" alt="High end interviews" />
+          <img src="/banner/photograph.png" alt="Lifestyle photography" />
+
+          <img src="/banner/commercials.png" alt="Television commercials" />
+          <img src="/banner/content.png" alt="Content creation" />
+          <img src="/banner/corporate.png" alt="Corporate videos" />
+          <img src="/banner/creative.png" alt="Creative direction" />
+          <img src="/banner/filmproduction.png" alt="Creative film production" />
+          <img src="/banner/interviews.png" alt="High end interviews" />
+          <img src="/banner/photograph.png" alt="Lifestyle photography" />
+        </div>
+      </div>
+    </section>
+    <section class="grid_2">
+      <div class="clients">
+        <h4>Selected <br />clients</h4>
+        <ul>
+          <li>Adidas</li>
+          <li>Arbejdstilsynet</li>
+          <li>Arbejdernes</li>
+          <li>Landsbank</li>
+          <li>CPH Airport</li>
+          <li>Coca Cola</li>
+          <li>Deloitte</li>
+          <li>DJØF</li>
+          <li>Danish Design Center</li>
+          <li>Fitness World</li>
+          <li>Fritz Hansen</li>
+          <li>Microsoft</li>
+          <li>Norwegian Airlines</li>
+          <li>Topdanmark</li>
+          <li>Spangsberg Flødeboller</li>
+          <li>Wonderful Copenhagen</li>
+        </ul>
+      </div>
+      <div class="agencies">
+        <h4>Selected <br /> agencies</h4>
+        <ul>
+          <li>BoyeSpellerberg</li>
+          <li>CoPlus</li>
+          <li>GeelmuydenKiese</li>
+          <li>Lead Agency</li>
+          <li>Mindshare</li>
+          <li>Marvelous</li>
+          <li>Sunrise</li>
+          <li>Precis Digital</li>
+        </ul>
+      </div>
+      <div class="contact">
+        <h4>Contact us</h4>
+        <p>mail: info@280.dk</p>
+        <p>phone: +45 31 46 20 10</p>
+      </div>
+      <div class="button">
+        <button onclick="window.location.href='/contact.astro'" class="corner-button">
+          <span class="corner top-left"></span>
+          <span class="corner top-right"></span>
+          <span class="corner bottom-left"></span>
+          <span class="corner bottom-right"></span>
+          GET IN TOUCH
+        </button>
+      </div>
+    </section>
+
+    <style>
+      @font-face {
+        font-family: Friz;
+        src: url("../assets/fonts/Friz/friz-quadrata-std-bold-587034a220f9f-kopi.otf");
+      }
+
+      @font-face {
+        font-family: Diatype;
+        src: url("../assets/fonts/Diatype/abc-diatype-regular-2-kopi.otf");
+      }
+
+      .intro {
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+      }
+
+      .intro img {
+        grid-column: 1 / 3;
+        grid-row: 1;
+      }
+
+      .intro div {
+        grid-column: 2 / 4;
+        grid-row: 1;
+      }
+      h1 {
+        font-size: 22px;
+      }
+
+      h3 {
+        font-size: 20px;
+        font-family: Diatype;
+        color: red;
+      }
+
+      .title {
+      }
+
+      main {
+        margin: 10%;
+      }
+      .grid_1 {
+        display: grid;
+        grid-template-columns: repeat(5, 1fr);
+      }
+
+      .who {
+        grid-column: 1 / span 4;
+        grid-row: 1;
+        max-width: 450px;
+      }
+
+      .philosophy {
+        grid-column: 2 / span 4;
+        grid-row: 2;
+        max-width: 450px;
+        text-align: left;
+      }
+
+      .corner-button {
+        position: relative;
+        background: transparent;
+        border: none;
+        font-size: 12px;
+        font-weight: 500;
+        padding: 7px 9px;
+        cursor: pointer;
+        margin-right: 30px;
+      }
+
+      .corner {
+        position: absolute;
+        width: 7px;
+        height: 7px;
+        border: 1.5px solid black;
+      }
+
+      .top-left {
+        top: 0;
+        left: 0;
+        border-right: none;
+        border-bottom: none;
+      }
+
+      .top-right {
+        top: 0;
+        right: 0;
+        border-left: none;
+        border-bottom: none;
+      }
+
+      .bottom-left {
+        bottom: 0;
+        left: 0;
+        border-right: none;
+        border-top: none;
+      }
+
+      .bottom-right {
+        bottom: 0;
+        right: 0;
+        border-left: none;
+        border-top: none;
+      }
+
+      .button {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+      }
+
+      ul,
+      p {
+        font-size: 12px;
+      }
+
+      ul {
+        list-style: none;
+        text-align: left;
+      }
+
+      li {
+        padding-bottom: 3px;
+      }
+
+      .grid_2 {
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+      }
+
+      .services {
+        text-align: center;
+      }
+
+      .full_width {
+        max-width: 100%;
+        margin: auto;
+      }
+
+      .background {
+        background-color: black;
+        max-width: 100%;
+        height: 310px;
+        overflow: hidden;
+        display: flex;
+        align-items: center;
+      }
+
+      .slider-container {
+        width: 100%;
+        overflow: hidden;
+      }
+
+      .slider-track {
+        display: flex;
+        width: max-content;
+        animation: scroll 20s linear infinite;
+      }
+      .slider-track img {
+        width: 10em;
+        padding-left: 0.6em;
+        height: auto;
+      }
+
+      @keyframes scroll {
+        0% {
+          transform: translateX(0);
+        }
+        100% {
+          transform: translateX(-50%);
+        }
+      }
+
+      @media (width >= 500px) {
+        h1 {
+          font-size: 30px;
+        }
+
+        .intro img {
+          width: 300px;
+        }
+      }
+
+      @media (width >= 600px) {
+        .intro img {
+          width: 350px;
+        }
+      }
+
+      @media (width >= 700px) {
+        .intro img {
+          width: 400px;
+        }
+
+        .intro {
+          grid-template-columns: repeat(4, 1fr);
+        }
+
+        .intro div {
+          grid-column: 3 / 5;
+        }
+      }
+
+      @media (width >= 800px) {
+        .intro img {
+          width: 500px;
+        }
+
+        h1 {
+          font-size: 37px;
+        }
+        .title {
+          font-size: 17px;
+        }
+
+        .philosophy {
+          grid-column: 3 / span 3;
+        }
+
+        h3 {
+          font-size: 27px;
+        }
+
+        p {
+          font-size: 14px;
+        }
+      }
+
+      @media (width >= 1000px) {
+        .intro {
+          grid-template-columns: repeat(5, 1fr);
+        }
+
+        .intro img {
+          width: 600px;
+        }
+
+        .intro div {
+          grid-column: 3 / 6;
+        }
+        h1 {
+          font-size: 59px;
+        }
+        .title {
+          font-size: 20px;
+        }
+
+        p {
+          font-size: 18px;
+        }
+
+        .philosophy,
+        .who {
+          max-width: 550px;
+        }
+
+        .slider-track img {
+          width: 12em;
+        }
+
+        .background {
+          height: 370px;
+        }
+      }
+
+      @media (width >= 1200px) {
+        .intro img {
+          width: 700px;
+        }
+
+        h1 {
+          font-size: 73px;
+        }
+        .title {
+          font-size: 25px;
+        }
+
+        h3 {
+          font-size: 40px;
+        }
+        .grid_1 {
+          display: grid;
+          grid-template-columns: repeat(7, 1fr);
+        }
+
+        .philosophy {
+          grid-column: 4 / 8;
+        }
+
+        .philosophy,
+        .who {
+          max-width: 700px;
+        }
+
+        .slider-track img {
+          width: 14em;
+        }
+
+        .background {
+          height: 430px;
+        }
+
+        h4 {
+          font-size: 30px;
+        }
+      }
+    </style>
+  </section>
+</Layout>
