@@ -7,7 +7,9 @@
   font-family: Diatype;
   src: url("../assets/fonts/Diatype/abc-diatype-regular-2-kopi.otf");
 }
-
+body {
+  max-width: 1400px;
+}
 main {
   margin: 0 auto;
   max-width: 98%;
