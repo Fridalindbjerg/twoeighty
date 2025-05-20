@@ -1,13 +1,12 @@
 ---
 import Layout from "../layouts/Layout.astro";
+import Button from "../components/Button.astro";
 ---
 
 <Layout>
   <section class="intro">
     <img src="/about.png" alt="Morten and Anders" />
-    <div>
-      <h1><span class="title">ABOUT </span> <br />Twoeighty <br />production co.</h1>
-    </div>
+    <h1><span class="title">ABOUT </span> <br />Twoeighty <br />production co.</h1>
   </section>
 
   <section class="grid_1">
@@ -95,13 +94,7 @@ import Layout from "../layouts/Layout.astro";
         <p>phone: +45 31 46 20 10</p>
       </div>
       <div class="button">
-        <button onclick="window.location.href='/contact.astro'" class="corner-button">
-          <span class="corner top-left"></span>
-          <span class="corner top-right"></span>
-          <span class="corner bottom-left"></span>
-          <span class="corner bottom-right"></span>
-          GET IN TOUCH
-        </button>
+        <Button />
       </div>
     </section>
 
@@ -116,12 +109,10 @@ import Layout from "../layouts/Layout.astro";
         grid-row: 1;
       }
 
-      .intro div {
+      h1 {
+        margin: auto;
         grid-column: 2 / 4;
         grid-row: 1;
-      }
-      h1 {
-        font-size: 22px;
       }
 
       h3 {
@@ -149,52 +140,6 @@ import Layout from "../layouts/Layout.astro";
         grid-row: 2;
         max-width: 450px;
         text-align: left;
-      }
-
-      .corner-button {
-        position: relative;
-        background: transparent;
-        border: none;
-        font-size: 12px;
-        font-weight: 500;
-        padding: 7px 9px;
-        cursor: pointer;
-        margin-right: 30px;
-      }
-
-      .corner {
-        position: absolute;
-        width: 7px;
-        height: 7px;
-        border: 1.5px solid black;
-      }
-
-      .top-left {
-        top: 0;
-        left: 0;
-        border-right: none;
-        border-bottom: none;
-      }
-
-      .top-right {
-        top: 0;
-        right: 0;
-        border-left: none;
-        border-bottom: none;
-      }
-
-      .bottom-left {
-        bottom: 0;
-        left: 0;
-        border-right: none;
-        border-top: none;
-      }
-
-      .bottom-right {
-        bottom: 0;
-        right: 0;
-        border-left: none;
-        border-top: none;
       }
 
       .button {
@@ -267,10 +212,6 @@ import Layout from "../layouts/Layout.astro";
       }
 
       @media (width >= 500px) {
-        h1 {
-          font-size: 30px;
-        }
-
         .intro img {
           width: 300px;
         }
@@ -291,7 +232,7 @@ import Layout from "../layouts/Layout.astro";
           grid-template-columns: repeat(4, 1fr);
         }
 
-        .intro div {
+        h1 {
           grid-column: 3 / 5;
         }
       }
@@ -301,9 +242,6 @@ import Layout from "../layouts/Layout.astro";
           width: 500px;
         }
 
-        h1 {
-          font-size: 37px;
-        }
         .title {
           font-size: 17px;
         }
@@ -330,12 +268,10 @@ import Layout from "../layouts/Layout.astro";
           width: 600px;
         }
 
-        .intro div {
+        h1 {
           grid-column: 3 / 6;
         }
-        h1 {
-          font-size: 59px;
-        }
+
         .title {
           font-size: 20px;
         }
@@ -363,9 +299,6 @@ import Layout from "../layouts/Layout.astro";
           width: 700px;
         }
 
-        h1 {
-          font-size: 73px;
-        }
         .title {
           font-size: 25px;
         }

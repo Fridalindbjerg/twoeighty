@@ -34,8 +34,9 @@ h2 {
 
 h1 {
   margin: 0;
-  line-height: 25px;
+  line-height: clamp(1.5625rem, 5vw, 3.75rem);
   text-align: center;
+  font-size: clamp(1.375rem, 5vw, 5.625rem);
 }
 
 h2 {
