@@ -37,17 +37,6 @@ import Layout from "../layouts/Layout.astro";
           <a href="XXX">Full project</a>
         </div>
       </div>
-      <script is:browser>
-        const handleResize = () => {
-          const div = document.getElementById("mydiv");
-          if (window.innerWidth > 700 && div) {
-            div.remove();
-          }
-        };
-
-        handleResize();
-        window.addEventListener("resize", handleResize);
-      </script>
     </article>
     <article class="grid2fr">
       <div class="grid_2_1">
@@ -56,7 +45,7 @@ import Layout from "../layouts/Layout.astro";
           <p>We created a brand film for Microsoft that highlights how trust and technology intersect in one of the world’s most remote and rugged landscapes — Iceland. The narrative follows individuals who rely on digital infrastructure in their daily lives, set against vast, cinematic scenery.</p>
         </div>
         <img src="https://picsum.photos/seed/picsum/900/1600" alt="" />
-        <img class="none span2" src="https://picsum.photos/seed/picsum/1500/1000" alt="" />
+        <img class="none span2" src="https://picsum.photos/seed/picsum/900/600" alt="" />
       </div>
       <div class="bottom">
         <img src="https://picsum.photos/seed/picsum/1500/1000" alt="" />
@@ -72,7 +61,7 @@ import Layout from "../layouts/Layout.astro";
         <img src="https://picsum.photos/seed/picsum/1500/1000" alt="" />
       </div>
       <div class="p_margin_l">
-        <img class="none span2" src="https://picsum.photos/seed/picsum/1500/1000" alt="" />
+        <img class="none" src="https://picsum.photos/seed/picsum/1500/1000" alt="" />
         <div class="grid_2_1">
           <img class="padding" src="https://picsum.photos/seed/picsum/900/1600" alt="" />
           <div class="p_margin_l">
@@ -98,10 +87,13 @@ import Layout from "../layouts/Layout.astro";
 </Layout>
 
 <style>
+  article {
+    padding-bottom: 22rem;
+  }
   .black {
     background-color: var(--black);
     color: white;
-    padding: 10% 5%;
+    padding: 5%;
   }
 
   .grid_9_1 {
@@ -145,8 +137,11 @@ import Layout from "../layouts/Layout.astro";
   }
 
   @media (width >= 700px) {
+    /* .maxvh {
+      max-height: 100vh;
+    } */
     .bottom {
-      align-self: end;
+      align-self: flex-start;
     }
     .none {
       display: block;
