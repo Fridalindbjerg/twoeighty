@@ -32,7 +32,7 @@ import Button from "../components/Button.astro";
     <div class="services">
       <h2>Twoeighty's <br /> <span class="span1">SERVICES</span></h2>
     </div>
-    <section class="background">
+    <section class="background full-width">
       <div class="slider-container">
         <div class="slider-track">
           <img src="/banner/commercials.png" alt="Television commercials" />
@@ -94,7 +94,13 @@ import Button from "../components/Button.astro";
         <p>phone: +45 31 46 20 10</p>
       </div>
       <div class="button">
-        <Button />
+        <button onclick="window.location.href='/contact.astro'" class="corner-button">
+          <span class="corner top-left"></span>
+          <span class="corner top-right"></span>
+          <span class="corner bottom-left"></span>
+          <span class="corner bottom-right"></span>
+          GET IN TOUCH
+        </button>
       </div>
     </section>
 
@@ -124,9 +130,7 @@ import Button from "../components/Button.astro";
       h4 {
         font-size: 1.25rem;
       }
-      main {
-        margin: 10%;
-      }
+
       .grid_1 {
         display: grid;
         grid-template-columns: repeat(5, 1fr);
@@ -164,6 +168,52 @@ import Button from "../components/Button.astro";
         align-items: center;
       }
 
+      .corner-button {
+        position: relative;
+        background: transparent;
+        border: none;
+        font-size: 12px;
+        font-weight: 500;
+        padding: 7px 9px;
+        cursor: pointer;
+        color: var(--redfont);
+      }
+
+      .corner {
+        position: absolute;
+        width: 7px;
+        height: 7px;
+        border: 1.5px solid var(--redfont);
+      }
+
+      .top-left {
+        top: 0;
+        left: 0;
+        border-right: none;
+        border-bottom: none;
+      }
+
+      .top-right {
+        top: 0;
+        right: 0;
+        border-left: none;
+        border-bottom: none;
+      }
+
+      .bottom-left {
+        bottom: 0;
+        left: 0;
+        border-right: none;
+        border-top: none;
+      }
+
+      .bottom-right {
+        bottom: 0;
+        right: 0;
+        border-left: none;
+        border-top: none;
+      }
+
       ul,
       p {
         font-size: 12px;
@@ -191,9 +241,13 @@ import Button from "../components/Button.astro";
         text-align: center;
       }
 
-      .full_width {
-        max-width: 100%;
-        margin: auto;
+      .full-width {
+        width: 100vw;
+        position: relative;
+        left: 50%;
+        right: 50%;
+        margin-left: -50vw;
+        margin-right: -50vw;
       }
 
       .background {
@@ -234,6 +288,9 @@ import Button from "../components/Button.astro";
         .intro img {
           width: 300px;
         }
+        .corner-button {
+          font-size: 0.875rem;
+        }
       }
 
       @media (width >= 600px) {
@@ -254,6 +311,10 @@ import Button from "../components/Button.astro";
         h1 {
           grid-column: 3 / 5;
         }
+
+        .corner-button {
+          font-size: 1rem;
+        }
       }
 
       @media (width >= 800px) {
@@ -262,7 +323,7 @@ import Button from "../components/Button.astro";
         }
 
         .title {
-          font-size: 17px;
+          font-size: 1.063rem;
         }
 
         .philosophy {
@@ -275,6 +336,16 @@ import Button from "../components/Button.astro";
 
         p {
           font-size: 14px;
+        }
+
+        .grid_2 {
+          grid-template-columns: repeat(3, 1fr);
+        }
+
+        .button {
+          grid-row: 1;
+          grid-column: 1 / span 3;
+          padding: 70px;
         }
       }
 
@@ -310,6 +381,10 @@ import Button from "../components/Button.astro";
 
         .background {
           height: 370px;
+        }
+
+        .corner-button {
+          font-size: 1.125rem;
         }
       }
 
@@ -349,6 +424,21 @@ import Button from "../components/Button.astro";
 
         h4 {
           font-size: 30px;
+        }
+
+        p,
+        li {
+          font-size: 1.125rem;
+        }
+
+        .corner-button {
+          font-size: 2.5rem;
+        }
+
+        .corner {
+          width: 15px;
+          height: 15px;
+          /* border: 2.5px solid var(--redfont); */
         }
       }
     </style>
