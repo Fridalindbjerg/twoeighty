@@ -28,33 +28,33 @@ import ButtonFooter from "../components/ButtonFooter.astro";
           </li>
         </ul>
       </nav>
-      <main>
-        <slot />
-      </main>
-      <footer>
-        <section>
-          <h5>Twoeighty production co.</h5>
-          <div class="group1">
-            <a href="/about.astro">ABOUT</a>
-            <a href="/archive.astro">ARCHIVE</a>
-          </div>
-          <div class="group2">
-            <p>CONTACT</p>
-            <p>mail: <br />info@280.dk</p>
-            <p>phone: <br />+45 31 46 20 10</p>
-          </div>
-          <div class="group3">
-            <p>SOCIALS</p>
-            <a href="https://www.instagram.com/280cph/"><img src="/insta-white.png" alt="Instagram logo" /></a>
-            <a href="https://vimeo.com/280cph"><img src="vimeo-white.png" alt="Vimeo logo" /></a>
-            <a href="https://www.linkedin.com/company/280cph/?originalSubdomain=dk"><img src="linkedin-white.png" alt="LinkedIn logo" /></a>
-          </div>
-          <div class="button">
-            <ButtonFooter />
-          </div>
-        </section>
-      </footer>
     </header>
+    <main>
+      <slot />
+    </main>
+    <footer>
+      <section>
+        <h5>Twoeighty production co.</h5>
+        <div class="group1">
+          <a href="/about.astro">ABOUT</a>
+          <a href="/archive.astro">ARCHIVE</a>
+        </div>
+        <div class="group2">
+          <p>CONTACT</p>
+          <p>mail: <br />info@280.dk</p>
+          <p>phone: <br />+45 31 46 20 10</p>
+        </div>
+        <div class="group3">
+          <p>SOCIALS</p>
+          <a href="https://www.instagram.com/280cph/"><img src="/insta-white.png" alt="Instagram logo" /></a>
+          <a href="https://vimeo.com/280cph"><img src="vimeo-white.png" alt="Vimeo logo" /></a>
+          <a href="https://www.linkedin.com/company/280cph/?originalSubdomain=dk"><img src="linkedin-white.png" alt="LinkedIn logo" /></a>
+        </div>
+        <div class="button">
+          <ButtonFooter />
+        </div>
+      </section>
+    </footer>
 
     <style>
       html,
