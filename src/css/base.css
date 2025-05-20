@@ -40,8 +40,12 @@ h1 {
 }
 
 h2 {
-  font-size: 30px;
-  line-height: 25px;
+  font-size: clamp(1.875rem, 8vw, 3.5rem);
+  line-height: clamp(1.563rem, 8vw, 2rem);
+}
+
+.span1 {
+  font-size: clamp(1.25rem, 8vw, 1.875rem);
 }
 
 .title {
@@ -72,5 +76,4 @@ li {
 
 .span1 {
   font-family: Diatype;
-  font-size: 20px;
 }
