@@ -121,12 +121,18 @@ import Button from "../components/Button.astro";
         color: red;
       }
 
+      h4 {
+        font-size: 1.25rem;
+      }
       main {
         margin: 10%;
       }
       .grid_1 {
         display: grid;
         grid-template-columns: repeat(5, 1fr);
+        row-gap: 35px;
+        margin-top: 35px;
+        margin-bottom: 70px;
       }
 
       .who {
@@ -140,6 +146,16 @@ import Button from "../components/Button.astro";
         grid-row: 2;
         max-width: 450px;
         text-align: left;
+      }
+
+      .who h3,
+      .philosophy h3 {
+        margin-bottom: 0;
+      }
+
+      .who p,
+      .philosophy p {
+        margin-top: 5px;
       }
 
       .button {
@@ -166,6 +182,9 @@ import Button from "../components/Button.astro";
       .grid_2 {
         display: grid;
         grid-template-columns: repeat(2, 1fr);
+        justify-items: center;
+        margin-top: 70px;
+        margin-bottom: 100px;
       }
 
       .services {
