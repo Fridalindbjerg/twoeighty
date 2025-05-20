@@ -71,132 +71,132 @@ import Layout from "../layouts/Layout.astro";
       <img class="margin_t" src="https://picsum.photos/seed/picsum/600/400" alt="" />
     </section>
   </main>
+</Layout>
 
-  <style>
-    .margin_r {
-      margin-right: 0.6rem;
-    }
+<style>
+  .margin_r {
+    margin-right: 0.6rem;
+  }
 
-    .max {
-      max-width: 300px;
-    }
+  .max {
+    max-width: 300px;
+  }
 
-    .margin_b {
-      margin-bottom: 0.6rem;
-    }
+  .margin_b {
+    margin-bottom: 0.6rem;
+  }
 
-    .margin_r {
-      margin-right: 0.6rem;
-      margin-top: 15%;
-    }
+  .margin_r {
+    margin-right: 0.6rem;
+    margin-top: 15%;
+  }
 
-    .margin_l {
-      margin-left: 0.6rem;
-      margin-top: 10%;
-    }
+  .margin_l {
+    margin-left: 0.6rem;
+    margin-top: 10%;
+  }
 
-    .none {
-      display: none;
-    }
-    .center {
-      display: flex;
-      gap: 0.2rem;
-      margin: 0 10%; /* fx 1rem mellem hvert logo */
-    }
+  .none {
+    display: none;
+  }
+  .center {
+    display: flex;
+    gap: 0.2rem;
+    margin: 0 10%; /* fx 1rem mellem hvert logo */
+  }
 
-    .flex_col {
-      display: flex;
-      flex-direction: column;
-      margin: 2rem 0.8rem; /* fx 1rem mellem hvert logo */
-    }
+  .flex_col {
+    display: flex;
+    flex-direction: column;
+    margin: 2rem 0.8rem; /* fx 1rem mellem hvert logo */
+  }
 
-    img {
-      max-width: 100%;
-    }
-    .flex_row {
-      display: flex;
-      flex-direction: row;
-      justify-content: space-between;
-    }
+  img {
+    max-width: 100%;
+  }
+  .flex_row {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+  }
 
+  .image_right {
+    margin-top: 11em;
+  }
+
+  .flex {
+    display: flex;
+    justify-content: space-between;
+
+    align-items: center;
+    margin-top: -7em;
+  }
+  .center_text {
+    flex: 2;
+  }
+
+  .image_left,
+  .image_right {
+    flex: 1; /* Eller sæt faste width hvis du vil */
+    position: relative;
+    z-index: 1;
+    max-width: 350px;
+  }
+
+  h1 {
+    margin: -3rem;
+    position: relative;
+    z-index: 2;
+  }
+
+  .centertext {
+    text-align: center;
+  }
+
+  @media (width >= 750px) {
     .image_right {
-      margin-top: 11em;
+      margin-top: 17rem;
     }
 
     .flex {
-      display: flex;
-      justify-content: space-between;
-
-      align-items: center;
-      margin-top: -7em;
-    }
-    .center_text {
-      flex: 2;
+      margin-top: -11rem;
     }
 
-    .image_left,
-    .image_right {
-      flex: 1; /* Eller sæt faste width hvis du vil */
-      position: relative;
-      z-index: 1;
-      max-width: 350px;
+    .none {
+      display: block;
     }
 
-    h1 {
-      margin: -3rem;
-      position: relative;
-      z-index: 2;
+    .flex_col {
+      margin: 3rem 0.8rem; /* fx 1rem mellem hvert logo */
     }
 
-    .centertext {
-      text-align: center;
+    .right {
+      /* grid-column: 1/2; */
+      grid-row: 1/2;
+    }
+    .left {
+      margin-left: 0.6rem;
+      grid-column: 2/3;
+    }
+    .grid_2_1 {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+    }
+  }
+
+  @media (width >= 900px) {
+    .none {
+      display: block;
     }
 
-    @media (width >= 750px) {
-      .image_right {
-        margin-top: 17rem;
-      }
-
-      .flex {
-        margin-top: -11rem;
-      }
-
-      .none {
-        display: block;
-      }
-
-      .flex_col {
-        margin: 3rem 0.8rem; /* fx 1rem mellem hvert logo */
-      }
-
-      .right {
-        /* grid-column: 1/2; */
-        grid-row: 1/2;
-      }
-      .left {
-        margin-left: 0.6rem;
-        grid-column: 2/3;
-      }
-      .grid_2_1 {
-        display: grid;
-        grid-template-columns: 1fr 1fr;
-      }
+    .flex_col {
+      margin: 5rem 0.8rem; /* fx 1rem mellem hvert logo */
     }
+  }
 
-    @media (width >= 900px) {
-      .none {
-        display: block;
-      }
-
-      .flex_col {
-        margin: 5rem 0.8rem; /* fx 1rem mellem hvert logo */
-      }
+  @media (width >= 1000px) {
+    .flex {
+      margin-top: -13rem;
     }
-
-    @media (width >= 1000px) {
-      .flex {
-        margin-top: -13rem;
-      }
-    }
-  </style>
-</Layout>
+  }
+</style>
