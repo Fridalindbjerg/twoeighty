@@ -107,7 +107,7 @@ import Button from "../components/Button.astro";
     <style>
       .intro {
         display: grid;
-        grid-template-columns: repeat(3, 1fr);
+        grid-template-columns: repeat(4, 1fr);
       }
 
       .intro img {
@@ -117,8 +117,9 @@ import Button from "../components/Button.astro";
 
       h1 {
         margin: auto;
-        grid-column: 2 / 4;
+        grid-column: 1 / 5;
         grid-row: 1;
+        margin-right: 0;
       }
 
       h3 {
@@ -302,14 +303,6 @@ import Button from "../components/Button.astro";
       @media (width >= 700px) {
         .intro img {
           width: 400px;
-        }
-
-        .intro {
-          grid-template-columns: repeat(4, 1fr);
-        }
-
-        h1 {
-          grid-column: 3 / 5;
         }
 
         .corner-button {
