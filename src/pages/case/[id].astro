@@ -1,0 +1,37 @@
+---
+export async function getStaticPaths() {
+  const res = await fetch("https://lescamgejebsqtwecrww.supabase.co/rest/v1/twoeighty_cases?select=id", {
+    headers: {
+      apikey: "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6Imxlc2NhbWdlamVic3F0d2Vjcnd3Iiwicm9sZSI6ImFub24iLCJpYXQiOjE3NDczMDI3MTcsImV4cCI6MjA2Mjg3ODcxN30.aoF4F4HWliGv7dB5WhKHov5-LFWZ-xm_RIfgX_L0Ul8",
+    },
+  });
+
+  const data = await res.json();
+
+  return data.map((item) => ({
+    params: { id: item.id.toString() }, // gør id til string
+  }));
+}
+
+const { id } = Astro.params;
+
+const res = await fetch(`https://lescamgejebsqtwecrww.supabase.co/rest/v1/twoeighty_cases?id=eq.${id}&select=*`, {
+  headers: {
+    apikey: "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6Imxlc2NhbWdlamVic3F0d2Vjcnd3Iiwicm9sZSI6ImFub24iLCJpYXQiOjE3NDczMDI3MTcsImV4cCI6MjA2Mjg3ODcxN30.aoF4F4HWliGv7dB5WhKHov5-LFWZ-xm_RIfgX_L0Ul8",
+  },
+});
+
+const data = await res.json();
+const post = data[0]; // vi forventer kun én post
+---
+
+{
+  post ? (
+    <>
+      <h1>{post.name}</h1>
+      <p>{post.description}</p>
+    </>
+  ) : (
+    <p>Case ikke fundet</p>
+  )
+}

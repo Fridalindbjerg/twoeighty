@@ -1,0 +1,31 @@
+---
+const data = await fetch("https://lescamgejebsqtwecrww.supabase.co/rest/v1/twoeighty_cases?select=*").then((res) => res.json());
+console.log(data);
+---
+
+{
+  post.map((post, i) => {
+    if (i === 0) {
+      return (
+        <div key={post.id} class="layout1">
+          <h2>{post.name}</h2>
+          <p>{post.description}</p>
+        </div>
+      );
+    } else if (i === 1) {
+      return (
+        <div key={post.id} class="layout2">
+          <h3>{post.name}</h3>
+          <img src={post.imageUrl} alt={post.name} />
+        </div>
+      );
+    } else {
+      return (
+        <div key={post.id} class="layout3">
+          <h4>{post.name}</h4>
+          <p>Pris: {post.price} kr.</p>
+        </div>
+      );
+    }
+  })
+}
