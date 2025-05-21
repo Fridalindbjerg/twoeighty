@@ -13,9 +13,8 @@ document.addEventListener("DOMContentLoaded", () => {
   let charIndex = 0;
 
   function typeLine() {
-    // Stop hvis alle linjer er skrevet færdig
     if (lineIndex >= lineElements.length) {
-      caret.style.display = "none"; // 👈 Caret forsvinder her
+      caret.style.display = "none"; // Skjul caret når færdig
       return;
     }
 
@@ -27,7 +26,6 @@ document.addEventListener("DOMContentLoaded", () => {
 
     lineEl.textContent = text.slice(0, charIndex);
 
-    // Flyt caret
     caret.style.top = `${lineEl.offsetTop}px`;
     caret.style.left = `${lineEl.offsetLeft + lineEl.offsetWidth}px`;
 
