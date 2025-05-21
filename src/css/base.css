@@ -1,44 +1,65 @@
+:root {
+  --background-color: #fcfcfb;
+  --red-font: #fd0002;
+  --black: #040404;
+
+  --heading-font: "Friz";
+  --body-font: Arial, Helvetica, sans-serif;
+  --secondary-font: "Diatype";
+}
+
 @font-face {
-  font-family: Friz;
+  font-family: "Friz";
   src: url("../assets/fonts/Friz/friz-quadrata-std-bold-587034a220f9f-kopi.otf");
 }
 
 @font-face {
-  font-family: Diatype;
+  font-family: "Diatype";
   src: url("../assets/fonts/Diatype/abc-diatype-regular-2-kopi.otf");
 }
-body {
-  max-width: 1400px;
+
+/* Reset */
+*, *::before, *::after {
+  box-sizing: border-box;
 }
-main {
-  margin: 0 auto;
-  max-width: 98%;
+
+body, h1, h2, h3, h4, p, ul, ol {
+  margin: 0;
+  padding: 0;
+}
+
+/* Layout */
+body{
   background-color: var(--background-color);
 }
 
-html {
-  --backgroundcolor: #fcfcfb;
-  --redfont: #fd0002;
-  --black: #040404;
+main {
+  margin: 0 auto;
+  max-width: 98%;
 }
 
-h1,
-h2,
-h3,
-h4 {
+/* Typografi */
+h1, h2 {
+  font-family: var(--heading-font);
+}
+
+h3, h4, .title, .menu li, .span1 {
+  font-family: var(--secondary-font);
+}
+
+p, li {
+  font-family: var(--body-font);
+}
+
+h1, h2, h3, .title {
+  color: var(--red-font);
   text-transform: uppercase;
 }
 
-h1,
-h2 {
-  font-family: Friz;
-}
-
 h1 {
-  margin: 0;
+  font-size: clamp(1.375rem, 8vw, 5rem);
   line-height: clamp(1.375rem, 6vw, 4.625rem);
   text-align: center;
-  font-size: clamp(1.375rem, 8vw, 5.625rem);
 }
 
 h2 {
@@ -53,29 +74,4 @@ h2 {
 .title {
   text-align: center;
   font-size: clamp(0.2rem, 4vw, 1.563rem);
-}
-h3,
-h4,
-.title {
-  font-family: Diatype;
-}
-
-h1,
-h2,
-h3,
-.title {
-  color: var(--redfont);
-}
-
-p,
-li {
-  font-family: Arial, Helvetica, sans-serif;
-}
-
-.menu li {
-  font-family: Diatype;
-}
-
-.span1 {
-  font-family: Diatype;
 }
