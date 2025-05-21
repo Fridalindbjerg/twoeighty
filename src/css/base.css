@@ -23,7 +23,7 @@
   box-sizing: border-box;
 }
 
-body, h1, h2, h3, h4, p, ul, ol {
+body, h1, h2, h3, h4, h5, h6, p, ul, ol {
   margin: 0;
   padding: 0;
 }
@@ -43,7 +43,7 @@ h1, h2 {
   font-family: var(--heading-font);
 }
 
-h3, h4, .title, .menu li, .span1 {
+h3, h4, h6, .title, .menu li, .span1 {
   font-family: var(--secondary-font);
 }
 
@@ -72,13 +72,15 @@ h2 {
 }
 
   h5 {
-    color: white;
-    font-family: Friz;
     text-transform: uppercase;
-    grid-column: 1 / span 3;
     text-align: center;
-    font-size: 15px;
     padding-bottom: 10px;
+    font-family: var(--heading-font);
+    font-size: clamp(1.5rem, 2vw, 2rem);
+  }
+
+  h6{
+  font-size: clamp(1rem, 1.5vw, 1.25rem);
   }
 
 .span1 {
@@ -102,25 +104,22 @@ a {
     color: white;
   }
 
-footer h5 {
-  font-family: var(--heading-font);
-  font-size: clamp(0.875rem, 1.25vw, 1.25rem);
-  text-transform: uppercase;
-  text-align: center;
-  padding-bottom: 10px;
-}
-
-footer p,
-footer a {
-  font-size: clamp(0.875rem, 1.5vw, 1.125rem);
+footer p{
+  font-size: clamp(0.875rem, 1.4vw, 1rem);
   font-family: var(--body-font);
-  color: white;
 }
 
 footer a{
   color: white;
 }
 
-  footer img {
-    width: 50px;
-  }
+.icon-container img {
+  width: 24px;
+  height: 24px;
+  object-fit: contain;
+  transition: transform 0.2s ease-in-out;
+}
+
+.icon-container img:hover {
+  transform: scale(1.2); /* zoom 20% op */
+}

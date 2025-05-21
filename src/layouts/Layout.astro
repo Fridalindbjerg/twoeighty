@@ -41,75 +41,95 @@ import ButtonFooter from "../components/ButtonFooter.astro";
     </main>
 
     <footer>
-      <h5>Twoeighty production co.</h5>
+      <article>
+        <h5>Twoeighty production co.</h5>
 
-      <div class="footer-grid">
-        <div class="footer-container">
-          <a href="/about.astro">ABOUT</a>
-          <a href="/archive.astro">ARCHIVE</a>
+        <div class="footer-grid">
+          <div class="footer-container">
+            <a href="/about.astro"><h6>ABOUT</h6></a>
+            <a href="/archive.astro"><h6>ARCHIVE</h6></a>
+          </div>
+          <div class="footer-container">
+            <h6>CONTACT</h6>
+            <p>mail: <br />info@280.dk</p>
+            <p>phone: <br />+45 31 46 20 10</p>
+          </div>
+          <div class="footer-container">
+            <h6>SOCIALS</h6>
+            <div class="icon-container">
+              <a href="https://www.instagram.com/280cph/"
+                ><img src="/insta_white.webp" alt="Instagram logo" /></a
+              >
+              <a href="https://vimeo.com/280cph"
+                ><img src="vimeo_white.webp" alt="Vimeo logo" /></a
+              >
+              <a
+                href="https://www.linkedin.com/company/280cph/?originalSubdomain=dk"
+                ><img src="linkedin_white.webp" alt="LinkedIn logo" /></a
+              >
+            </div>
+          </div>
+          <div class="button">
+            <ButtonFooter />
+          </div>
         </div>
-        <div class="footer-container">
-          <p>CONTACT</p>
-          <p>mail: <br />info@280.dk</p>
-          <p>phone: <br />+45 31 46 20 10</p>
-        </div>
-        <div class="footer-container">
-          <p>SOCIALS</p>
-          <a href="https://www.instagram.com/280cph/"
-            ><img src="/insta_white.webp" alt="Instagram logo" /></a
-          >
-          <a href="https://vimeo.com/280cph"
-            ><img src="vimeo_white.webp" alt="Vimeo logo" /></a
-          >
-          <a
-            href="https://www.linkedin.com/company/280cph/?originalSubdomain=dk"
-            ><img src="linkedin_white.webp" alt="LinkedIn logo" /></a
-          >
-        </div>
-        <div class="button">
-          <ButtonFooter />
-        </div>
-      </div>
+      </article>
     </footer>
   </body>
+
+  <style>
+    /**** HEADER ****/
+    header {
+      position: fixed;
+      top: 0;
+      width: 100%;
+      z-index: 1000;
+      background-color: var(--background-color);
+    }
+
+    nav {
+      margin: 20px;
+    }
+
+    ul {
+      list-style-type: none;
+      display: flex;
+      flex-direction: row;
+      justify-content: space-between;
+      align-items: center;
+    }
+
+    .link-group {
+      display: flex;
+      flex-direction: row;
+      gap: 15px;
+    }
+
+    /**** FOOTER ****/
+    footer {
+      padding: 60px;
+    }
+
+    h5 {
+      margin-bottom: 50px;
+      text-align: center;
+    }
+    .footer-grid {
+      display: flex;
+      justify-content: space-evenly;
+      margin: 0 auto;
+    }
+
+    .footer-container {
+      display: flex;
+      flex-direction: column;
+      gap: 20px;
+    }
+
+    .icon-container {
+      display: flex;
+      flex-direction: row;
+      gap: 15px;
+    }
+  </style>
 </html>
-
-<style>
-  /**** HEADER ****/
-  header {
-    position: fixed;
-    top: 0;
-    width: 100%;
-    z-index: 1000;
-    background-color: var(--background-color);
-  }
-
-  nav {
-    margin: 20px;
-  }
-
-  ul {
-    list-style-type: none;
-    display: flex;
-    flex-direction: row;
-    justify-content: space-between;
-    align-items: center;
-  }
-
-  .link-group {
-    display: flex;
-    flex-direction: row;
-    gap: 15px;
-  }
-
-  /**** FOOTER ****/
-  .footer-grid {
-    display: grid;
-    grid-template-columns: repeat(4, 1fr);
-  }
-
-  .footer-container {
-    display: flex;
-    flex-direction: column;
-  }
-</style>
