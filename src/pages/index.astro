@@ -5,7 +5,7 @@ import Layout from "../layouts/Layout.astro";
 
 <Layout>
   <main>
-    <section>
+    <section class="hero">
       <div class="grid_5_1">
         <h1 class="center">
           <span class="title"> we are</span>
@@ -15,62 +15,82 @@ import Layout from "../layouts/Layout.astro";
       </div>
       <img class="img_hiro" src="https://picsum.photos/seed/picsum/900/1600" alt="" />
     </section>
-    <h2>
-      Selected cases
 
-      <div>KNAPNKAPKNAPKNAPKNAP</div>
-    </h2>
+    <article>
+      <h2>
+        Selected cases
 
-    <article class="max grid_2_1">
-      <div>
-        <h3>thykassen</h3>
-        <p>We created a visual identity for Thykassen that captures the raw, natural beauty of the West Jutland landscape. Through authentic imagery and film, we told a story about simplicity, sustainability, and local produce. Our goal was to highlight what’s real – no filters, no fuss – and let the atmosphere speak for itself.</p>
-      </div>
-      <img src="https://picsum.photos/seed/picsum/1500/1000" alt="" />
-      <img class="none" src="https://picsum.photos/seed/picsum/1500/1000" alt="" />
+        <div>KNAPNKAPKNAPKNAPKNAP</div>
+      </h2>
 
-      <div class="col2_1 grid_2_1">
-        <img class="img_max" src="https://picsum.photos/seed/picsum/900/1600" alt="" />
-        <div>
-          <p>With a warm, human-centered aesthetic, we developed a campaign that works across platforms – from website and social media to print and video. We aimed to showcase both the product and the people behind it in a relatable and honest way. All content was crafted with attention to the local spirit and subtle moments, helping Thykassen attract new customers while building stronger connections within their community.</p>
-          <a href="XXX">Full project</a>
-        </div>
-      </div>
-    </article>
-
-    <article class="max grid2fr">
-      <div class="grid_2_1">
-        <div class="top">
-          <h3>microsoft</h3>
-          <p>We created a brand film for Microsoft that highlights how trust and technology intersect in one of the world’s most remote and rugged landscapes — Iceland. The narrative follows individuals who rely on digital infrastructure in their daily lives, set against vast, cinematic scenery.</p>
-        </div>
-        <img src="https://picsum.photos/seed/picsum/900/1600" alt="" />
-        <img class="none span2" src="https://picsum.photos/seed/picsum/900/600" alt="" />
-      </div>
-      <div class="top">
-        <img src="https://picsum.photos/seed/picsum/1500/1000" alt="" />
-        <p>This project was about capturing the quiet strength of Icelandic communities and illustrating how Microsoft’s technologies enable connection, resilience, and progress. We used a grounded visual language to tell a human-centered story — one that reflects both innovation and intimacy.</p>
-        <a href="XXX">Full project</a>
-      </div>
-    </article>
-
-    <article class="max grid2fr">
-      <div>
-        <h3>fitness world</h3>
-        <p>We created a visual campaign for Fitness World that celebrates movement, community, and the individuality of every training journey. Through cinematic storytelling and diverse casting, we showcased how fitness can be a part of life at any stage — whether in a gym, a forest, or anywhere in between.</p>
-        <img src="https://picsum.photos/seed/picsum/1500/1000" alt="" />
-      </div>
-      <div class="gap">
-        <img class="none" src="https://picsum.photos/seed/picsum/1500/1000" alt="" />
-        <div class="grid_2_1">
-          <img class="padding" src="https://picsum.photos/seed/picsum/900/1600" alt="" />
+      <section class="case_grid">
+        <div class="case_left">
           <div>
-            <p>The project focused on portraying authenticity and energy across a wide range of personalities and physical expressions. We wanted to move beyond clichés and create a campaign rooted in realness, drive, and self-empowerment — making fitness feel both approachable and aspirational.</p>
+            <h3>thykassen</h3>
+            <p>
+              We created a visual identity for Thykassen that captures the raw, natural beauty of the West Jutland landscape. Through authentic imagery and film, we told a story about simplicity, sustainability, and local produce. Our goal was to highlight what’s real – no filters, no fuss – and let the atmosphere speak for itself.
+              <br />
+              <br />
+              With a warm, human-centered aesthetic, we developed a campaign that works across platforms – from website and social media to print and video.
+            </p>
+          </div>
+          <img src="https://picsum.photos/seed/picsum/1500/1000" alt="" />
+        </div>
+
+        <div class="case_right">
+          <img class="none" src="https://picsum.photos/seed/picsum/1500/1000" alt="" />
+
+          <div class="right_split">
+            <img src="https://picsum.photos/seed/picsum/900/1600" alt="" />
+            <div>
+              <p>We aimed to showcase both the product and the people behind it in a relatable and honest way. All content was crafted with attention to the local spirit and subtle moments, helping Thykassen attract new customers while building stronger connections within their community.</p>
+              <a href="XXX">Full project</a>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section class="case_grid">
+        <div class="case_left">
+          <div class="left_split">
+            <div>
+              <h3>microsoft</h3>
+              <p>We created a brand film for Microsoft that highlights how trust and technology intersect in one of the world’s most remote and rugged landscapes — Iceland. The narrative follows individuals who rely on digital infrastructure in their daily lives, set against vast, cinematic scenery.</p>
+            </div>
+            <img src="https://picsum.photos/seed/picsum/500/500" alt="" />
+          </div>
+
+          <img class="none" src="https://picsum.photos/seed/picsum/1500/1000" alt="" />
+        </div>
+
+        <div>
+          <img src="https://picsum.photos/seed/picsum/1500/1000" alt="" />
+          <div>
+            <p>This project was about capturing the quiet strength of Icelandic communities and illustrating how Microsoft’s technologies enable connection, resilience, and progress. We used a grounded visual language to tell a human-centered story — one that reflects both innovation and intimacy.</p>
             <a href="XXX">Full project</a>
           </div>
         </div>
-      </div>
+      </section>
+
+      <section class="grid2fr">
+        <div>
+          <h3>fitness world</h3>
+          <p>We created a visual campaign for Fitness World that celebrates movement, community, and the individuality of every training journey. Through cinematic storytelling and diverse casting, we showcased how fitness can be a part of life at any stage — whether in a gym, a forest, or anywhere in between.</p>
+          <img src="https://picsum.photos/seed/picsum/1500/1000" alt="" />
+        </div>
+        <div class="p_margin_l">
+          <img class="none" src="https://picsum.photos/seed/picsum/1500/1000" alt="" />
+          <div class="grid_2_1">
+            <img class="padding" src="https://picsum.photos/seed/picsum/900/1600" alt="" />
+            <div class="p_margin_l">
+              <p>The project focused on portraying authenticity and energy across a wide range of personalities and physical expressions. We wanted to move beyond clichés and create a campaign rooted in realness, drive, and self-empowerment — making fitness feel both approachable and aspirational.</p>
+              <a href="XXX">Full project</a>
+            </div>
+          </div>
+        </div>
+      </section>
     </article>
+
     <article class="grid_3_1 black">
       <div>
         <p>We are TWOEIGHTY — a Copenhagen-based production company driven by curiosity, collaboration and craft. We work with brands, agencies and artists to create visually striking, emotionally honest storytelling — from commercials and branded content to music videos and experimental formats. Our work is rooted in a playful, conceptual approach and a belief in the power of real people and real moments.</p>
@@ -87,21 +107,59 @@ import Layout from "../layouts/Layout.astro";
 </Layout>
 
 <style>
-  .imgmax {
-    max-width: 50%;
-  }
-  article {
-    margin: 0 auto;
-  }
-  .max {
-    max-width: 1100px;
-  }
+  /***********OVERORDNET *********/
   h1 {
     max-width: 100vh;
   }
-  article {
-    padding-bottom: 22rem;
+
+  h3 {
+    font-size: 2.5rem;
+    margin: 0;
   }
+
+  h2 {
+    text-align: center;
+  }
+
+  p {
+    font-size: 0.875rem;
+    line-height: 1.5rem;
+  }
+
+  /**************CASES **************/
+  .case_grid {
+    display: grid;
+    margin-top: 100px;
+    margin-bottom: 100px;
+    gap: 25px;
+  }
+
+  .case_left {
+    display: flex;
+    flex-direction: column;
+  }
+
+  img {
+    width: 100%;
+  }
+
+  .right_split {
+    display: grid;
+    grid-template-columns: 1fr 2fr;
+    gap: 25px;
+  }
+
+  .left_split {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 25px;
+  }
+
+  .none {
+    display: none;
+  }
+
+  /****************ABOUT *****************/
   .black {
     background-color: var(--black);
     color: white;
@@ -121,71 +179,14 @@ import Layout from "../layouts/Layout.astro";
     font-family: Friz;
     text-transform: uppercase;
   }
-  .none {
-    display: none;
-  }
-  h2 {
-    text-align: center;
-  }
+
+  /*************HERO ****************/
   .center {
     text-align: center;
   }
 
-  img {
-    max-width: 100%;
-  }
-
-  .grid_2_1 {
-    gap: 2rem;
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-  }
-
-  @media (width >= 700px) {
-    .gap {
-      display: grid;
-      gap: 2rem;
-    }
-
-    .col2_1 {
-      grid-column: 2/3;
-    }
-
-    .top {
-      align-self: flex-start;
-    }
-    .bottom {
-      align-self: end;
-    }
-    .none {
-      display: grid;
-    }
-    .grid_6_1 {
-      display: grid;
-      grid-template-columns: repeat(6, 1fr);
-      /* grid-template-rows: repeat(4, 1fr); */
-    }
-
-    .span2 {
-      grid-column: span 2;
-    }
-
-    .grid3_4 {
-      grid-column: 3/4;
-      grid-row: 1/2;
-    }
-    /* .grid_2_1 {
-      margin-right: 0.6rem;
-    } */
-    .grid2fr {
-      display: grid;
-      grid-template-columns: 1fr 1fr;
-      gap: 2rem;
-    }
-  }
-
-  @media (width >= 800px) {
-    section {
+  @media (width >= 768px) {
+    .hero {
       display: grid;
       grid-template-columns: 1fr 1fr;
     }
@@ -201,6 +202,10 @@ import Layout from "../layouts/Layout.astro";
       text-align: left;
       margin-left: 2rem;
     }
+
+    .bottom {
+      align-self: flex-end;
+    }
   }
 
   @media (width >= 900px) {
@@ -210,7 +215,7 @@ import Layout from "../layouts/Layout.astro";
     }
   }
 
-  @media (width >= 1000px) {
+  @media (width >= 1024px) {
     section {
       grid-template-columns: repeat(5, 1fr);
     }
@@ -224,17 +229,41 @@ import Layout from "../layouts/Layout.astro";
       grid-column: 3/6;
       grid-row: span 2;
     }
-  }
 
-  @media (width >= 1150px) {
-    .bottom {
-      margin-left: -5em;
+    p {
+      font-size: 1.125rem;
     }
+
+    .none {
+      display: block;
+    }
+
+    .case_right,
+    .case_left {
+      display: flex;
+      gap: 25px;
+      flex-direction: column;
+    }
+
+    .case_grid {
+      grid-template-columns: 1fr 1fr;
+    }
+
+    /* .thy {
+      max-height: 1000px;
+    } */
 
     .grid_3_1 {
       margin: 0;
     }
   }
+
+  /* @media (width >= 1150px) {
+    .bottom {
+      margin-left: -5em;
+    }
+
+  } */
 </style>
 
 <!-- Script nederst i komponenten -->

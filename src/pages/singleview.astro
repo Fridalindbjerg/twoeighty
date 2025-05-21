@@ -1,5 +1,30 @@
 ---
 import Layout from "../layouts/Layout.astro";
+
+// export async function getStaticPaths() {
+//   const curl = "https://lescamgejebsqtwecrww.supabase.co/rest/v1/twoeighty_cases?select=*";
+
+//   const apikey = "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6Imxlc2NhbWdlamVic3F0d2Vjcnd3Iiwicm9sZSI6ImFub24iLCJpYXQiOjE3NDczMDI3MTcsImV4cCI6MjA2Mjg3ODcxN30.aoF4F4HWliGv7dB5WhKHov5-LFWZ-xm_RIfgX_L0Ul8";
+
+//   const options = {
+//     headers: {
+//       apikey: apikey,
+//     },
+//   };
+
+//   const response = await fetch(curl, options);
+//   const data = await response.json();
+
+//   return data.map((post) => {
+//     return {
+//       params: { id: post.id },
+//       props: { post },
+//     };
+//   });
+// }
+
+// const { id } = Astro.params;
+// const { post } = Astro.props;
 ---
 
 <Layout>
@@ -8,9 +33,8 @@ import Layout from "../layouts/Layout.astro";
       <img class="image_r" src="https://picsum.photos/seed/picsum/900/1600" alt="" />
       <h1>
         <span class="title">introducing </span><br />
-        thykassen
+        <!-- {post.name} -->
       </h1>
-
       <img class="image_l" src="https://picsum.photos/seed/picsum/900/1600" alt="" />
     </div>
     <section class="grid_2_1">
