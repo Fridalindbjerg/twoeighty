@@ -35,7 +35,7 @@ body{
 
 main {
   margin: 0 auto;
-  max-width: 98%;
+  max-width: 95%;
 }
 
 /* Typografi */
@@ -47,7 +47,7 @@ h3, h4, .title, .menu li, .span1 {
   font-family: var(--secondary-font);
 }
 
-p, li {
+p, li, a {
   font-family: var(--body-font);
 }
 
@@ -62,10 +62,24 @@ h1 {
   text-align: center;
 }
 
+p, a{
+font-size: clamp(0.875rem, 1.5vw, 1.125rem);
+}
+
 h2 {
   font-size: clamp(1.875rem, 8vw, 3.5rem);
   line-height: clamp(1.6rem, 8vw, 2rem);
 }
+
+  h5 {
+    color: white;
+    font-family: Friz;
+    text-transform: uppercase;
+    grid-column: 1 / span 3;
+    text-align: center;
+    font-size: 15px;
+    padding-bottom: 10px;
+  }
 
 .span1 {
   font-size: clamp(1.25rem, 8vw, 1.875rem);
@@ -75,3 +89,38 @@ h2 {
   text-align: center;
   font-size: clamp(0.2rem, 4vw, 1.563rem);
 }
+
+a {
+  color: var(--black);
+  text-decoration: underline;
+  cursor: pointer;
+}
+
+/***************FOOTER ***********/
+  footer {
+    background-color: #040404;
+    color: white;
+  }
+
+footer h5 {
+  font-family: var(--heading-font);
+  font-size: clamp(0.875rem, 1.25vw, 1.25rem);
+  text-transform: uppercase;
+  text-align: center;
+  padding-bottom: 10px;
+}
+
+footer p,
+footer a {
+  font-size: clamp(0.875rem, 1.5vw, 1.125rem);
+  font-family: var(--body-font);
+  color: white;
+}
+
+footer a{
+  color: white;
+}
+
+  footer img {
+    width: 50px;
+  }

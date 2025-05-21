@@ -17,214 +17,99 @@ import ButtonFooter from "../components/ButtonFooter.astro";
   <body>
     <header>
       <nav>
-        <ul>
-          <div class="menu">
-            <li><a href="/about.astro">ABOUT</a></li>
-            <li><a href="/archive.astro">ARCHIVE</a></li>
-          </div>
-          <li><a href="/index.astro"><img src="/logo.png" alt="280 logo" /></a></li>
+        <ul class="menu">
+          <li>
+            <div class="link-group">
+              <a href="/about.astro">ABOUT</a>
+              <a href="/archive.astro">ARCHIVE</a>
+            </div>
+          </li>
+          <li>
+            <a href="/index.astro">
+              <img src="/logo.png" alt="280 logo" />
+            </a>
+          </li>
           <li>
             <ButtonHeader />
           </li>
         </ul>
       </nav>
     </header>
+
     <main>
       <slot />
     </main>
+
     <footer>
-      <section>
-        <h5>Twoeighty production co.</h5>
-        <div class="group1">
+      <h5>Twoeighty production co.</h5>
+
+      <div class="footer-grid">
+        <div class="footer-container">
           <a href="/about.astro">ABOUT</a>
           <a href="/archive.astro">ARCHIVE</a>
         </div>
-        <div class="group2">
+        <div class="footer-container">
           <p>CONTACT</p>
           <p>mail: <br />info@280.dk</p>
           <p>phone: <br />+45 31 46 20 10</p>
         </div>
-        <div class="group3">
+        <div class="footer-container">
           <p>SOCIALS</p>
-          <a href="https://www.instagram.com/280cph/"><img src="/insta-white.png" alt="Instagram logo" /></a>
-          <a href="https://vimeo.com/280cph"><img src="vimeo-white.png" alt="Vimeo logo" /></a>
-          <a href="https://www.linkedin.com/company/280cph/?originalSubdomain=dk"><img src="linkedin-white.png" alt="LinkedIn logo" /></a>
+          <a href="https://www.instagram.com/280cph/"
+            ><img src="/insta_white.webp" alt="Instagram logo" /></a
+          >
+          <a href="https://vimeo.com/280cph"
+            ><img src="vimeo_white.webp" alt="Vimeo logo" /></a
+          >
+          <a
+            href="https://www.linkedin.com/company/280cph/?originalSubdomain=dk"
+            ><img src="linkedin_white.webp" alt="LinkedIn logo" /></a
+          >
         </div>
         <div class="button">
           <ButtonFooter />
         </div>
-      </section>
+      </div>
     </footer>
-
-    <style>
-      html,
-      body {
-        margin: 0;
-        width: 100%;
-        height: 100%;
-        background-color: var(--backgroundcolor);
-      }
-
-      main {
-        margin: 25px;
-      }
-
-      /**** HEADER ****/
-      header {
-        margin-left: 5px;
-        margin-right: 5px;
-        background-color: var(--backgroundcolor);
-      }
-
-      a {
-        font-family: Diatype;
-        color: black;
-        text-decoration: none;
-        cursor: pointer;
-      }
-
-      li img {
-        width: 50px;
-      }
-
-      ul {
-        font-size: 12px;
-        list-style-type: none;
-        display: flex;
-        flex-direction: row;
-        justify-content: space-between;
-        align-items: center;
-      }
-
-      .menu {
-        display: flex;
-        flex-direction: row;
-        gap: 15px;
-      }
-
-      li:hover {
-        font-size: larger;
-      }
-
-      /**** FOOTER ****/
-      footer {
-        background-color: #040404;
-      }
-
-      section {
-        display: grid;
-        grid-template-columns: repeat(3, 1fr);
-        max-width: 375px;
-        margin: auto;
-      }
-
-      .group1,
-      .group2,
-      .group3 {
-        padding-left: 30px;
-      }
-
-      .group1,
-      .group2 {
-        display: flex;
-        flex-direction: column;
-      }
-
-      .group1 a {
-        color: white;
-        font-size: 12px;
-        text-decoration: underline;
-        padding-bottom: 20px;
-      }
-
-      .group3 a {
-        padding-right: 5px;
-      }
-
-      h5 {
-        color: white;
-        font-family: Friz;
-        text-transform: uppercase;
-        grid-column: 1 / span 3;
-        text-align: center;
-        font-size: 15px;
-        padding-bottom: 10px;
-      }
-
-      .group2 p,
-      .group3 p {
-        color: white;
-        font-family: Diatype;
-        font-size: 12px;
-      }
-
-      .button {
-        padding-bottom: 20px;
-        padding-top: 20px;
-        grid-column: 1 / span 3;
-        text-align: center;
-      }
-
-      /**** MEDIA QURIES ****/
-
-      @media (width >= 500px) {
-        ul,
-        .group1 a,
-        .group2 p,
-        .group3 p,
-        .corner-button,
-        .corner1-button {
-          font-size: 14px;
-        }
-      }
-      @media (width >= 700px) {
-        ul,
-        .group1 a,
-        .group2 p,
-        .group3 p,
-        .corner-button,
-        .corner1-button {
-          font-size: 16px;
-        }
-
-        .group3 a {
-          width: 5px;
-        }
-
-        section {
-          display: grid;
-          grid-template-columns: repeat(4, 1fr);
-          max-width: 800px;
-          margin: auto;
-          padding-bottom: 40px;
-        }
-
-        h5 {
-          grid-column: 1 / span 4;
-          font-size: 20px;
-          letter-spacing: 1px;
-        }
-
-        .button {
-          grid-column: 4 / 5;
-          grid-row: 2;
-          margin-top: 40px;
-        }
-      }
-      @media (width >= 1000px) {
-        ul,
-        .group1 a,
-        .group2 p,
-        .group3 p,
-        .corner-button,
-        .corner1-button {
-          font-size: 18px;
-        }
-
-        h5 {
-          font-size: 36px;
-        }
-      }
-    </style>
   </body>
 </html>
+
+<style>
+  /**** HEADER ****/
+  header {
+    position: fixed;
+    top: 0;
+    width: 100%;
+    z-index: 1000;
+    background-color: var(--background-color);
+  }
+
+  nav {
+    margin: 20px;
+  }
+
+  ul {
+    list-style-type: none;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+  }
+
+  .link-group {
+    display: flex;
+    flex-direction: row;
+    gap: 15px;
+  }
+
+  /**** FOOTER ****/
+  .footer-grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+  }
+
+  .footer-container {
+    display: flex;
+    flex-direction: column;
+  }
+</style>
