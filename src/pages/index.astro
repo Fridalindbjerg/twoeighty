@@ -116,31 +116,30 @@ import Typewriter from "../components/Typewriter.astro";
         </div>
       </section>
 
-      <section class="grid2fr">
-        <div>
-          <h3>fitness world</h3>
-          <p>
-            We created a visual campaign for Fitness World that celebrates
-            movement, community, and the individuality of every training
-            journey. Through cinematic storytelling and diverse casting, we
-            showcased how fitness can be a part of life at any stage — whether
-            in a gym, a forest, or anywhere in between.
-          </p>
+      <section class="case_grid">
+        <div class="case_left">
+          <div>
+            <h3>fitness world</h3>
+            <p>
+              We created a visual campaign for Fitness World that celebrates
+              movement, community, and the individuality of every training
+              journey. Through cinematic storytelling and diverse casting, we
+              showcased how fitness can be a part of life at any stage — whether
+              in a gym, a forest, or anywhere in between.
+            </p>
+          </div>
           <img src="https://picsum.photos/seed/picsum/1500/1000" alt="" />
         </div>
-        <div class="p_margin_l">
+
+        <div class="case_right">
           <img
             class="none"
             src="https://picsum.photos/seed/picsum/1500/1000"
             alt=""
           />
-          <div class="grid_2_1">
-            <img
-              class="padding"
-              src="https://picsum.photos/seed/picsum/900/1600"
-              alt=""
-            />
-            <div class="p_margin_l">
+          <div class="right_split">
+            <img src="https://picsum.photos/seed/picsum/900/1600" alt="" />
+            <div>
               <p>
                 The project focused on portraying authenticity and energy across
                 a wide range of personalities and physical expressions. We
@@ -192,6 +191,7 @@ import Typewriter from "../components/Typewriter.astro";
 
   h2 {
     text-align: center;
+    margin: 150px 0 100px 0px;
   }
 
   p {
@@ -202,8 +202,7 @@ import Typewriter from "../components/Typewriter.astro";
   /**************CASES **************/
   .case_grid {
     display: grid;
-    margin-top: 100px;
-    margin-bottom: 100px;
+    margin-bottom: 200px;
     gap: 25px;
   }
 
@@ -292,10 +291,6 @@ import Typewriter from "../components/Typewriter.astro";
       grid-template-columns: 1fr 2fr;
       gap: 30px;
     }
-
-    /* h1 {
-      text-align: left;
-    } */
 
     .img_container {
       grid-row: 1/3;
