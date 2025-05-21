@@ -1,15 +1,19 @@
 ---
 import Socials from "../components/Socials.astro";
 import Layout from "../layouts/Layout.astro";
+import Typewriter from "../components/Typewriter.astro";
 ---
 
 <Layout>
   <main>
     <section class="hero">
       <div class="hero_text center">
-        <h1>
-          <span class="title"> we are</span>
-          <br />twoeighty <br /> production co.
+        <h1 id="typewriter">
+          <span class="line" data-content="we are" data-class="title"></span><br
+          />
+          <span class="line" data-content="twoeighty"></span><br />
+          <span class="line" data-content="production co."></span>
+          <span class="caret">|</span>
         </h1>
         <p>
           A Copenhagen-based production company crafting bold, human stories
@@ -192,40 +196,27 @@ import Layout from "../layouts/Layout.astro";
     display: inline-block;
     overflow: hidden;
     white-space: nowrap;
-    border-right: 2px solid black;
-    animation:
-      typing 3s steps(30, end) forwards,
-      blink 0.75s step-end 3s 4;
   }
 
-  .typewriter {
+  #typewriter {
+    white-space: pre;
+    display: inline-block;
+    position: relative;
   }
 
-  @keyframes typing {
-    from {
-      width: 0;
-    }
-    to {
-      width: 100%;
-    }
+  .caret {
+    position: absolute;
+    animation: blink 1s step-end infinite;
+    display: inline-block;
   }
 
   @keyframes blink {
-    50% {
-      border-color: transparent;
+    0%,
+    100% {
+      opacity: 1;
     }
-  }
-
-  /* Når animationen er færdig, fjern stregen helt */
-  .typewriter::after {
-    content: "";
-    animation: hide-caret 0s forwards;
-    animation-delay: 6s; /* typing + blink tid */
-  }
-
-  @keyframes hide-caret {
-    to {
-      border-right: none;
+    50% {
+      opacity: 0;
     }
   }
 
@@ -387,3 +378,4 @@ import Layout from "../layouts/Layout.astro";
 </style>
 
 <!-- Script nederst i komponenten -->
+<script src="/typewriter.js" defer></script>
