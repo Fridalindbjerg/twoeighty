@@ -106,30 +106,44 @@ import ButtonFooter from "../components/ButtonFooter.astro";
     }
 
     /**** FOOTER ****/
+
     footer {
       padding: 60px;
+      display: flex;
+      justify-content: center;
     }
 
     h5 {
       margin-bottom: 50px;
       text-align: center;
     }
+
     .footer-grid {
-      display: flex;
-      justify-content: space-evenly;
-      margin: 0 auto;
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      grid-template-rows: 2;
+      row-gap: 70px;
+      gap: 70px;
     }
 
     .footer-container {
       display: flex;
       flex-direction: column;
       gap: 20px;
+      text-align: left;
     }
 
     .icon-container {
       display: flex;
       flex-direction: row;
       gap: 15px;
+    }
+
+    @media (width >= 768px) {
+      .footer-grid {
+        grid-template-columns: repeat(4, 1fr);
+        gap: 120px;
+      }
     }
   </style>
 </html>
