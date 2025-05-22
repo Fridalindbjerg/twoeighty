@@ -23,7 +23,7 @@
   box-sizing: border-box;
 }
 
-body, h1, h2, h3, h4, p, ul, ol {
+body, h1, h2, h3, h4, h5, h6, p, ul, ol {
   margin: 0;
   padding: 0;
 }
@@ -35,7 +35,7 @@ body{
 
 main {
   margin: 0 auto;
-  max-width: 98%;
+  max-width: 95%;
 }
 
 /* Typografi */
@@ -43,11 +43,11 @@ h1, h2 {
   font-family: var(--heading-font);
 }
 
-h3, h4, .title, .menu li, .span1 {
+h3, h4, h6, .title, .menu li, .span1 {
   font-family: var(--secondary-font);
 }
 
-p, li {
+p, li, a {
   font-family: var(--body-font);
 }
 
@@ -62,10 +62,26 @@ h1 {
   text-align: center;
 }
 
+p, a{
+font-size: clamp(0.875rem, 1.5vw, 1.125rem);
+}
+
 h2 {
   font-size: clamp(1.875rem, 8vw, 3.5rem);
   line-height: clamp(1.6rem, 8vw, 2rem);
 }
+
+  h5 {
+    text-transform: uppercase;
+    text-align: center;
+    padding-bottom: 10px;
+    font-family: var(--heading-font);
+    font-size: clamp(1.5rem, 2vw, 2rem);
+  }
+
+  h6{
+  font-size: clamp(1rem, 1.5vw, 1.25rem);
+  }
 
 .span1 {
   font-size: clamp(1.25rem, 8vw, 1.875rem);
@@ -74,4 +90,36 @@ h2 {
 .title {
   text-align: center;
   font-size: clamp(0.2rem, 4vw, 1.563rem);
+}
+
+a {
+  color: var(--black);
+  text-decoration: underline;
+  cursor: pointer;
+}
+
+/***************FOOTER ***********/
+  footer {
+    background-color: #040404;
+    color: white;
+  }
+
+footer p{
+  font-size: clamp(0.875rem, 1.4vw, 1rem);
+  font-family: var(--body-font);
+}
+
+footer a{
+  color: white;
+}
+
+.icon-container img {
+  width: 24px;
+  height: 24px;
+  object-fit: contain;
+  transition: transform 0.2s ease-in-out;
+}
+
+.icon-container img:hover {
+  transform: scale(1.2); /* zoom 20% op */
 }
