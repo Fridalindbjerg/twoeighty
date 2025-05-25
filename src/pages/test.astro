@@ -1,31 +1,15 @@
 ---
-const data = await fetch("https://lescamgejebsqtwecrww.supabase.co/rest/v1/twoeighty_cases?select=*").then((res) => res.json());
-console.log(data);
+import Case from "../components/Case.astro";
+const curl = "https://lescamgejebsqtwecrww.supabase.co/rest/v1/twoeighty_cases?select=*";
+
+const apikey = "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6Imxlc2NhbWdlamVic3F0d2Vjcnd3Iiwicm9sZSI6ImFub24iLCJpYXQiOjE3NDczMDI3MTcsImV4cCI6MjA2Mjg3ODcxN30.aoF4F4HWliGv7dB5WhKHov5-LFWZ-xm_RIfgX_L0Ul8";
+
+const options = {
+  headers: {
+    apikey: apikey,
+  },
+};
+const data = await fetch(curl, options).then((response) => response.json()); // console.log(data); ---
 ---
 
-{
-  post.map((post, i) => {
-    if (i === 0) {
-      return (
-        <div key={post.id} class="layout1">
-          <h2>{post.name}</h2>
-          <p>{post.description}</p>
-        </div>
-      );
-    } else if (i === 1) {
-      return (
-        <div key={post.id} class="layout2">
-          <h3>{post.name}</h3>
-          <img src={post.imageUrl} alt={post.name} />
-        </div>
-      );
-    } else {
-      return (
-        <div key={post.id} class="layout3">
-          <h4>{post.name}</h4>
-          <p>Pris: {post.price} kr.</p>
-        </div>
-      );
-    }
-  })
-}
+{data.map((product) => <Case {product} />)}

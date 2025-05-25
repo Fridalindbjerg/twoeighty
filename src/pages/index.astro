@@ -2,27 +2,30 @@
 import Socials from "../components/Socials.astro";
 import Layout from "../layouts/Layout.astro";
 import Typewriter from "../components/Typewriter.astro";
+import Case from "../components/Case.astro";
+
+const curl = "https://lescamgejebsqtwecrww.supabase.co/rest/v1/twoeighty_cases?select=*";
+
+const apikey = "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6Imxlc2NhbWdlamVic3F0d2Vjcnd3Iiwicm9sZSI6ImFub24iLCJpYXQiOjE3NDczMDI3MTcsImV4cCI6MjA2Mjg3ODcxN30.aoF4F4HWliGv7dB5WhKHov5-LFWZ-xm_RIfgX_L0Ul8";
+
+const options = {
+  headers: {
+    apikey: apikey,
+  },
+};
+const data = await fetch(curl, options).then((response) => response.json());
 ---
 
 <Layout>
   <section class="hero">
     <div class="hero_text center">
       <Typewriter />
-      <p>
-        A Copenhagen-based production company crafting bold, human stories
-        across film, photography, and creative direction. We partner with
-        brands, agencies, and artists to create work that feels honest, playful,
-        and visually striking.
-      </p>
+      <p>A Copenhagen-based production company crafting bold, human stories across film, photography, and creative direction. We partner with brands, agencies, and artists to create work that feels honest, playful, and visually striking.</p>
 
-      <a href="/about.astro">Learn more</a>
+      <a href="/about">Learn more</a>
     </div>
     <div class="img_container">
-      <img
-        class="img_hero"
-        src="https://picsum.photos/seed/picsum/900/1600"
-        alt=""
-      />
+      <video autoplay muted playsinline class="img_hero" src="/public/index1.mp4"></video>
     </div>
   </section>
 
@@ -33,42 +36,29 @@ import Typewriter from "../components/Typewriter.astro";
       <div>KNAPKNAP</div>
     </h2>
 
+    {data.map((product) => <Case {product} />)}
+    <!-- 
     <section class="case_grid">
       <div class="case_left">
         <div>
           <h3>thykassen</h3>
           <p>
-            We created a visual identity for Thykassen that captures the raw,
-            natural beauty of the West Jutland landscape. Through authentic
-            imagery and film, we told a story about simplicity, sustainability,
-            and local produce. Our goal was to highlight what’s real – no
-            filters, no fuss – and let the atmosphere speak for itself.
+            We created a visual identity for Thykassen that captures the raw, natural beauty of the West Jutland landscape. Through authentic imagery and film, we told a story about simplicity, sustainability, and local produce. Our goal was to highlight what’s real – no filters, no fuss – and let the atmosphere speak for itself.
             <br />
             <br />
-            With a warm, human-centered aesthetic, we developed a campaign that works
-            across platforms – from website and social media to print and video.
+            With a warm, human-centered aesthetic, we developed a campaign that works across platforms – from website and social media to print and video.
           </p>
         </div>
         <img src="https://picsum.photos/seed/picsum/1500/1000" alt="" />
       </div>
 
       <div class="case_right">
-        <img
-          class="none"
-          src="https://picsum.photos/seed/picsum/1500/1000"
-          alt=""
-        />
+        <img class="none" src="https://picsum.photos/seed/picsum/1500/1000" alt="" />
 
         <div class="right_split">
           <img src="https://picsum.photos/seed/picsum/900/1600" alt="" />
           <div>
-            <p>
-              We aimed to showcase both the product and the people behind it in
-              a relatable and honest way. All content was crafted with attention
-              to the local spirit and subtle moments, helping Thykassen attract
-              new customers while building stronger connections within their
-              community.
-            </p>
+            <p>We aimed to showcase both the product and the people behind it in a relatable and honest way. All content was crafted with attention to the local spirit and subtle moments, helping Thykassen attract new customers while building stronger connections within their community.</p>
             <a href="XXX">Full project</a>
           </div>
         </div>
@@ -80,34 +70,18 @@ import Typewriter from "../components/Typewriter.astro";
         <div class="left_split">
           <div>
             <h3>microsoft</h3>
-            <p>
-              We created a brand film for Microsoft that highlights how trust
-              and technology intersect in one of the world’s most remote and
-              rugged landscapes — Iceland. The narrative follows individuals who
-              rely on digital infrastructure in their daily lives, set against
-              vast, cinematic scenery.
-            </p>
+            <p>We created a brand film for Microsoft that highlights how trust and technology intersect in one of the world’s most remote and rugged landscapes — Iceland. The narrative follows individuals who rely on digital infrastructure in their daily lives, set against vast, cinematic scenery.</p>
           </div>
           <img src="https://picsum.photos/seed/picsum/500/500" alt="" />
         </div>
 
-        <img
-          class="none"
-          src="https://picsum.photos/seed/picsum/1500/1000"
-          alt=""
-        />
+        <img class="none" src="https://picsum.photos/seed/picsum/1500/1000" alt="" />
       </div>
 
       <div>
         <img src="https://picsum.photos/seed/picsum/1500/1000" alt="" />
         <div>
-          <p>
-            This project was about capturing the quiet strength of Icelandic
-            communities and illustrating how Microsoft’s technologies enable
-            connection, resilience, and progress. We used a grounded visual
-            language to tell a human-centered story — one that reflects both
-            innovation and intimacy.
-          </p>
+          <p>This project was about capturing the quiet strength of Icelandic communities and illustrating how Microsoft’s technologies enable connection, resilience, and progress. We used a grounded visual language to tell a human-centered story — one that reflects both innovation and intimacy.</p>
           <a href="XXX">Full project</a>
         </div>
       </div>
@@ -117,218 +91,191 @@ import Typewriter from "../components/Typewriter.astro";
       <div class="case_left">
         <div>
           <h3>fitness world</h3>
-          <p>
-            We created a visual campaign for Fitness World that celebrates
-            movement, community, and the individuality of every training
-            journey. Through cinematic storytelling and diverse casting, we
-            showcased how fitness can be a part of life at any stage — whether
-            in a gym, a forest, or anywhere in between.
-          </p>
+          <p>We created a visual campaign for Fitness World that celebrates movement, community, and the individuality of every training journey. Through cinematic storytelling and diverse casting, we showcased how fitness can be a part of life at any stage — whether in a gym, a forest, or anywhere in between.</p>
         </div>
         <img src="https://picsum.photos/seed/picsum/1500/1000" alt="" />
       </div>
 
       <div class="case_right">
-        <img
-          class="none"
-          src="https://picsum.photos/seed/picsum/1500/1000"
-          alt=""
-        />
+        <img class="none" src="https://picsum.photos/seed/picsum/1500/1000" alt="" />
         <div class="right_split">
           <img src="https://picsum.photos/seed/picsum/900/1600" alt="" />
           <div>
-            <p>
-              The project focused on portraying authenticity and energy across a
-              wide range of personalities and physical expressions. We wanted to
-              move beyond clichés and create a campaign rooted in realness,
-              drive, and self-empowerment — making fitness feel both
-              approachable and aspirational.
-            </p>
+            <p>The project focused on portraying authenticity and energy across a wide range of personalities and physical expressions. We wanted to move beyond clichés and create a campaign rooted in realness, drive, and self-empowerment — making fitness feel both approachable and aspirational.</p>
             <a href="XXX">Full project</a>
           </div>
         </div>
       </div>
     </section>
+  </article> -->
+
+    <article class="grid_3_1 black">
+      <div>
+        <p>We are TWOEIGHTY — a Copenhagen-based production company driven by curiosity, collaboration and craft. We work with brands, agencies and artists to create visually striking, emotionally honest storytelling — from commercials and branded content to music videos and experimental formats. Our work is rooted in a playful, conceptual approach and a belief in the power of real people and real moments.</p>
+        <a href="XXX">Learn more</a>
+      </div>
+      <div class="grid_9_1">
+        <img src="/twoeighty.webp" alt="" />
+        <p class="vertical">twoeighty</p>
+      </div>
+      <p class="bottom">Behind every frame is a team that values process as much as product. We’re not just here to deliver — we’re here to co-create. With strong emphasis on creative sparring, visual identity and human connection, we strive to make every collaboration feel intuitive, transparent and full of energy.</p>
+    </article>
+    <Socials />
   </article>
 
-  <article class="grid_3_1 black">
-    <div>
-      <p>
-        We are TWOEIGHTY — a Copenhagen-based production company driven by
-        curiosity, collaboration and craft. We work with brands, agencies and
-        artists to create visually striking, emotionally honest storytelling —
-        from commercials and branded content to music videos and experimental
-        formats. Our work is rooted in a playful, conceptual approach and a
-        belief in the power of real people and real moments.
-      </p>
-      <a href="XXX">Learn more</a>
-    </div>
-    <div class="grid_9_1">
-      <img src="https://picsum.photos/seed/picsum/900/1600" alt="" />
-      <p class="vertical">twoeighty</p>
-    </div>
-    <p class="bottom">
-      Behind every frame is a team that values process as much as product. We’re
-      not just here to deliver — we’re here to co-create. With strong emphasis
-      on creative sparring, visual identity and human connection, we strive to
-      make every collaboration feel intuitive, transparent and full of energy.
-    </p>
-  </article>
-  <Socials />
-</Layout>
-
-<style>
-  /***********OVERORDNET *********/
-  h3 {
-    font-size: 2.5rem;
-    margin: 0;
-  }
-
-  h2 {
-    text-align: center;
-    margin: 150px 0 100px 0px;
-  }
-
-  p {
-    font-size: 0.875rem;
-    line-height: 1.5rem;
-  }
-
-  /**************CASES **************/
-  .case_grid {
-    display: grid;
-    margin-bottom: 200px;
-    gap: 25px;
-  }
-
-  .case_left {
-    display: flex;
-    flex-direction: column;
-  }
-
-  img {
-    width: 100%;
-  }
-
-  .right_split {
-    display: grid;
-    grid-template-columns: 1fr 2fr;
-    gap: 25px;
-  }
-
-  .left_split {
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    gap: 25px;
-  }
-
-  .none {
-    display: none;
-  }
-
-  /****************ABOUT *****************/
-  .black {
-    background-color: var(--black);
-    color: white;
-    padding: 5%;
-  }
-
-  .grid_9_1 {
-    display: grid;
-    grid-template-columns: 9fr 1fr;
-    margin: auto 0;
-  }
-  .vertical {
-    writing-mode: vertical-rl;
-    font-size: 6em;
-    margin-right: 0;
-    margin-left: -2rem;
-    font-family: Friz;
-    text-transform: uppercase;
-  }
-
-  /*************HERO ****************/
-  .hero {
-    display: grid;
-    gap: 30px;
-  }
-  .hero_text {
-    text-align: center;
-  }
-
-  .img_container {
-    display: flex;
-    justify-content: center;
-    height: 80vh;
-    width: auto;
-  }
-
-  .img_hero {
-    width: auto;
-  }
-
-  @media (width >= 768px) {
-    .bottom {
-      align-self: flex-end;
-    }
-  }
-
-  @media (width >= 900px) {
-    .grid_3_1 {
-      display: grid;
-      grid-template-columns: 1fr 2fr 1fr;
-    }
-  }
-
-  @media (width >= 1024px) {
-    .hero {
-      display: grid;
-      grid-template-columns: 1fr 2fr;
-      gap: 30px;
+  <style>
+    /***********OVERORDNET *********/
+    h3 {
+      font-size: 2.5rem;
+      margin: 0;
     }
 
-    .img_container {
-      grid-row: 1/3;
-      display: flex;
-      justify-content: center;
-    }
-
-    .img_hero {
-      height: 90vh;
-      width: auto;
-    }
-
-    .hero_text {
-      display: flex;
-      flex-direction: column;
-      justify-content: center;
-      height: 90vh;
-      text-align: left;
+    h2 {
+      text-align: center;
+      margin: 150px 0 100px 0px;
     }
 
     p {
-      font-size: 1.125rem;
+      font-size: 0.875rem;
+      line-height: 1.5rem;
     }
 
-    .none {
-      display: block;
+    /**************CASES **************/
+    .case_grid {
+      display: grid;
+      margin-bottom: 200px;
+      gap: 25px;
     }
 
-    .case_right,
     .case_left {
       display: flex;
-      gap: 25px;
       flex-direction: column;
     }
 
-    .case_grid {
+    img {
+      width: 100%;
+    }
+
+    .right_split {
+      display: grid;
+      grid-template-columns: 1fr 2fr;
+      gap: 25px;
+    }
+
+    .left_split {
+      display: grid;
       grid-template-columns: 1fr 1fr;
+      gap: 25px;
     }
 
-    .grid_3_1 {
-      margin: 0;
+    .none {
+      display: none;
     }
-  }
-</style>
 
-<!-- Script nederst i komponenten -->
+    /****************ABOUT *****************/
+    .black {
+      background-color: var(--black);
+      color: white;
+      padding: 5%;
+    }
+
+    .grid_9_1 {
+      display: grid;
+      grid-template-columns: 9fr 1fr;
+      margin: auto 0;
+    }
+    .vertical {
+      writing-mode: vertical-rl;
+      font-size: 6em;
+      margin-right: 0;
+      margin-left: -2rem;
+      font-family: Friz;
+      text-transform: uppercase;
+    }
+
+    /*************HERO ****************/
+    .hero {
+      display: grid;
+      gap: 30px;
+    }
+    .hero_text {
+      text-align: center;
+    }
+
+    .img_container {
+      display: flex;
+      justify-content: center;
+      height: 80vh;
+      width: auto;
+    }
+
+    .img_hero {
+      width: auto;
+    }
+
+    @media (width >= 768px) {
+      .bottom {
+        align-self: flex-end;
+      }
+    }
+
+    @media (width >= 900px) {
+      .grid_3_1 {
+        display: grid;
+        grid-template-columns: 1fr 2fr 1fr;
+      }
+    }
+
+    @media (width >= 1024px) {
+      .hero {
+        display: grid;
+        grid-template-columns: 1fr 2fr;
+        gap: 30px;
+      }
+
+      .img_container {
+        grid-row: 1/3;
+        display: flex;
+        justify-content: center;
+      }
+
+      .img_hero {
+        height: 90vh;
+        width: auto;
+      }
+
+      .hero_text {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        height: 90vh;
+        text-align: left;
+      }
+
+      p {
+        font-size: 1.125rem;
+      }
+
+      .none {
+        display: block;
+      }
+
+      .case_right,
+      .case_left {
+        display: flex;
+        gap: 25px;
+        flex-direction: column;
+      }
+
+      .case_grid {
+        grid-template-columns: 1fr 1fr;
+      }
+
+      .grid_3_1 {
+        margin: 0;
+      }
+    }
+  </style>
+
+  <!-- Script nederst i komponenten -->
+</Layout>

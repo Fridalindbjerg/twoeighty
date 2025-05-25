@@ -1,0 +1,121 @@
+---
+const { product } = Astro.props;
+---
+
+<section class="case_grid">
+  <div class="case_left">
+    <div>
+      <h3>{product.name}</h3>
+      <p>
+        {product.index_p1}
+      </p>
+    </div>
+    <iframe src={product.resultsvid_left} width="100%" height="500" style={{ border: "none", objectFit: "cover" }} muted allow="autoplay; 
+    fullscreen; picture-in-picture" allowfullscreen></iframe>
+  </div>
+
+  <div class="case_right">
+    <iframe class="none" src={product.resultsvid_right} width="100%" height="500" style="border: none;" allow="autoplay; fullscreen; picture-in-picture" allowfullscreen></iframe>
+
+    <div class="right_split">
+      <img src="https://picsum.photos/seed/picsum/900/1600" alt="" />
+      <div>
+        <p>{product.index_p2}</p>
+        <a href={"case/" + product.id}>Full project</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<style>
+  /***********OVERORDNET *********/
+  h3 {
+    font-size: 2.5rem;
+    margin: 0;
+  }
+
+  h2 {
+    text-align: center;
+    margin: 150px 0 100px 0px;
+  }
+
+  p {
+    font-size: 0.875rem;
+    line-height: 1.5rem;
+  }
+
+  /**************CASES **************/
+  .case_grid {
+    display: grid;
+    margin-bottom: 200px;
+    gap: 25px;
+  }
+
+  .case_left {
+    display: flex;
+    flex-direction: column;
+  }
+
+  img {
+    width: 100%;
+  }
+
+  .right_split {
+    display: grid;
+    grid-template-columns: 1fr 2fr;
+    gap: 25px;
+  }
+
+  .left_split {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 25px;
+  }
+
+  .none {
+    display: none;
+  }
+
+  @media (width >= 1024px) {
+    p {
+      font-size: 1.125rem;
+    }
+
+    .none {
+      display: block;
+    }
+
+    .case_right,
+    .case_left {
+      display: flex;
+      gap: 25px;
+      flex-direction: column;
+    }
+
+    .case_grid {
+      grid-template-columns: 1fr 1fr;
+    }
+  }
+</style>
+<!-- 
+    <section class="case_grid">
+      <div class="case_left">
+        <div class="left_split">
+          <div>
+            <h3>microsoft</h3>
+            <p>We created a brand film for Microsoft that highlights how trust and technology intersect in one of the world’s most remote and rugged landscapes — Iceland. The narrative follows individuals who rely on digital infrastructure in their daily lives, set against vast, cinematic scenery.</p>
+          </div>
+          <img src="https://picsum.photos/seed/picsum/500/500" alt="" />
+        </div>
+
+        <img class="none" src="https://picsum.photos/seed/picsum/1500/1000" alt="" />
+      </div>
+
+      <div>
+        <img src="https://picsum.photos/seed/picsum/1500/1000" alt="" />
+        <div>
+          <p>This project was about capturing the quiet strength of Icelandic communities and illustrating how Microsoft’s technologies enable connection, resilience, and progress. We used a grounded visual language to tell a human-centered story — one that reflects both innovation and intimacy.</p>
+          <a href="">Full project</a>
+        </div>
+      </div>
+    </section> -->

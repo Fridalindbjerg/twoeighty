@@ -1,37 +1,218 @@
 ---
+import Layout from "../../layouts/Layout.astro";
+
 export async function getStaticPaths() {
-  const res = await fetch("https://lescamgejebsqtwecrww.supabase.co/rest/v1/twoeighty_cases?select=id", {
+  const curl = "https://lescamgejebsqtwecrww.supabase.co/rest/v1/twoeighty_cases?select=*";
+
+  const apikey = "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6Imxlc2NhbWdlamVic3F0d2Vjcnd3Iiwicm9sZSI6ImFub24iLCJpYXQiOjE3NDczMDI3MTcsImV4cCI6MjA2Mjg3ODcxN30.aoF4F4HWliGv7dB5WhKHov5-LFWZ-xm_RIfgX_L0Ul8";
+
+  const options = {
     headers: {
-      apikey: "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6Imxlc2NhbWdlamVic3F0d2Vjcnd3Iiwicm9sZSI6ImFub24iLCJpYXQiOjE3NDczMDI3MTcsImV4cCI6MjA2Mjg3ODcxN30.aoF4F4HWliGv7dB5WhKHov5-LFWZ-xm_RIfgX_L0Ul8",
+      apikey: apikey,
     },
+  };
+
+  const response = await fetch(curl, options);
+  const data = await response.json();
+
+  return data.map((post) => {
+    return {
+      params: { id: post.id },
+      props: { post },
+    };
   });
-
-  const data = await res.json();
-
-  return data.map((item) => ({
-    params: { id: item.id.toString() }, // gør id til string
-  }));
 }
 
 const { id } = Astro.params;
-
-const res = await fetch(`https://lescamgejebsqtwecrww.supabase.co/rest/v1/twoeighty_cases?id=eq.${id}&select=*`, {
-  headers: {
-    apikey: "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6Imxlc2NhbWdlamVic3F0d2Vjcnd3Iiwicm9sZSI6ImFub24iLCJpYXQiOjE3NDczMDI3MTcsImV4cCI6MjA2Mjg3ODcxN30.aoF4F4HWliGv7dB5WhKHov5-LFWZ-xm_RIfgX_L0Ul8",
-  },
-});
-
-const data = await res.json();
-const post = data[0]; // vi forventer kun én post
+const { post } = Astro.props;
 ---
 
-{
-  post ? (
-    <>
-      <h1>{post.name}</h1>
-      <p>{post.description}</p>
-    </>
-  ) : (
-    <p>Case ikke fundet</p>
-  )
-}
+---
+
+<h1>{}</h1>
+<Layout>
+  <main>
+    <div class="grid_12_1">
+      <img class="image_r" src={post.hiro_right} alt="" />
+      <h1>
+        <span class="title">introducing </span><br />{post.name}
+      </h1>
+      <img class="image_l" src={post.hiro_left} alt="" />
+    </div>
+    <section class="grid_2_1">
+      <div class="left">
+        <h3>brief</h3>
+        <p>
+          {post.brief_text}
+        </p>
+      </div>
+      <img class="right" src={post.brief_img} alt="" />
+    </section>
+    <section>
+      <div class="centertext">
+        <h3>process</h3>
+        <p>{post.process_text}</p>
+      </div>
+      <div class="flex_row">
+        <a class="margin_r none" href="XXX">
+          <img src={post.process_img1} alt="" />
+        </a>
+        <a class="max" href="XXX">
+          <img src={post.process_img2} alt="" />
+        </a>
+
+        <div class="flex_col">
+          <div>
+            <a href="XXX">
+              <img class="margin_b" src={post.process_img3} alt="" />
+            </a>
+            <a href="XXX">
+              <img src={post.process_img4} alt="" />
+            </a>
+          </div>
+        </div>
+
+        <a class="max" href="XXX"> <img src={post.process_img5} alt="" /></a>
+        <a class="margin_l none" href="XXX"><img src={post.process_img6} alt="" /></a>
+      </div>
+    </section>
+    <section class="grid_2_1">
+      <div class="margin_r">
+        <h3>results</h3>
+
+        <p>{post.results_text}</p>
+        <iframe src={post.resultsvid_right} width="100%" height="500" style="border: none;" allow="autoplay; fullscreen; picture-in-picture" allowfullscreen></iframe>
+      </div>
+      <iframe class="margin_t" src={post.resultsvid_left} width="100%" height="500" style="border: none;" allow="autoplay; fullscreen; picture-in-picture" allowfullscreen></iframe>
+    </section>
+  </main>
+
+  <style>
+    .grid_12_1 {
+      display: grid;
+      grid-template-columns: repeat(18, 1fr);
+      grid-template-rows: auto;
+      position: relative;
+    }
+    .image_r {
+      grid-column: 13 / -1;
+      grid-row: 1;
+      width: 100%;
+      height: auto;
+      margin-top: 3rem;
+    }
+
+    h1 {
+      grid-column: 1 / -1; /* Strækker sig over hele række */
+      grid-row: 1;
+      justify-self: center;
+      align-self: center;
+      text-align: center;
+      z-index: 2;
+    }
+
+    .image_l {
+      grid-column: 1 / 7;
+      grid-row: 1;
+      width: 100%;
+      height: auto;
+    }
+
+    .max {
+      max-width: 300px;
+    }
+
+    .margin_b {
+      margin-bottom: 0.6rem;
+    }
+
+    .margin_r {
+      margin-right: 0.6rem;
+      margin-top: 15%;
+    }
+
+    .margin_l {
+      margin-left: 0.6rem;
+      margin-top: 10%;
+    }
+
+    .none {
+      display: none;
+    }
+    .center {
+      display: flex;
+      gap: 0.2rem;
+      margin: 0 10%; /* fx 1rem mellem hvert logo */
+    }
+
+    .flex_col {
+      display: flex;
+      flex-direction: column;
+      margin: 2rem 0.8rem; /* fx 1rem mellem hvert logo */
+    }
+
+    img {
+      max-width: 100%;
+    }
+    .flex_row {
+      display: flex;
+      flex-direction: row;
+      justify-content: space-between;
+    }
+
+    h1 {
+      margin: -3rem;
+      position: relative;
+      z-index: 2;
+    }
+
+    .centertext {
+      text-align: center;
+    }
+
+    @media (width >=500px) {
+      .image_r {
+        margin-top: 4rem;
+      }
+    }
+
+    @media (width >= 750px) {
+      .image_r {
+        margin-top: 6rem;
+      }
+      .none {
+        display: block;
+      }
+
+      .flex_col {
+        margin: 3rem 0.8rem; /* fx 1rem mellem hvert logo */
+      }
+
+      .right {
+        /* grid-column: 1/2; */
+        grid-row: 1/2;
+      }
+      .left {
+        margin-left: 0.6rem;
+        grid-column: 2/3;
+      }
+      .grid_2_1 {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+      }
+    }
+
+    @media (width >= 900px) {
+      .image_r {
+        margin-top: 9rem;
+      }
+      .none {
+        display: block;
+      }
+
+      .flex_col {
+        margin: 5rem 0.8rem; /* fx 1rem mellem hvert logo */
+      }
+    }
+  </style>
+</Layout>
