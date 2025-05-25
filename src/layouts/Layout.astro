@@ -17,22 +17,40 @@ import ButtonFooter from "../components/ButtonFooter.astro";
   <body>
     <header>
       <nav>
-        <ul class="menu">
-          <li>
-            <div class="link-group">
+        <div class="nav-container">
+          <!-- VENSTRE SIDE (burger + menu) -->
+          <div class="nav-left">
+            <div class="burger">
+              <span></span>
+              <span></span>
+              <span></span>
+            </div>
+
+            <div class="menu">
               <a href="/about">ABOUT</a>
               <a href="/archive">ARCHIVE</a>
+
+              <!-- MOBIL-KNAP -->
+              <div class="button-mobile">
+                <ButtonHeader />
+              </div>
             </div>
-          </li>
-          <li>
+          </div>
+
+          <!-- CENTER LOGO -->
+          <div class="nav-center">
             <a href="/">
-              <img src="/logo.png" alt="280 logo" />
+              <img src="/logo.webp" alt="280 logo" />
             </a>
-          </li>
-          <li>
-            <ButtonHeader />
-          </li>
-        </ul>
+          </div>
+
+          <!-- HØJRE SIDE -->
+          <div class="nav-right">
+            <div class="button-desktop">
+              <ButtonHeader />
+            </div>
+          </div>
+        </div>
       </nav>
     </header>
 
@@ -57,9 +75,16 @@ import ButtonFooter from "../components/ButtonFooter.astro";
           <div class="footer-container">
             <h6>SOCIALS</h6>
             <div class="icon-container">
-              <a href="https://www.instagram.com/280cph/"><img src="/insta_white.webp" alt="Instagram logo" /></a>
-              <a href="https://vimeo.com/280cph"><img src="vimeo_white.webp" alt="Vimeo logo" /></a>
-              <a href="https://www.linkedin.com/company/280cph/?originalSubdomain=dk"><img src="linkedin_white.webp" alt="LinkedIn logo" /></a>
+              <a href="https://www.instagram.com/280cph/"
+                ><img src="/insta_white.webp" alt="Instagram logo" /></a
+              >
+              <a href="https://vimeo.com/280cph"
+                ><img src="vimeo_white.webp" alt="Vimeo logo" /></a
+              >
+              <a
+                href="https://www.linkedin.com/company/280cph/?originalSubdomain=dk"
+                ><img src="linkedin_white.webp" alt="LinkedIn logo" /></a
+              >
             </div>
           </div>
           <div class="button">
@@ -68,6 +93,7 @@ import ButtonFooter from "../components/ButtonFooter.astro";
         </div>
       </article>
     </footer>
+    <script src="/burger.js" defer></script>
   </body>
 
   <style>
@@ -83,22 +109,96 @@ import ButtonFooter from "../components/ButtonFooter.astro";
       background-color: var(--background-color);
     }
 
-    nav {
-      margin: 20px;
+    header img {
+      width: clamp(40px, 6vw, 50px);
     }
 
-    ul {
-      list-style-type: none;
+    header a {
+      text-decoration: none;
+      color: black;
+    }
+
+    .nav-container {
       display: flex;
-      flex-direction: row;
       justify-content: space-between;
+      align-items: center;
+      margin: 10px 30px;
+    }
+
+    /* Venstre side: burger og/eller links */
+    .nav-left {
+      display: flex;
+      align-items: center;
+      gap: 20px;
+    }
+
+    .nav-center {
+      position: absolute;
+      left: 50%;
+      transform: translateX(-50%);
+    }
+    /* Højre side: knap */
+    .nav-right {
+      display: flex;
+      justify-content: flex-end;
       align-items: center;
     }
 
-    .link-group {
+    /* Skjul desktop-knap på mobil */
+    .button-desktop {
+      display: none;
+    }
+
+    .button-mobile button {
+      font-size: 1rem;
+    }
+
+    /**** BURGER MENU ****/
+    .burger {
+      display: flex;
+      flex-direction: column;
+      gap: 5px;
+      cursor: pointer;
+      z-index: 4000;
+    }
+
+    .burger span {
+      display: block;
+      width: 22px;
+      height: 2px;
+      background: black;
+      transition: 0.3s;
+      border-radius: 2px;
+    }
+
+    .burger.open span:nth-child(1) {
+      transform: translateY(8px) rotate(45deg);
+    }
+    .burger.open span:nth-child(2) {
+      opacity: 0;
+    }
+    .burger.open span:nth-child(3) {
+      transform: translateY(-8px) rotate(-45deg);
+    }
+
+    /**** MOBIL DROPDOWN MENU ****/
+    .menu {
+      display: none;
+      flex-direction: column;
+      position: absolute;
+      top: 35px;
+      left: 0;
+      background-color: var(--background-color);
+      padding: 20px;
+      z-index: 3000;
+      width: 100vw;
+    }
+
+    .menu.open {
       display: flex;
       flex-direction: row;
-      gap: 15px;
+      gap: 30px;
+      left: 14px;
     }
 
     /**** FOOTER ****/
@@ -139,6 +239,33 @@ import ButtonFooter from "../components/ButtonFooter.astro";
       .footer-grid {
         grid-template-columns: repeat(4, 1fr);
         gap: 120px;
+      }
+
+      .burger {
+        display: none;
+      }
+
+      .menu {
+        display: flex;
+        position: static;
+        flex-direction: row;
+        gap: 15px;
+        padding: 0;
+        background: none;
+        width: auto;
+      }
+
+      .menu a {
+        padding: 0;
+      }
+
+      .button-desktop {
+        display: block;
+      }
+
+      /* Skjul mobil-knappen som udgangspunkt */
+      .button-mobile {
+        display: none;
       }
     }
   </style>
