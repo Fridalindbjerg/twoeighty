@@ -27,8 +27,6 @@ const { id } = Astro.params;
 const { post } = Astro.props;
 ---
 
----
-
 <Layout>
   <main>
     <div class="grid_12_1">
@@ -80,7 +78,7 @@ const { post } = Astro.props;
         <h3>results</h3>
 
         <p>{post.results_text}</p>
-        <iframe src={post.resultsvid_right} width="100%" height="500" style="border: none;" allow="autoplay; fullscreen; picture-in-picture" allowfullscreen></iframe>
+        <iframe src={`${post.resultsvid_right}?autoplay=1&muted=1&loop=1&background=1`} width="100%" height="500" style="border: none;" allow="autoplay; fullscreen; picture-in-picture" allowfullscreen></iframe>
       </div>
       <iframe class="margin_t" src={post.resultsvid_left} width="100%" height="500" style="border: none;" allow="autoplay; fullscreen; picture-in-picture" allowfullscreen></iframe>
     </section>
@@ -88,6 +86,9 @@ const { post } = Astro.props;
 </Layout>
 
 <style>
+  section {
+    margin-top: 150px;
+  }
   .grid_12_1 {
     display: grid;
     grid-template-columns: repeat(18, 1fr);

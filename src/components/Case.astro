@@ -2,7 +2,7 @@
 const { product } = Astro.props;
 ---
 
-<section class="case_grid">
+<!-- <section class="case_grid">
   <div class="case_left">
     <div>
       <h3>{product.name}</h3>
@@ -23,7 +23,69 @@ const { product } = Astro.props;
       </div>
     </div>
   </div>
+</section> -->
+<section class="case_grid">
+  <div class="case_left">
+    <div>
+      <h3>{product.name}</h3>
+      <p>{product.index_p1}</p>
+    </div>
+
+    <!-- Vimeo video med hover-effekt -->
+    <iframe id="autoplayVideo" src={`${product.resultsvid_left}?autoplay=1&muted=1&loop=1&background=1`} allow="autoplay; fullscreen"></iframe>
+  </div>
+
+  <div class={product.class}>
+    <iframe id="hoverVideo" class="none" src={`${product.resultsvid_right}?&muted=1&loop=1`} allow="autoplay;"></iframe>
+
+    <div class="right_split">
+      <img src="https://picsum.photos/seed/picsum/900/1600" alt="" />
+      <div class="space">
+        <p>{product.index_p2}</p>
+        <a href={"case/" + product.id}>Full project</a>
+      </div>
+    </div>
+  </div>
 </section>
+
+<!-- Vimeo Player Script -->
+
+<!-- <script type="module" is:browser>
+  import Player from "https://player.vimeo.com/api/player.js";
+
+  const autoplayIframe = document.getElementById("autoplayVideo"); // din altid-afspillende video
+  const hoverIframe = document.getElementById("hoverVideo"); // din hover-video
+
+  const autoplayPlayer = new Player(autoplayIframe);
+  const hoverPlayer = new Player(hoverIframe);
+
+  hoverIframe.parentElement.addEventListener("mouseenter", () => {
+    hoverPlayer.play();
+    autoplayPlayer.pause();
+  });
+
+  hoverIframe.parentElement.addEventListener("mouseleave", () => {
+    hoverPlayer.pause();
+    autoplayPlayer.play();
+  });
+</script> -->
+
+<!-- <script src="https://player.vimeo.com/api/player.js"></script>
+<script>
+  // Vent til DOM er loaded
+  document.addEventListener("DOMContentLoaded", function () {
+    const iframe = document.getElementById("hoverVideo");
+    const player = new Vimeo.Player(iframe);
+
+    iframe.addEventListener("mouseenter", () => {
+      player.play();
+    });
+
+    iframe.addEventListener("mouseleave", () => {
+      player.pause();
+    });
+  });
+</script> -->
 
 <style>
   /***********OVERORDNET *********/
@@ -53,6 +115,7 @@ const { product } = Astro.props;
     display: flex;
     flex-direction: column;
   }
+
   iframe {
     width: 100%;
     aspect-ratio: 16 / 9; /* holder proportioner */
@@ -95,6 +158,14 @@ const { product } = Astro.props;
       gap: 25px;
       flex-direction: column;
     }
+
+    .container {
+      display: flex;
+      gap: 25px;
+
+      flex-direction: column-reverse;
+    }
+
     .case_grid {
       grid-template-columns: 1fr 1fr;
     }
