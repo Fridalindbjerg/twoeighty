@@ -42,11 +42,22 @@ ol {
 /* Layout */
 body {
   background-color: var(--background-color);
+  max-width: 1440px;
+  margin: 0 auto;
 }
 
 main {
   margin: 0 auto;
   max-width: 95%;
+}
+
+.full-width {
+  width: 100vw !important;
+  position: relative;
+  left: 50%;
+  right: 50%;
+  margin-left: -50vw;
+  margin-right: -50vw;
 }
 
 /* Typografi */
@@ -85,9 +96,10 @@ h1 {
 }
 
 p,
-a {
+a,
+.corner-button {
   font-size: clamp(0.875rem, 1.5vw, 1.125rem);
-  line-height: 1.5rem;
+  line-height: clamp(1.5rem, 5vw, 1.8rem);
 }
 
 h2 {
@@ -98,6 +110,24 @@ h3 {
   font-size: clamp(1.2rem, 2.2vw, 2.5rem);
 }
 
+h4 {
+  font-size: clamp(1.25rem, 2vw + 0.5rem, 1.875rem);
+  text-transform: uppercase;
+  padding-bottom: 15px;
+}
+
+.corner-button:hover {
+  transform: scale(1.1);
+  color: var(--red-font);
+}
+
+.corner-button:hover .corner {
+  border-color: var(--red-font);
+}
+
+.corner1-button:hover {
+  transform: scale(1.1);
+}
 h5 {
   text-transform: uppercase;
   text-align: center;
@@ -106,7 +136,8 @@ h5 {
   font-size: clamp(1.5rem, 2vw, 2rem);
 }
 
-h6 {
+h6,
+.corner1-button {
   font-size: clamp(1rem, 1.5vw, 1.25rem);
 }
 
@@ -149,4 +180,15 @@ footer a {
 
 .icon-container img:hover {
   transform: scale(1.2); /* zoom 20% op */
+}
+
+@media (width >= 1440px) {
+  .full-width {
+    width: auto !important;
+    left: auto;
+    right: auto;
+    margin-left: 0;
+    margin-right: 0;
+    position: static;
+  }
 }
