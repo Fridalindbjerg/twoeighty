@@ -6,12 +6,8 @@ import "/src/css/base.css";
   <h2>twoeighty's</h2>
   <h3>socials</h3>
   <div class="flex_row">
-    <a class="margin_r none" href="https://www.instagram.com/p/C3kQ29NIzbn/">
-      <img src="socials/socials_1.webp" alt="" />
-    </a>
-    <a class="max" href="https://www.instagram.com/p/CpKZgCdoNQN/?img_index=5">
-      <img src="socials/socials_2.webp" alt="" />
-    </a>
+    <a class="margin_r none" href="https://www.instagram.com/p/C3kQ29NIzbn/"><img src="socials/socials_1.webp" alt="" /></a>
+    <a href="https://www.instagram.com/p/CpKZgCdoNQN/?img_index=5"><img src="socials/socials_2.webp" alt="" /></a>
 
     <div class="flex_col">
       <div class="flex_row center">
@@ -22,45 +18,30 @@ import "/src/css/base.css";
 
       <div>
         <a href="https://www.instagram.com/p/CwXbkogMti7/">
-          <img class="margin_b" src="/socials/socials_3.webp" alt="" />
-        </a>
-        <a href="https://www.instagram.com/p/Co9qgyCI8TG/?img_index=1">
-          <img src="/socials/socials_6.webp" alt="" />
-        </a>
+          <img class="margin_b" src="/socials/socials_3.webp" alt="" /></a>
+        <a href="https://www.instagram.com/p/Co9qgyCI8TG/?img_index=1"><img src="/socials/socials_6.webp" alt="" /></a>
       </div>
     </div>
 
-    <a class="max" href="https://www.instagram.com/p/ClOB13qoGBe/?img_index=4"> <img src="/socials/socials_5.webp" alt="" /></a>
-    <a class="margin_l none" href="https://www.instagram.com/p/CXxyq0Jsshr/">
-      <img src="/socials/socials_4.webp" alt="" />
+    <a href="https://www.instagram.com/p/ClOB13qoGBe/?img_index=4"> <img src="/socials/socials_5.webp" alt="" /></a>
+    <a class="margin_l none" href="https://www.instagram.com/p/CXxyq0Jsshr/"><img src="/socials/socials_4.webp" alt="" />
     </a>
   </div>
 </section>
 
 <style>
-  section {
-    margin-top: 150px;
-  }
-  .max {
-    max-width: 300px;
-  }
 
-  .margin_b {
-    margin-bottom: 0.6rem;
-  }
 
   .margin_r {
-    margin-right: 0.6rem;
     margin-top: 15%;
   }
 
   .margin_l {
-    margin-left: 0.6rem;
     margin-top: 10%;
   }
 
   .none {
-    display: none;
+  visibility: hidden;
   }
   .center {
     display: flex;
@@ -71,7 +52,7 @@ import "/src/css/base.css";
   .flex_col {
     display: flex;
     flex-direction: column;
-    margin: 2rem 0.8rem; /* fx 1rem mellem hvert logo */
+    gap: 10px;
   }
 
   img {
@@ -81,6 +62,7 @@ import "/src/css/base.css";
     display: flex;
     flex-direction: row;
     justify-content: space-between;
+    gap: 10px
   }
 
   .center a img {
@@ -111,21 +93,21 @@ height: auto; */
 
   @media (width >= 750px) {
     .none {
-      display: block;
+    visibility: visible;
     }
 
     .flex_col {
-      margin: 3rem 0.8rem; /* fx 1rem mellem hvert logo */
+      margin-top: 3rem; /* fx 1rem mellem hvert logo */
     }
   }
 
   @media (width >= 900px) {
     .none {
-      display: block;
+    visibility: visible;
     }
 
     .flex_col {
-      margin: 5rem 0.8rem; /* fx 1rem mellem hvert logo */
+      margin-top: 5rem ; /* fx 1rem mellem hvert logo */
     }
   }
 </style>

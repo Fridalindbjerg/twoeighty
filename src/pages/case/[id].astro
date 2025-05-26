@@ -30,11 +30,11 @@ const { singleCase } = Astro.props;
 <Layout>
   <main>
     <div class="grid_12_1">
-      <img class="image_r" src={singleCase.hiro_right} alt="" />
+      <img class="image_r" src={singleCase.hiro_right} alt=`stemningsbillede fra ${singleCase.name}` />
       <h1>
         <span class="title">introducing </span><br />{singleCase.name}
       </h1>
-      <img class="image_l" src={singleCase.hiro_left} alt="" />
+      <img class="image_l" src={singleCase.hiro_left} alt=`stemningsbillede fra ${singleCase.name}` />
     </div>
     <section class="grid_2_1">
       <div class="left">
@@ -43,70 +43,45 @@ const { singleCase } = Astro.props;
           {singleCase.brief_text}
         </p>
       </div>
-      <img class="right" src={singleCase.brief_img} alt="" />
+      <img class="right" src={singleCase.brief_img} alt=`stemningsbillede fra ${singleCase.name}` />
     </section>
     <section>
       <div class="centertext">
         <h3>process</h3>
         <p>{singleCase.process_text}</p>
       </div>
-      <div class="flex_row">
-        <a class="margin_r none" href="XXX">
-          <img src={singleCase.process_img1} alt="" />
-        </a>
-        <a class="max" href="XXX">
-          <img src={singleCase.process_img2} alt="" />
-        </a>
+      <div class="flex_row1">
+        <img class="none1" src={singleCase.process_img1} alt=`stemningsbillede fra ${singleCase.name}` />
+        <img src={singleCase.process_img2} alt=`behind-the-scenes-billede fra ${singleCase.name}` />
 
-        <div class="flex_col">
+        <div class="flex_col1">
           <div>
-            <a href="XXX">
-              <img class="margin_b" src={singleCase.process_img3} alt="" />
-            </a>
-            <a href="XXX">
-              <img src={singleCase.process_img4} alt="" />
-            </a>
+            <img src={singleCase.process_img3} alt=`behind-the-scenes-billede fra ${singleCase.name}` />
+          </div>
+          <div>
+            <img src={singleCase.process_img4} alt=`stemningsbillede fra ${singleCase.name}` />
           </div>
         </div>
-
-        <a class="max" href="XXX"> <img src={singleCase.process_img5} alt="" /></a>
-        <a class="margin_l none" href="XXX"><img src={singleCase.process_img6} alt="" /></a>
+        <img src={singleCase.process_img5} alt=`stemningsbillede fra ${singleCase.name}` />
+        <img class="none1" src={singleCase.process_img6} alt=`behind-the-scenes-billede fra ${singleCase.name}` />
       </div>
-    </section>
-    <section class="grid_2_1">
-      <div class="">
-        <h3>results</h3>
-
-        <p>{singleCase.results_text}</p>
-        <iframe src={`${singleCase.resultsvid_right}?&muted=1&loop=1`} allow="autoplay;"></iframe>
-      </div>
-      <iframe class="margin_1" src={`${singleCase.resultsvid_left}?autoplay=1&muted=1&loop=1&background=1`} allow="autoplay; fullscreen"></iframe>
     </section>
   </main>
+  <section class="grid_2_1">
+    <div class="">
+      <h3>results</h3>
+
+      <p>{singleCase.results_text}</p>
+      <iframe src={`${singleCase.resultsvid_right}?&muted=1&loop=1`} allow="autoplay;"></iframe>
+    </div>
+    <iframe class="margin_1" src={`${singleCase.resultsvid_left}?autoplay=1&muted=1&loop=1&background=1`} allow="autoplay; fullscreen"></iframe>
+  </section>
 </Layout>
 
-<!-- <section class="case_grid">
-  <div class="case_left">
-    <div>
-      <h3>{product.name}</h3>
-      <p>{product.index_p1}</p>
-    </div>
-
-    Vimeo video med hover-effekt -->
-<!-- <iframe id="autoplayVideo" src={`${product.resultsvid_left}?autoplay=1&muted=1&loop=1&background=1`} allow="autoplay; fullscreen"></iframe>
-
-<div class={product.class}>
-  <iframe id="hoverVideo" class="none" src={`${product.resultsvid_right}?&muted=1&loop=1`} allow="autoplay;"></iframe>
-
-  <div class="right_split">
-    <img src="https://picsum.photos/seed/picsum/900/1600" alt="" />
-    <div class="space">
-      <p>{product.index_p2}</p>
-      <a href={"case/" + product.id}>Full project</a>
-    </div>
-  </div>
-</div> -->
 <style>
+  h3 {
+    margin-bottom: 25px;
+  }
   iframe {
     width: 100%;
     aspect-ratio: 16 / 9; /* holder proportioner */
@@ -115,6 +90,10 @@ const { singleCase } = Astro.props;
   }
   section {
     margin-top: 150px;
+  }
+
+  section:last-of-type {
+    margin-bottom: 150px;
   }
   .grid_12_1 {
     display: grid;
@@ -128,6 +107,19 @@ const { singleCase } = Astro.props;
     width: 100%;
     height: auto;
     margin-top: 3rem;
+  }
+
+  .flex_row1 {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 25px;
+    margin-top: 50px;
+  }
+  .flex_col1 {
+    display: flex;
+    flex-direction: column;
+    gap: 25px;
+    margin-top: 8rem;
   }
 
   h1 {
@@ -146,16 +138,8 @@ const { singleCase } = Astro.props;
     height: auto;
   }
 
-  .max {
-    max-width: 300px;
-  }
-
   .margin_b {
     margin-bottom: 10px;
-  }
-
-  .margin_r {
-    margin-right: 25px;
   }
 
   .margin_l {
@@ -163,7 +147,7 @@ const { singleCase } = Astro.props;
     margin-top: 10%;
   }
 
-  .none {
+  .none1 {
     display: none;
   }
   .center {
@@ -172,19 +156,8 @@ const { singleCase } = Astro.props;
     margin: 0 10%; /* fx 1rem mellem hvert logo */
   }
 
-  .flex_col {
-    display: flex;
-    flex-direction: column;
-    margin: 2rem 0.8rem; /* fx 1rem mellem hvert logo */
-  }
-
   img {
     max-width: 100%;
-  }
-  .flex_row {
-    display: flex;
-    flex-direction: row;
-    justify-content: space-between;
   }
 
   h1 {
@@ -204,19 +177,19 @@ const { singleCase } = Astro.props;
   }
 
   @media (width >= 750px) {
+    .flex_row1 {
+      grid-template-columns: repeat(5, 1fr);
+    }
+
     .image_r {
       margin-top: 6rem;
     }
-    .none {
-      display: block;
-    }
-
-    .flex_col {
-      margin: 3rem 0.8rem; /* fx 1rem mellem hvert logo */
+    .none1 {
+      display: grid;
+      margin-top: 6rem;
     }
 
     .right {
-      /* grid-column: 1/2; */
       grid-row: 1/2;
     }
     .left {
@@ -233,13 +206,6 @@ const { singleCase } = Astro.props;
   @media (width >= 900px) {
     .image_r {
       margin-top: 9rem;
-    }
-    .none {
-      display: block;
-    }
-
-    .flex_col {
-      margin: 5rem 0.8rem; /* fx 1rem mellem hvert logo */
     }
   }
 </style>

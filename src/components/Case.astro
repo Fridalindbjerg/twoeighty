@@ -39,7 +39,7 @@ const { singleCase } = Astro.props;
     <iframe id="hoverVideo" class="none" src={`${singleCase.resultsvid_right}?&muted=1&loop=1`} allow="autoplay;"></iframe>
 
     <div class="right_split">
-      <img src="https://picsum.photos/seed/picsum/900/1600" alt="" />
+      <img src={singleCase.hiro_left} alt="" />
       <div class="space">
         <p>{singleCase.index_p2}</p>
         <a href={"case/" + singleCase.id}>Full project</a>
