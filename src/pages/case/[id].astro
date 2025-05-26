@@ -27,9 +27,6 @@ const { id } = Astro.params;
 const { post } = Astro.props;
 ---
 
----
-
-<h1>{}</h1>
 <Layout>
   <main>
     <div class="grid_12_1">
@@ -81,138 +78,141 @@ const { post } = Astro.props;
         <h3>results</h3>
 
         <p>{post.results_text}</p>
-        <iframe src={post.resultsvid_right} width="100%" height="500" style="border: none;" allow="autoplay; fullscreen; picture-in-picture" allowfullscreen></iframe>
+        <iframe src={`${post.resultsvid_right}?autoplay=1&muted=1&loop=1&background=1`} width="100%" height="500" style="border: none;" allow="autoplay; fullscreen; picture-in-picture" allowfullscreen></iframe>
       </div>
       <iframe class="margin_t" src={post.resultsvid_left} width="100%" height="500" style="border: none;" allow="autoplay; fullscreen; picture-in-picture" allowfullscreen></iframe>
     </section>
   </main>
+</Layout>
 
-  <style>
-    .grid_12_1 {
-      display: grid;
-      grid-template-columns: repeat(18, 1fr);
-      grid-template-rows: auto;
-      position: relative;
-    }
+<style>
+  section {
+    margin-top: 150px;
+  }
+  .grid_12_1 {
+    display: grid;
+    grid-template-columns: repeat(18, 1fr);
+    grid-template-rows: auto;
+    position: relative;
+  }
+  .image_r {
+    grid-column: 13 / -1;
+    grid-row: 1;
+    width: 100%;
+    height: auto;
+    margin-top: 3rem;
+  }
+
+  h1 {
+    grid-column: 1 / -1; /* Strækker sig over hele række */
+    grid-row: 1;
+    justify-self: center;
+    align-self: center;
+    text-align: center;
+    z-index: 2;
+  }
+
+  .image_l {
+    grid-column: 1 / 7;
+    grid-row: 1;
+    width: 100%;
+    height: auto;
+  }
+
+  .max {
+    max-width: 300px;
+  }
+
+  .margin_b {
+    margin-bottom: 0.6rem;
+  }
+
+  .margin_r {
+    margin-right: 0.6rem;
+    margin-top: 15%;
+  }
+
+  .margin_l {
+    margin-left: 0.6rem;
+    margin-top: 10%;
+  }
+
+  .none {
+    display: none;
+  }
+  .center {
+    display: flex;
+    gap: 0.2rem;
+    margin: 0 10%; /* fx 1rem mellem hvert logo */
+  }
+
+  .flex_col {
+    display: flex;
+    flex-direction: column;
+    margin: 2rem 0.8rem; /* fx 1rem mellem hvert logo */
+  }
+
+  img {
+    max-width: 100%;
+  }
+  .flex_row {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+  }
+
+  h1 {
+    margin: -3rem;
+    position: relative;
+    z-index: 2;
+  }
+
+  .centertext {
+    text-align: center;
+  }
+
+  @media (width >=500px) {
     .image_r {
-      grid-column: 13 / -1;
-      grid-row: 1;
-      width: 100%;
-      height: auto;
-      margin-top: 3rem;
+      margin-top: 4rem;
     }
+  }
 
-    h1 {
-      grid-column: 1 / -1; /* Strækker sig over hele række */
-      grid-row: 1;
-      justify-self: center;
-      align-self: center;
-      text-align: center;
-      z-index: 2;
+  @media (width >= 750px) {
+    .image_r {
+      margin-top: 6rem;
     }
-
-    .image_l {
-      grid-column: 1 / 7;
-      grid-row: 1;
-      width: 100%;
-      height: auto;
-    }
-
-    .max {
-      max-width: 300px;
-    }
-
-    .margin_b {
-      margin-bottom: 0.6rem;
-    }
-
-    .margin_r {
-      margin-right: 0.6rem;
-      margin-top: 15%;
-    }
-
-    .margin_l {
-      margin-left: 0.6rem;
-      margin-top: 10%;
-    }
-
     .none {
-      display: none;
-    }
-    .center {
-      display: flex;
-      gap: 0.2rem;
-      margin: 0 10%; /* fx 1rem mellem hvert logo */
+      display: block;
     }
 
     .flex_col {
-      display: flex;
-      flex-direction: column;
-      margin: 2rem 0.8rem; /* fx 1rem mellem hvert logo */
+      margin: 3rem 0.8rem; /* fx 1rem mellem hvert logo */
     }
 
-    img {
-      max-width: 100%;
+    .right {
+      /* grid-column: 1/2; */
+      grid-row: 1/2;
     }
-    .flex_row {
-      display: flex;
-      flex-direction: row;
-      justify-content: space-between;
+    .left {
+      margin-left: 0.6rem;
+      grid-column: 2/3;
     }
+    .grid_2_1 {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+    }
+  }
 
-    h1 {
-      margin: -3rem;
-      position: relative;
-      z-index: 2;
+  @media (width >= 900px) {
+    .image_r {
+      margin-top: 9rem;
     }
-
-    .centertext {
-      text-align: center;
-    }
-
-    @media (width >=500px) {
-      .image_r {
-        margin-top: 4rem;
-      }
+    .none {
+      display: block;
     }
 
-    @media (width >= 750px) {
-      .image_r {
-        margin-top: 6rem;
-      }
-      .none {
-        display: block;
-      }
-
-      .flex_col {
-        margin: 3rem 0.8rem; /* fx 1rem mellem hvert logo */
-      }
-
-      .right {
-        /* grid-column: 1/2; */
-        grid-row: 1/2;
-      }
-      .left {
-        margin-left: 0.6rem;
-        grid-column: 2/3;
-      }
-      .grid_2_1 {
-        display: grid;
-        grid-template-columns: 1fr 1fr;
-      }
+    .flex_col {
+      margin: 5rem 0.8rem; /* fx 1rem mellem hvert logo */
     }
-
-    @media (width >= 900px) {
-      .image_r {
-        margin-top: 9rem;
-      }
-      .none {
-        display: block;
-      }
-
-      .flex_col {
-        margin: 5rem 0.8rem; /* fx 1rem mellem hvert logo */
-      }
-    }
-  </style>
-</Layout>
+  }
+</style>

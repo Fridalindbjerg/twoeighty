@@ -2,7 +2,7 @@
 const { product } = Astro.props;
 ---
 
-<section class="case_grid">
+<!-- <section class="case_grid">
   <div class="case_left">
     <div>
       <h3>{product.name}</h3>
@@ -10,16 +10,37 @@ const { product } = Astro.props;
         {product.index_p1}
       </p>
     </div>
-    <iframe src={product.resultsvid_left} width="100%" height="500" style={{ border: "none", objectFit: "cover" }} muted allow="autoplay; 
-    fullscreen; picture-in-picture" allowfullscreen></iframe>
+    <iframe src={product.resultsvid_left} muted allow="autoplay;"></iframe>
   </div>
 
   <div class="case_right">
-    <iframe class="none" src={product.resultsvid_right} width="100%" height="500" style="border: none;" allow="autoplay; fullscreen; picture-in-picture" allowfullscreen></iframe>
+    <iframe class="none" src={product.resultsvid_right} muted allow="autoplay;"></iframe>
+    <div class="right_split">
+      <img src="https://picsum.photos/seed/picsum/900/1600" alt="" />
+      <div class="space">
+        <p>{product.index_p2}</p>
+        <a href={"case/" + product.id}>Full project</a>
+      </div>
+    </div>
+  </div>
+</section> -->
+<section class="case_grid">
+  <div class="case_left">
+    <div>
+      <h3>{product.name}</h3>
+      <p>{product.index_p1}</p>
+    </div>
+
+    <!-- Vimeo video med hover-effekt -->
+    <iframe id="autoplayVideo" src={`${product.resultsvid_left}?autoplay=1&muted=1&loop=1&background=1`} allow="autoplay; fullscreen"></iframe>
+  </div>
+
+  <div class={product.class}>
+    <iframe id="hoverVideo" class="none" src={`${product.resultsvid_right}?&muted=1&loop=1`} allow="autoplay;"></iframe>
 
     <div class="right_split">
       <img src="https://picsum.photos/seed/picsum/900/1600" alt="" />
-      <div>
+      <div class="space">
         <p>{product.index_p2}</p>
         <a href={"case/" + product.id}>Full project</a>
       </div>
@@ -27,64 +48,110 @@ const { product } = Astro.props;
   </div>
 </section>
 
+<!-- Vimeo Player Script -->
+
+<!-- <script type="module" is:browser>
+  import Player from "https://player.vimeo.com/api/player.js";
+
+  const autoplayIframe = document.getElementById("autoplayVideo"); // din altid-afspillende video
+  const hoverIframe = document.getElementById("hoverVideo"); // din hover-video
+
+  const autoplayPlayer = new Player(autoplayIframe);
+  const hoverPlayer = new Player(hoverIframe);
+
+  hoverIframe.parentElement.addEventListener("mouseenter", () => {
+    hoverPlayer.play();
+    autoplayPlayer.pause();
+  });
+
+  hoverIframe.parentElement.addEventListener("mouseleave", () => {
+    hoverPlayer.pause();
+    autoplayPlayer.play();
+  });
+</script> -->
+
+<!-- <script src="https://player.vimeo.com/api/player.js"></script>
+<script>
+  // Vent til DOM er loaded
+  document.addEventListener("DOMContentLoaded", function () {
+    const iframe = document.getElementById("hoverVideo");
+    const player = new Vimeo.Player(iframe);
+
+    iframe.addEventListener("mouseenter", () => {
+      player.play();
+    });
+
+    iframe.addEventListener("mouseleave", () => {
+      player.pause();
+    });
+  });
+</script> -->
+
 <style>
   /***********OVERORDNET *********/
   h3 {
     font-size: 2.5rem;
-    margin: 0;
+    margin: 0 0 25px 0;
   }
-
   h2 {
     text-align: center;
     margin: 150px 0 100px 0px;
   }
-
   p {
     font-size: 0.875rem;
     line-height: 1.5rem;
+    padding-bottom: 25px;
   }
-
+  a {
+    padding-top: 50px;
+  }
   /**************CASES **************/
   .case_grid {
     display: grid;
     margin-bottom: 200px;
     gap: 25px;
   }
-
   .case_left {
     display: flex;
     flex-direction: column;
   }
 
+  iframe {
+    width: 100%;
+    aspect-ratio: 16 / 9; /* holder proportioner */
+    border: none;
+    display: block;
+  }
   img {
     width: 100%;
   }
-
   .right_split {
     display: grid;
     grid-template-columns: 1fr 2fr;
     gap: 25px;
   }
-
   .left_split {
     display: grid;
     grid-template-columns: 1fr 1fr;
     gap: 25px;
   }
-
   .none {
     display: none;
+  }
+  .space {
+    display: flex;
+    flex-direction: column;
+    padding-bottom: 4rem;
   }
 
   @media (width >= 1024px) {
     p {
       font-size: 1.125rem;
+      padding-bottom: 0;
     }
-
     .none {
       display: block;
     }
-
     .case_right,
     .case_left {
       display: flex;
@@ -92,30 +159,15 @@ const { product } = Astro.props;
       flex-direction: column;
     }
 
+    .container {
+      display: flex;
+      gap: 25px;
+
+      flex-direction: column-reverse;
+    }
+
     .case_grid {
       grid-template-columns: 1fr 1fr;
     }
   }
 </style>
-<!-- 
-    <section class="case_grid">
-      <div class="case_left">
-        <div class="left_split">
-          <div>
-            <h3>microsoft</h3>
-            <p>We created a brand film for Microsoft that highlights how trust and technology intersect in one of the world’s most remote and rugged landscapes — Iceland. The narrative follows individuals who rely on digital infrastructure in their daily lives, set against vast, cinematic scenery.</p>
-          </div>
-          <img src="https://picsum.photos/seed/picsum/500/500" alt="" />
-        </div>
-
-        <img class="none" src="https://picsum.photos/seed/picsum/1500/1000" alt="" />
-      </div>
-
-      <div>
-        <img src="https://picsum.photos/seed/picsum/1500/1000" alt="" />
-        <div>
-          <p>This project was about capturing the quiet strength of Icelandic communities and illustrating how Microsoft’s technologies enable connection, resilience, and progress. We used a grounded visual language to tell a human-centered story — one that reflects both innovation and intimacy.</p>
-          <a href="">Full project</a>
-        </div>
-      </div>
-    </section> -->
