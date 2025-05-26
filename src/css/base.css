@@ -19,17 +19,28 @@
 }
 
 /* Reset */
-*, *::before, *::after {
+*,
+*::before,
+*::after {
   box-sizing: border-box;
 }
 
-body, h1, h2, h3, h4, h5, h6, p, ul, ol {
+body,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+p,
+ul,
+ol {
   margin: 0;
   padding: 0;
 }
 
 /* Layout */
-body{
+body {
   background-color: var(--background-color);
 }
 
@@ -39,19 +50,30 @@ main {
 }
 
 /* Typografi */
-h1, h2 {
+h1,
+h2 {
   font-family: var(--heading-font);
 }
 
-h3, h4, h6, .title, .menu li, .span1 {
+h3,
+h4,
+h6,
+.title,
+.menu li,
+.span1 {
   font-family: var(--secondary-font);
 }
 
-p, li, a {
+p,
+li,
+a {
   font-family: var(--body-font);
 }
 
-h1, h2, h3, .title {
+h1,
+h2,
+h3,
+.title {
   color: var(--red-font);
   text-transform: uppercase;
 }
@@ -62,31 +84,31 @@ h1 {
   text-align: center;
 }
 
-p, a{
-font-size: clamp(0.875rem, 1.5vw, 1.125rem);
-line-height: 1.5rem;
+p,
+a {
+  font-size: clamp(0.875rem, 1.5vw, 1.125rem);
+  line-height: 1.5rem;
 }
 
 h2 {
   font-size: clamp(1.875rem, 8vw, 3.5rem);
   line-height: clamp(1.6rem, 8vw, 2rem);
 }
+h3 {
+  font-size: clamp(1.2rem, 2.2vw, 2.5rem);
+}
 
-  h3 {
-    font-size: 2.5rem;
-  }
+h5 {
+  text-transform: uppercase;
+  text-align: center;
+  padding-bottom: 10px;
+  font-family: var(--heading-font);
+  font-size: clamp(1.5rem, 2vw, 2rem);
+}
 
-  h5 {
-    text-transform: uppercase;
-    text-align: center;
-    padding-bottom: 10px;
-    font-family: var(--heading-font);
-    font-size: clamp(1.5rem, 2vw, 2rem);
-  }
-
-  h6{
+h6 {
   font-size: clamp(1rem, 1.5vw, 1.25rem);
-  }
+}
 
 .span1 {
   font-size: clamp(1.25rem, 8vw, 1.875rem);
@@ -104,17 +126,17 @@ a {
 }
 
 /***************FOOTER ***********/
-  footer {
-    background-color: #040404;
-    color: white;
-  }
+footer {
+  background-color: #040404;
+  color: white;
+}
 
-footer p{
+footer p {
   font-size: clamp(0.875rem, 1.4vw, 1rem);
   font-family: var(--body-font);
 }
 
-footer a{
+footer a {
   color: white;
 }
 
