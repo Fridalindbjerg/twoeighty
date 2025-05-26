@@ -75,16 +75,9 @@ import ButtonFooter from "../components/ButtonFooter.astro";
           <div class="footer-container">
             <h6>SOCIALS</h6>
             <div class="icon-container">
-              <a href="https://www.instagram.com/280cph/"
-                ><img src="/insta_white.webp" alt="Instagram logo" /></a
-              >
-              <a href="https://vimeo.com/280cph"
-                ><img src="vimeo_white.webp" alt="Vimeo logo" /></a
-              >
-              <a
-                href="https://www.linkedin.com/company/280cph/?originalSubdomain=dk"
-                ><img src="linkedin_white.webp" alt="LinkedIn logo" /></a
-              >
+              <a href="https://www.instagram.com/280cph/"><img src="/insta_white.webp" alt="Instagram logo" /></a>
+              <a href="https://vimeo.com/280cph"><img src="vimeo_white.webp" alt="Vimeo logo" /></a>
+              <a href="https://www.linkedin.com/company/280cph/?originalSubdomain=dk"><img src="linkedin_white.webp" alt="LinkedIn logo" /></a>
             </div>
           </div>
           <div class="button">
@@ -105,6 +98,7 @@ import ButtonFooter from "../components/ButtonFooter.astro";
       position: fixed;
       top: 0;
       width: 100%;
+      max-width: 1440px;
       z-index: 1000;
       background-color: var(--background-color);
     }
@@ -118,11 +112,16 @@ import ButtonFooter from "../components/ButtonFooter.astro";
       color: black;
     }
 
+    header a:hover {
+      transform: scale(1.1); /* zoom 20% op */
+    }
+
     .nav-container {
       display: flex;
       justify-content: space-between;
       align-items: center;
       margin: 10px 30px;
+      max-width: 1440px;
     }
 
     /* Venstre side: burger og/eller links */
@@ -172,13 +171,13 @@ import ButtonFooter from "../components/ButtonFooter.astro";
     }
 
     .burger.open span:nth-child(1) {
-      transform: translateY(8px) rotate(45deg);
+      transform: translateY(6.1px) rotate(45deg);
     }
     .burger.open span:nth-child(2) {
       opacity: 0;
     }
     .burger.open span:nth-child(3) {
-      transform: translateY(-8px) rotate(-45deg);
+      transform: translateY(-8.1px) rotate(-45deg);
     }
 
     /**** MOBIL DROPDOWN MENU ****/

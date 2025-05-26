@@ -4,7 +4,7 @@ import Layout from "../layouts/Layout.astro";
 ---
 
 <Layout>
-  <section class="header_img">
+  <section class="header_img full-width">
     <h1>
       <span class="title">Get in touch with</span>
       <br />
@@ -60,7 +60,6 @@ import Layout from "../layouts/Layout.astro";
     background-repeat: no-repeat;
     background-size: cover;
     /* background-position: center; */
-    width: 100vw;
     height: 70vh;
     position: relative;
     align-content: center;
@@ -70,8 +69,8 @@ import Layout from "../layouts/Layout.astro";
     background-color: black;
     color: white;
     padding: 40px;
-    width: 70%;
-    max-width: 350px;
+    width: 75%;
+    max-width: 480px;
     margin: 0 auto;
     position: relative;
     top: -200px;
@@ -88,7 +87,7 @@ import Layout from "../layouts/Layout.astro";
   form {
     display: grid;
     grid-template-columns: repeat(2, 1fr);
-    gap: 10px;
+    gap: 20px;
   }
 
   input,
@@ -123,13 +122,16 @@ import Layout from "../layouts/Layout.astro";
 
   .f6 {
     text-align: center;
+    padding-left: 30px;
+    padding-top: 15px;
   }
+
+  /* BUTTON */
 
   .corner-button {
     position: relative;
     background: transparent;
     border: none;
-    font-size: 12px;
     font-weight: 500;
     padding: 7px 9px;
     cursor: pointer;
@@ -191,6 +193,9 @@ import Layout from "../layouts/Layout.astro";
     input,
     textarea {
       font-size: 16px;
+    }
+    form {
+      gap: 30px;
     }
   }
   @media (width >= 1000px) {

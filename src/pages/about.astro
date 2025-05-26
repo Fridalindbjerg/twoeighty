@@ -121,13 +121,15 @@ import Button from "../components/Button.astro";
         grid-row: 1;
         margin-right: 0;
       }
-
+      h2 {
+        margin-bottom: 20px;
+      }
       .grid_1 {
         display: grid;
         grid-template-columns: repeat(5, 1fr);
         row-gap: 35px;
-        margin-top: 35px;
-        margin-bottom: 70px;
+        margin-top: 80px;
+        margin-bottom: 90px;
       }
 
       .who {
@@ -163,18 +165,18 @@ import Button from "../components/Button.astro";
         position: relative;
         background: transparent;
         border: none;
-        font-size: 12px;
+        font-size: clamp(1.25rem, 2vw + 0.5rem, 1.875rem);
         font-weight: 500;
         padding: 7px 9px;
         cursor: pointer;
-        color: var(--redfont);
+        color: var(--red-font);
       }
 
       .corner {
         position: absolute;
         width: 7px;
         height: 7px;
-        border: 1.5px solid var(--redfont);
+        border: 1.5px solid var(--red-font);
       }
 
       .top-left {
@@ -223,8 +225,9 @@ import Button from "../components/Button.astro";
         display: grid;
         grid-template-columns: repeat(2, 1fr);
         justify-items: center;
-        margin-top: 70px;
+        margin-top: 50px;
         margin-bottom: 100px;
+        row-gap: 40px;
       }
 
       .services {
@@ -268,11 +271,6 @@ import Button from "../components/Button.astro";
       .intro img {
         width: 300px;
       }
-      @media (width >= 500px) {
-        .corner-button {
-          font-size: 0.875rem;
-        }
-      }
 
       @media (width >= 600px) {
         .intro img {
@@ -283,10 +281,6 @@ import Button from "../components/Button.astro";
       @media (width >= 700px) {
         .intro img {
           width: 400px;
-        }
-
-        .corner-button {
-          font-size: 1rem;
         }
       }
 
@@ -328,8 +322,13 @@ import Button from "../components/Button.astro";
           height: 380px;
         }
 
+        .corner {
+          width: 11px;
+          height: 11px;
+        }
+
         .corner-button {
-          font-size: 1.125rem;
+          padding: 9px 11px;
         }
       }
 
@@ -365,15 +364,6 @@ import Button from "../components/Button.astro";
 
         li {
           font-size: 1.125rem;
-        }
-
-        .corner-button {
-          font-size: 2.5rem;
-        }
-
-        .corner {
-          width: 15px;
-          height: 15px;
         }
       }
     </style>
