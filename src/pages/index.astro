@@ -26,7 +26,7 @@ const data = await fetch(curl, options).then((response) => response.json());
       <a href="/about">Learn more</a>
     </div>
     <div class="img_container">
-      <video autoplay muted playsinline class="img_hero" src="/public/index1.mp4"></video>
+      <video autoplay muted playsinline class="img_hero" src="/index1.mp4"></video>
     </div>
   </section>
 
@@ -38,7 +38,7 @@ const data = await fetch(curl, options).then((response) => response.json());
       </div>
     </div>
 
-    {data.map((product) => <Case {product} />)}
+    {data.map((singleCase) => <Case {singleCase} />)}
   </section>
 
   <section class="grid_3_1 black">
