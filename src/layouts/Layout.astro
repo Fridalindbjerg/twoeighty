@@ -75,9 +75,16 @@ import ButtonFooter from "../components/ButtonFooter.astro";
           <div class="footer-container">
             <h6>SOCIALS</h6>
             <div class="icon-container">
-              <a href="https://www.instagram.com/280cph/"><img src="/insta_white.webp" alt="Instagram logo" /></a>
-              <a href="https://vimeo.com/280cph"><img src="vimeo_white.webp" alt="Vimeo logo" /></a>
-              <a href="https://www.linkedin.com/company/280cph/?originalSubdomain=dk"><img src="linkedin_white.webp" alt="LinkedIn logo" /></a>
+              <a href="https://www.instagram.com/280cph/"
+                ><img src="/insta_white.webp" alt="Instagram logo" /></a
+              >
+              <a href="https://vimeo.com/280cph"
+                ><img src="vimeo_white.webp" alt="Vimeo logo" /></a
+              >
+              <a
+                href="https://www.linkedin.com/company/280cph/?originalSubdomain=dk"
+                ><img src="linkedin_white.webp" alt="LinkedIn logo" /></a
+              >
             </div>
           </div>
           <div class="button">
@@ -90,17 +97,18 @@ import ButtonFooter from "../components/ButtonFooter.astro";
   </body>
 
   <style>
-    main {
-      margin-top: 4.5rem;
-    }
     /**** HEADER ****/
     header {
       position: fixed;
       top: 0;
       width: 100%;
-      max-width: 1440px;
       z-index: 1000;
       background-color: var(--background-color);
+    }
+
+    nav {
+      max-width: 2000px;
+      margin: 0 auto;
     }
 
     header img {
@@ -121,7 +129,6 @@ import ButtonFooter from "../components/ButtonFooter.astro";
       justify-content: space-between;
       align-items: center;
       margin: 10px 30px;
-      max-width: 1440px;
     }
 
     /* Venstre side: burger og/eller links */
