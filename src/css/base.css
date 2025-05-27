@@ -48,7 +48,7 @@ main {
   margin: 0 auto;
   width: 95%;
   max-width: 2000px;
-  margin-top: 4,5rem;
+  margin-top: 4, 5rem;
 }
 
 .full-width {
@@ -96,8 +96,7 @@ h1 {
 }
 
 p,
-a,
-.corner-button {
+a {
   font-size: clamp(0.875rem, 1.5vw, 1.125rem);
   line-height: clamp(1.5rem, 5vw, 1.8rem);
 }
@@ -116,18 +115,6 @@ h4 {
   padding-bottom: 15px;
 }
 
-.corner-button:hover {
-  transform: scale(1.1);
-  color: var(--red-font);
-}
-
-.corner-button:hover .corner {
-  border-color: var(--red-font);
-}
-
-.corner1-button:hover {
-  transform: scale(1.1);
-}
 h5 {
   text-transform: uppercase;
   text-align: center;
@@ -136,8 +123,7 @@ h5 {
   font-size: clamp(1.5rem, 2vw, 2rem);
 }
 
-h6,
-.corner1-button {
+h6 {
   font-size: clamp(1rem, 1.5vw, 1.25rem);
 }
 
@@ -181,4 +167,3 @@ footer a {
 .icon-container img:hover {
   transform: scale(1.2); /* zoom 20% op */
 }
-

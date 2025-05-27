@@ -16,9 +16,12 @@ import "/src/css/base.css";
     background: transparent;
     border: none;
     font-weight: 500;
-    padding: 7px 9px;
+    padding: 2% 8%;
     cursor: pointer;
     margin-right: 30px;
+    font-size: clamp(0.875rem, 1.5vw, 1.125rem);
+    line-height: clamp(1.5rem, 5vw, 1.8rem);
+    white-space: nowrap;
   }
 
   .corner {
@@ -56,8 +59,13 @@ import "/src/css/base.css";
     border-top: none;
   }
 
-  button:hover {
-    font-size: larger;
+  .corner-button:hover {
+    transform: scale(1.1);
+    color: var(--red-font);
+  }
+
+  .corner-button:hover .corner {
+    border-color: var(--red-font);
   }
 
   @media (width >= 1000px) {
