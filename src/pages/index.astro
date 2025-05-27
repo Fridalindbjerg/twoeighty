@@ -4,6 +4,7 @@ import Layout from "../layouts/Layout.astro";
 import Typewriter from "../components/Typewriter.astro";
 import Case from "../components/Case.astro";
 import ButtonArchive from "../components/ButtonArchive.astro";
+import Button from "../components/Button.astro";
 
 const curl = "https://lescamgejebsqtwecrww.supabase.co/rest/v1/twoeighty_cases?selected=eq.true";
 
@@ -44,15 +45,16 @@ const data = await fetch(curl, options).then((response) => response.json());
   <section class="grid_3_1 black full-width">
     <div>
       <p class="margin_r">We are TWOEIGHTY — a Copenhagen-based production company driven by curiosity, collaboration and craft. We work with brands, agencies and artists to create visually striking, emotionally honest storytelling — from commercials and branded content to music videos and experimental formats. Our work is rooted in a playful, conceptual approach and a belief in the power of real people and real moments.</p>
-      <a href="XXX">Learn more</a>
+      <a href="/about">Learn more</a>
     </div>
     <div class="grid_9_1">
-      <img src="/twoeighty.webp" alt="" />
+      <img src="/280_1.webp" alt="anders og morten" />
       <p class="vertical">twoeighty</p>
     </div>
     <p class="bottom">Behind every frame is a team that values process as much as product. We’re not just here to deliver — we’re here to co-create. With strong emphasis on creative sparring, visual identity and human connection, we strive to make every collaboration feel intuitive, transparent and full of energy.</p>
   </section>
   <Socials />
+  <Button />
 </Layout>
 
 <style>
@@ -78,6 +80,11 @@ const data = await fetch(curl, options).then((response) => response.json());
   }
 
   /****************ABOUT *****************/
+
+  /* .grid_9_1 img {
+    max-width: 80%;
+  } */
+
   .bottom {
     margin-top: 25px;
   }
