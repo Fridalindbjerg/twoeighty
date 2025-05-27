@@ -5,77 +5,70 @@ import "/src/css/base.css";
 <section>
   <h2>twoeighty's</h2>
   <h3>socials</h3>
-  <div class="flex_row">
+  <div class="grid_3_1">
     <a class="margin_r none" href="https://www.instagram.com/p/C3kQ29NIzbn/"><img src="socials/socials_1.webp" alt="to modeller med kasket" /></a>
     <a href="https://www.instagram.com/p/CpKZgCdoNQN/?img_index=5"><img src="socials/socials_2.webp" alt="behind the scenes på et filmset" /></a>
 
-    <div class="flex_col">
-      <div class="flex_row center">
+    <div>
+      <div class="flexCol center">
         <a href="https://www.instagram.com/280cph/"><img src="/insta_black.webp" alt="instagram logo" /></a>
         <a href="https://vimeo.com/280cph"><img src="/vimeo_black.webp" alt="vimeo logo" /></a>
         <a href="https://www.linkedin.com/company/280cph/"><img src="/linkedind_black.webp" alt="linkedin logo" /></a>
       </div>
 
-      <div>
-        <a href="https://www.instagram.com/p/CwXbkogMti7/">
-          <img class="margin_b" src="/socials/socials_3.webp" alt="gruppebilede fra et filmset" /></a>
+      <div class="flexRow">
+        <a href="https://www.instagram.com/p/CwXbkogMti7/"> <img class="margin_b" src="/socials/socials_3.webp" alt="gruppebilede fra et filmset" /></a>
         <a href="https://www.instagram.com/p/Co9qgyCI8TG/?img_index=1"><img src="/socials/socials_6.webp" alt="profilbillede af mand" /></a>
       </div>
     </div>
 
     <a href="https://www.instagram.com/p/ClOB13qoGBe/?img_index=4"> <img src="/socials/socials_5.webp" alt="billede af en mand i underbukser" /></a>
-    <a class="margin_l none" href="https://www.instagram.com/p/CXxyq0Jsshr/"><img src="/socials/socials_4.webp" alt="behind the scenes billede på et set" />
-    </a>
+    <a class="margin_r none" href="https://www.instagram.com/p/CXxyq0Jsshr/"><img src="/socials/socials_4.webp" alt="behind the scenes billede på et set" /> </a>
   </div>
 </section>
 
 <style>
-
-
-  .margin_r {
-    margin-top: 15%;
-  }
-
-  .margin_l {
-    margin-top: 10%;
-  }
-
-  .none {
-  display: none;
-  }
-  .center {
-    display: flex;
-    gap: 0.2rem;
-    margin: 0 10%; /* fx 1rem mellem hvert logo */
-  }
-
-  .flex_col {
+  .flexRow {
     display: flex;
     flex-direction: column;
+    gap: 5px;
+  }
+  .none {
+    display: none;
+  }
+  .grid_3_1 {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
     gap: 10px;
+    margin-top: 50px;
+  }
+  .flexCol {
+    padding: 0 20%;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    margin-top: 1rem;
+  }
+
+  .margin_r {
+    margin-top: 35%;
   }
 
   img {
     max-width: 100%;
   }
-  .flex_row {
-    display: flex;
-    flex-direction: row;
-    justify-content: space-between;
-    gap: 10px
+
+  .flexCol a img {
+    margin-bottom: 10px;
+    display: block;
+    width: 100%;
+    height: auto;
   }
 
-  .center a img {
-  margin-bottom: 20px;
-  display: block;
-  width: 100%;
-  height: auto;
-  }
-
-  .center a {
-  display: block;
-max-width: 40px;  
-height: auto; */
+  .flexCol a {
+    display: block;
+    max-width: 20px;
+    /* height: auto; */
   }
 
   h2,
@@ -92,21 +85,33 @@ height: auto; */
   }
 
   @media (width >= 750px) {
-    .none {
-    visibility: visible;
+    .grid_3_1 {
+      grid-template-columns: repeat(5, 1fr);
+      gap: 25px;
+    }
+    .flexCol {
+      margin-top: 3rem;
+      padding: 0 5%;
+    }
+    .flexRow {
+      gap: 15px;
+    }
+    .flexCol a {
+      max-width: 40px;
+    }
+    .flexCol a img {
+      margin-bottom: 20px;
     }
 
-    .flex_col {
-      margin-top: 3rem; /* fx 1rem mellem hvert logo */
+    .none {
+      display: block;
     }
   }
 
-  @media (width >= 900px) {
-    .none {
-display: block;    }
-
-    .flex_col {
-      margin-top: 5rem ; /* fx 1rem mellem hvert logo */
+  @media (width >= 1300px) {
+    .flexCol {
+      margin-top: 3rem;
+      padding: 0 15%;
     }
   }
 </style>
