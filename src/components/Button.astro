@@ -2,16 +2,16 @@
 import "/src/css/base.css";
 ---
 
-<button onclick="window.location.href='/contact'" class="corner-button">
-  <span class="corner top-left"></span>
-  <span class="corner top-right"></span>
-  <span class="corner bottom-left"></span>
-  <span class="corner bottom-right"></span>
+<button onclick="window.location.href='/contact'" class="corner2-button button">
+  <span class="corner2 top2-left"></span>
+  <span class="corner2 top2-right"></span>
+  <span class="corner2 bottom2-left"></span>
+  <span class="corner2 bottom2-right"></span>
   GET IN TOUCH
 </button>
 
 <style>
-  .corner-button {
+  .corner2-button {
     position: relative;
     background: transparent;
     border: none;
@@ -20,38 +20,58 @@ import "/src/css/base.css";
     cursor: pointer;
   }
 
-  .corner {
+  .corner2 {
     position: absolute;
     width: 7px;
     height: 7px;
     border: 1.5px solid black;
   }
 
-  .top-left {
+  .top2-left {
     top: 0;
     left: 0;
     border-right: none;
     border-bottom: none;
   }
 
-  .top-right {
+  .top2-right {
     top: 0;
     right: 0;
     border-left: none;
     border-bottom: none;
   }
 
-  .bottom-left {
+  .bottom2-left {
     bottom: 0;
     left: 0;
     border-right: none;
     border-top: none;
   }
 
-  .bottom-right {
+  .bottom2-right {
     bottom: 0;
     right: 0;
     border-left: none;
     border-top: none;
+  }
+
+  .corner2-button:hover {
+    transform: scale(1.1);
+    color: var(--red-font);
+  }
+
+  .corner2-button:hover .corner2 {
+    border-color: var(--red-font);
+  }
+
+  @media (width >= 1000px) {
+    .corner2-button {
+      padding: 9px 11px;
+    }
+
+    .corner2 {
+      width: 11px;
+      height: 11px;
+    }
   }
 </style>

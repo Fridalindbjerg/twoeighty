@@ -19,6 +19,8 @@ import "/src/css/base.css";
     padding: 7px 9px;
     cursor: pointer;
     margin-right: 30px;
+    font-size: clamp(0.875rem, 1.5vw, 1.125rem);
+    line-height: clamp(1.5rem, 5vw, 1.8rem);
   }
 
   .corner {
@@ -54,10 +56,6 @@ import "/src/css/base.css";
     right: 0;
     border-left: none;
     border-top: none;
-  }
-
-  button:hover {
-    font-size: larger;
   }
 
   @media (width >= 1000px) {
