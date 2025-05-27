@@ -4,6 +4,7 @@ import Layout from "../layouts/Layout.astro";
 import Typewriter from "../components/Typewriter.astro";
 import Case from "../components/Case.astro";
 import ButtonArchive from "../components/ButtonArchive.astro";
+import Button from "../components/Button.astro";
 
 const curl =
   "https://lescamgejebsqtwecrww.supabase.co/rest/v1/twoeighty_cases?selected=eq.true";
@@ -49,6 +50,7 @@ const data = await fetch(curl, options).then((response) => response.json());
     {data.map((singleCase) => <Case {singleCase} />)}
   </section>
 
+
   <section class="full-width">
     <div class="grid_3_1 black">
       <div>
@@ -63,7 +65,8 @@ const data = await fetch(curl, options).then((response) => response.json());
         <a href="XXX">Learn more</a>
       </div>
       <div class="grid_9_1">
-        <img src="/twoeighty.webp" alt="" />
+ 
+      <img src="/280_1.webp" alt="anders og morten" />
         <p class="vertical">twoeighty</p>
       </div>
       <p class="bottom">
@@ -76,6 +79,7 @@ const data = await fetch(curl, options).then((response) => response.json());
     </div>
   </section>
   <Socials />
+  <Button />
 </Layout>
 
 <style>
@@ -101,6 +105,11 @@ const data = await fetch(curl, options).then((response) => response.json());
   }
 
   /****************ABOUT *****************/
+
+  /* .grid_9_1 img {
+    max-width: 80%;
+  } */
+
   .bottom {
     margin-top: 25px;
   }
