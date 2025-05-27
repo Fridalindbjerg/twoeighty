@@ -182,7 +182,7 @@ footer a {
   transform: scale(1.2); /* zoom 20% op */
 }
 
-@media (width >= 1440px) {
+@media (width >= 1500px) {
   .full-width {
     width: auto !important;
     left: auto;
