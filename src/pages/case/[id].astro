@@ -3,9 +3,11 @@ import ButtonArchive from "../../components/ButtonArchive.astro";
 import Layout from "../../layouts/Layout.astro";
 
 export async function getStaticPaths() {
-  const curl = "https://lescamgejebsqtwecrww.supabase.co/rest/v1/twoeighty_cases?select=*";
+  const curl =
+    "https://lescamgejebsqtwecrww.supabase.co/rest/v1/twoeighty_cases?select=*";
 
-  const apikey = "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6Imxlc2NhbWdlamVic3F0d2Vjcnd3Iiwicm9sZSI6ImFub24iLCJpYXQiOjE3NDczMDI3MTcsImV4cCI6MjA2Mjg3ODcxN30.aoF4F4HWliGv7dB5WhKHov5-LFWZ-xm_RIfgX_L0Ul8";
+  const apikey =
+    "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6Imxlc2NhbWdlamVic3F0d2Vjcnd3Iiwicm9sZSI6ImFub24iLCJpYXQiOjE3NDczMDI3MTcsImV4cCI6MjA2Mjg3ODcxN30.aoF4F4HWliGv7dB5WhKHov5-LFWZ-xm_RIfgX_L0Ul8";
 
   const options = {
     headers: {
@@ -31,14 +33,24 @@ const { singleCase } = Astro.props;
 <Layout>
   <main>
     <div class="grid_12_1">
-      <img class="image_r" src={singleCase.hiro_right} alt=`stemningsbillede fra ${singleCase.name}` />
-      <h1>
-        <span class="title">introducing </span><br />{singleCase.name}
-      </h1>
-      <img class="image_l" src={singleCase.hiro_left} alt=`stemningsbillede fra ${singleCase.name}` />
-      <div class="button">
-        <ButtonArchive />
+      <img
+        class="image_r"
+        src={singleCase.hiro_right}
+        alt=`stemningsbillede fra ${singleCase.name}`
+      />
+      <div class="title_container">
+        <h1>
+          <span class="title">introducing </span><br />{singleCase.name}
+        </h1>
+        <div class="button">
+          <ButtonArchive />
+        </div>
       </div>
+      <img
+        class="image_l"
+        src={singleCase.hiro_left}
+        alt=`stemningsbillede fra ${singleCase.name}`
+      />
     </div>
     <section class="grid_2_1">
       <div class="left">
@@ -47,7 +59,11 @@ const { singleCase } = Astro.props;
           {singleCase.brief_text}
         </p>
       </div>
-      <img class="right" src={singleCase.brief_img} alt=`stemningsbillede fra ${singleCase.name}` />
+      <img
+        class="right"
+        src={singleCase.brief_img}
+        alt=`stemningsbillede fra ${singleCase.name}`
+      />
     </section>
     <section>
       <div class="centertext">
@@ -55,19 +71,39 @@ const { singleCase } = Astro.props;
         <p>{singleCase.process_text}</p>
       </div>
       <div class="flex_row1">
-        <img class="none1" src={singleCase.process_img1} alt=`stemningsbillede fra ${singleCase.name}` />
-        <img src={singleCase.process_img2} alt=`behind-the-scenes-billede fra ${singleCase.name}` />
+        <img
+          class="none1"
+          src={singleCase.process_img1}
+          alt=`stemningsbillede fra ${singleCase.name}`
+        />
+        <img
+          src={singleCase.process_img2}
+          alt=`behind-the-scenes-billede fra ${singleCase.name}`
+        />
 
         <div class="flex_col1">
           <div>
-            <img src={singleCase.process_img3} alt=`behind-the-scenes-billede fra ${singleCase.name}` />
+            <img
+              src={singleCase.process_img3}
+              alt=`behind-the-scenes-billede fra ${singleCase.name}`
+            />
           </div>
           <div>
-            <img src={singleCase.process_img4} alt=`stemningsbillede fra ${singleCase.name}` />
+            <img
+              src={singleCase.process_img4}
+              alt=`stemningsbillede fra ${singleCase.name}`
+            />
           </div>
         </div>
-        <img src={singleCase.process_img5} alt=`stemningsbillede fra ${singleCase.name}` />
-        <img class="none1" src={singleCase.process_img6} alt=`behind-the-scenes-billede fra ${singleCase.name}` />
+        <img
+          src={singleCase.process_img5}
+          alt=`stemningsbillede fra ${singleCase.name}`
+        />
+        <img
+          class="none1"
+          src={singleCase.process_img6}
+          alt=`behind-the-scenes-billede fra ${singleCase.name}`
+        />
       </div>
     </section>
   </main>
@@ -76,9 +112,14 @@ const { singleCase } = Astro.props;
       <h3>results</h3>
 
       <p>{singleCase.results_text}</p>
-      <iframe src={`${singleCase.resultsvid_right}?&muted=1&loop=1`} allow="autoplay;"></iframe>
+      <iframe
+        src={`${singleCase.resultsvid_right}?&muted=1&loop=1`}
+        allow="autoplay;"></iframe>
     </div>
-    <iframe class="margin_1" src={`${singleCase.resultsvid_left}?autoplay=1&muted=1&loop=1&background=1`} allow="autoplay; fullscreen"></iframe>
+    <iframe
+      class="margin_1"
+      src={`${singleCase.resultsvid_left}?autoplay=1&muted=1&loop=1&background=1`}
+      allow="autoplay; fullscreen"></iframe>
   </section>
   <div class="btn_last button2">
     <ButtonArchive />
@@ -106,11 +147,24 @@ const { singleCase } = Astro.props;
     section:last-of-type {
       margin-bottom: 150px;
     }
+
+    .title_container {
+      position: absolute;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+    }
+
     .grid_12_1 {
       display: grid;
       grid-template-columns: repeat(18, 1fr);
       grid-template-rows: auto;
       position: relative;
+      margin-top: 50px;
     }
     .image_r {
       grid-column: 13 / -1;
@@ -171,12 +225,6 @@ const { singleCase } = Astro.props;
       max-width: 100%;
     }
 
-    h1 {
-      margin: -3rem;
-      position: relative;
-      z-index: 2;
-    }
-
     .centertext {
       text-align: center;
     }
@@ -185,7 +233,6 @@ const { singleCase } = Astro.props;
       text-align: center;
       grid-column: 7 / 13;
       grid-row: 1;
-      margin-top: 130%;
     }
 
     @media (width >=500px) {

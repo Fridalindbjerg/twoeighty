@@ -6,9 +6,11 @@ import Case from "../components/Case.astro";
 import ButtonArchive from "../components/ButtonArchive.astro";
 import Button from "../components/Button.astro";
 
-const curl = "https://lescamgejebsqtwecrww.supabase.co/rest/v1/twoeighty_cases?selected=eq.true";
+const curl =
+  "https://lescamgejebsqtwecrww.supabase.co/rest/v1/twoeighty_cases?selected=eq.true";
 
-const apikey = "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6Imxlc2NhbWdlamVic3F0d2Vjcnd3Iiwicm9sZSI6ImFub24iLCJpYXQiOjE3NDczMDI3MTcsImV4cCI6MjA2Mjg3ODcxN30.aoF4F4HWliGv7dB5WhKHov5-LFWZ-xm_RIfgX_L0Ul8";
+const apikey =
+  "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6Imxlc2NhbWdlamVic3F0d2Vjcnd3Iiwicm9sZSI6ImFub24iLCJpYXQiOjE3NDczMDI3MTcsImV4cCI6MjA2Mjg3ODcxN30.aoF4F4HWliGv7dB5WhKHov5-LFWZ-xm_RIfgX_L0Ul8";
 
 const options = {
   headers: {
@@ -22,12 +24,18 @@ const data = await fetch(curl, options).then((response) => response.json());
   <section class="hero">
     <div class="hero_text">
       <Typewriter />
-      <p>A Copenhagen-based production company crafting bold, human stories across film, photography, and creative direction. We partner with brands, agencies, and artists to create work that feels honest, playful, and visually striking.</p>
+      <p>
+        A Copenhagen-based production company crafting bold, human stories
+        across film, photography, and creative direction. We partner with
+        brands, agencies, and artists to create work that feels honest, playful,
+        and visually striking.
+      </p>
 
       <a href="/about">Learn more</a>
     </div>
     <div class="img_container">
-      <video autoplay muted playsinline class="img_hero" src="/index1.mp4"></video>
+      <video autoplay muted playsinline class="img_hero" src="/index1.mp4"
+      ></video>
     </div>
   </section>
 
@@ -45,34 +53,45 @@ const data = await fetch(curl, options).then((response) => response.json());
   <section class="full-width">
     <div class="grid_3_1 black">
       <div>
-        <p class="margin_r">We are TWOEIGHTY — a Copenhagen-based production company driven by curiosity, collaboration and craft. We work with brands, agencies and artists to create visually striking, emotionally honest storytelling — from commercials and branded content to music videos and experimental formats. Our work is rooted in a playful, conceptual approach and a belief in the power of real people and real moments.</p>
+        <p class="margin_r">
+          We are TWOEIGHTY — a Copenhagen-based production company driven by
+          curiosity, collaboration and craft. We work with brands, agencies and
+          artists to create visually striking, emotionally honest storytelling —
+          from commercials and branded content to music videos and experimental
+          formats. Our work is rooted in a playful, conceptual approach and a
+          belief in the power of real people and real moments.
+        </p>
         <a href="XXX">Learn more</a>
       </div>
       <div class="grid_9_1">
         <img src="/280_1.webp" alt="anders og morten" />
         <p class="vertical">twoeighty</p>
       </div>
-      <p class="bottom">Behind every frame is a team that values process as much as product. We’re not just here to deliver — we’re here to co-create. With strong emphasis on creative sparring, visual identity and human connection, we strive to make every collaboration feel intuitive, transparent and full of energy.</p>
+      <p class="bottom">
+        Behind every frame is a team that values process as much as product.
+        We’re not just here to deliver — we’re here to co-create. With strong
+        emphasis on creative sparring, visual identity and human connection, we
+        strive to make every collaboration feel intuitive, transparent and full
+        of energy.
+      </p>
     </div>
   </section>
   <Socials />
-  <div>
+  <div class="intouch_btn">
     <Button />
   </div>
 </Layout>
 
 <style>
   /***********OVERORDNET *********/
-  div:last-of-type {
-    text-align: center;
-    margin: 80px 0;
-  }
-  a:first-of-type {
-    margin-top: 50px;
+
+  button section {
+    margin-bottom: 150px;
   }
 
-  section {
-    margin-bottom: 150px;
+  .intouch_btn {
+    text-align: center;
+    margin: 150px;
   }
   .center {
     text-align: center;
@@ -85,6 +104,27 @@ const data = await fetch(curl, options).then((response) => response.json());
   h2 {
     text-align: center;
     margin: 150px 0 15px 0px;
+  }
+
+  /*************HERO ****************/
+  .hero {
+    display: grid;
+    gap: 30px;
+    margin-top: 50px;
+  }
+  .hero_text {
+    text-align: center;
+  }
+
+  .img_container {
+    display: flex;
+    justify-content: center;
+    height: 80vh;
+    width: auto;
+  }
+
+  .img_hero {
+    width: auto;
   }
 
   /****************ABOUT *****************/
@@ -100,6 +140,7 @@ const data = await fetch(curl, options).then((response) => response.json());
     background-color: var(--black);
     color: white;
     padding: 5%;
+    margin-bottom: 150px;
   }
 
   .grid_9_1 {
@@ -114,26 +155,6 @@ const data = await fetch(curl, options).then((response) => response.json());
     margin-left: -2rem;
     font-family: Friz;
     text-transform: uppercase;
-  }
-
-  /*************HERO ****************/
-  .hero {
-    display: grid;
-    gap: 30px;
-  }
-  .hero_text {
-    text-align: center;
-  }
-
-  .img_container {
-    display: flex;
-    justify-content: center;
-    height: 80vh;
-    width: auto;
-  }
-
-  .img_hero {
-    width: auto;
   }
 
   @media (width >= 768px) {
