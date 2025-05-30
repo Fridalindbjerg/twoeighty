@@ -1,0 +1,195 @@
+---
+const { videoId, autoplayOnView = false, span = "" } = Astro.props;
+const thumbnailUrl = `https://vumbnail.com/${videoId}.jpg`;
+---
+
+<!-- ---
+const { videoId, span } = Astro.props;
+const thumbnailUrl = `https://vumbnail.com/${videoId}.jpg`;
+---
+
+<div class={`video-wrapper ${span}`} data-video-id={videoId}>
+  <img src={thumbnailUrl} alt="Video thumbnail" />
+  <div class="play-button">
+    <svg width="30" height="30" viewBox="0 0 24 24" fill="#fff">
+      <path d="M8 5v14l11-7z"></path>
+    </svg>
+  </div>
+</div>
+
+<script is:inline>
+  document.querySelectorAll(".video-wrapper").forEach((wrapper) => {
+    wrapper.addEventListener("click", () => {
+      const videoId = wrapper.dataset.videoId;
+      const iframe = document.createElement("iframe");
+      iframe.setAttribute("src", `https://player.vimeo.com/video/${videoId}?autoplay=1&muted=1`);
+      iframe.setAttribute("frameborder", "0");
+      iframe.setAttribute("allow", "autoplay; fullscreen; picture-in-picture");
+      iframe.setAttribute("allowfullscreen", "");
+      iframe.style.width = "100%";
+      iframe.style.height = "100%";
+
+      wrapper.innerHTML = "";
+      wrapper.appendChild(iframe);
+    });
+  });
+</script>
+
+<style>
+  .video-wrapper {
+    position: relative;
+    width: 100%;
+    aspect-ratio: 16 / 9;
+    cursor: pointer;
+    overflow: hidden;
+  }
+
+  .video-wrapper img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
+  }
+
+  .play-button {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 80px;
+    height: 80px;
+    background: rgba(0, 0, 0, 0.6);
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: background 0.3s ease;
+  }
+
+  .play-button:hover {
+    background: rgba(0, 0, 0, 0.8);
+  }
+  .span2 {
+    grid-column: span 2;
+  }
+
+  .span3 {
+    grid-column: span 3;
+  }
+  .span4 {
+    grid-column: span 4;
+  }
+</style> -->
+<div class={`video-wrapper ${span}`} data-video-id={videoId} data-autoplay-on-view={autoplayOnView ? "true" : "false"} style="position: relative; cursor: pointer; aspect-ratio: 16 / 9;">
+  <img src={thumbnailUrl} alt="Video thumbnail" style="width: 100%; height: 100%; object-fit: cover;" />
+  <div class="play-button" aria-label="Play video">
+    <svg width="30" height="30" viewBox="0 0 24 24" fill="#fff">
+      <path d="M8 5v14l11-7z"></path>
+    </svg>
+  </div>
+</div>
+
+<style>
+  .span2 {
+    grid-column: span 2;
+  }
+
+  .span3 {
+    grid-column: span 3;
+  }
+  .span4 {
+    grid-column: span 4;
+  }
+  .video-wrapper {
+    position: relative;
+    width: 100%;
+    cursor: pointer;
+    overflow: hidden;
+  }
+
+  .video-wrapper img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
+  }
+
+  .play-button {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 80px;
+    height: 80px;
+    background: rgba(0, 0, 0, 0.6);
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: background 0.3s ease;
+  }
+
+  .play-button:hover {
+    background: rgba(0, 0, 0, 0.8);
+  }
+</style>
+
+<script is:inline>
+  document.addEventListener("DOMContentLoaded", () => {
+    // hele dit script her
+
+    const options = {
+      root: null,
+      rootMargin: "0px",
+      threshold: 0.5,
+    };
+
+    const observer = new IntersectionObserver((entries, obs) => {
+      entries.forEach((entry) => {
+        if (entry.isIntersecting) {
+          const wrapper = entry.target;
+          // Tjek om autoplay-on-view er true
+          if (wrapper.dataset.autoplayOnView === "true") {
+            const videoId = wrapper.dataset.videoId;
+
+            const iframe = document.createElement("iframe");
+            iframe.setAttribute("src", `https://player.vimeo.com/video/${videoId}?autoplay=1&muted=1`);
+            iframe.setAttribute("frameborder", "0");
+            iframe.setAttribute("allow", "autoplay; fullscreen; picture-in-picture");
+            iframe.setAttribute("allowfullscreen", "");
+            iframe.style.width = "100%";
+            iframe.style.height = "100%";
+
+            wrapper.innerHTML = "";
+            wrapper.appendChild(iframe);
+
+            obs.unobserve(wrapper);
+          }
+        }
+      });
+    }, options);
+
+    // Kun observer de med data-autoplay-on-view="true"
+    document.querySelectorAll(".video-wrapper[data-autoplay-on-view='true']").forEach((el) => observer.observe(el));
+
+    // Tilføj klik-event til alle, også dem uden autoplay-on-view, så de kan afspille på klik
+    document.querySelectorAll(".video-wrapper").forEach((wrapper) => {
+      wrapper.addEventListener("click", () => {
+        // Hvis autoplay-on-view ikke er true, så afspil ved klik i stedet
+        if (wrapper.dataset.autoplayOnView !== "true") {
+          const videoId = wrapper.dataset.videoId;
+          const iframe = document.createElement("iframe");
+          iframe.setAttribute("src", `https://player.vimeo.com/video/${videoId}?autoplay=1&muted=1`);
+          iframe.setAttribute("frameborder", "0");
+          iframe.setAttribute("allow", "autoplay; fullscreen; picture-in-picture");
+          iframe.setAttribute("allowfullscreen", "");
+          iframe.style.width = "100%";
+          iframe.style.height = "100%";
+
+          wrapper.innerHTML = "";
+          wrapper.appendChild(iframe);
+        }
+      });
+    });
+  });
+</script>
