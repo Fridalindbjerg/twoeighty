@@ -11,12 +11,12 @@ import VideoIframe from "../components/VideoIframe.astro";
   </div>
   <div class="gap">
     <section>
-      <VideoIframe videoId="1009499573" autoplayOnView={false} span="span4" />
+      <VideoIframe videoId="1009499573" autoplayOnView={true} span="span4" />
 
       <img class="span2" src="https://freight.cargo.site/w/1000/q/75/i/02f98ffc4f43d06a01d04b199e8e7f2292e749b36485b7c4cd4fdd1e3032afce/DSC_9073_web_1.jpg" alt="man in white shirt" />
       <img class="span2" src="https://freight.cargo.site/w/1000/q/75/i/3aec979f451831658a214cd737d7b3a4a0ca0cdc4dc61458e389b46b4f59a05f/DSC_9949_web.jpg" alt="man without pant standing in water" />
 
-      <VideoIframe videoId="260068158" autoplayOnView={false} span="span4" />
+      <VideoIframe videoId="260068158" autoplayOnView={true} span="span4" />
       <!-- Fatmoose -->
 
       <img src="https://freight.cargo.site/w/1000/q/75/i/da7015edb87bcd77406650d9b3415a28163ec5a7ff1e158a79ace4be513b9c39/Fatmoose_AW21_0297.jpg" alt="man i a winther jacket" />
@@ -40,7 +40,7 @@ import VideoIframe from "../components/VideoIframe.astro";
 
       <!-- urbangym -->
 
-      <VideoIframe videoId="285877252" autoplayOnView={false} span="span4" />
+      <VideoIframe videoId="285877252" autoplayOnView={true} span="span4" />
 
       <VideoIframe videoId="1069897374" autoplayOnView={false} span="span2" />
       <VideoIframe videoId="1069906212" autoplayOnView={false} span="span2" />
@@ -150,36 +150,3 @@ import VideoIframe from "../components/VideoIframe.astro";
     }
   }
 </style>
-<!-- 
-<script>
-  const options = {
-    root: null,
-    rootMargin: "0px",
-    threshold: 0.5,
-  };
-
-  const observer = new IntersectionObserver((entries, obs) => {
-    entries.forEach((entry) => {
-      if (entry.isIntersecting) {
-        const wrapper = entry.target;
-        const videoId = wrapper.dataset.videoId;
-
-        // Lav iframe og autoplay video
-        const iframe = document.createElement("iframe");
-        iframe.setAttribute("src", `https://player.vimeo.com/video/${videoId}?autoplay=1&muted=1`);
-        iframe.setAttribute("frameborder", "0");
-        iframe.setAttribute("allow", "autoplay; fullscreen; picture-in-picture");
-        iframe.setAttribute("allowfullscreen", "");
-        iframe.style.width = "100%";
-        iframe.style.height = "100%";
-
-        wrapper.innerHTML = ""; // Fjern thumbnail + play knap
-        wrapper.appendChild(iframe);
-
-        obs.unobserve(wrapper); // Stop med at observere
-      }
-    });
-  }, options);
-
-  document.querySelectorAll(".video-wrapper").forEach((el) => observer.observe(el));
-</script> -->
