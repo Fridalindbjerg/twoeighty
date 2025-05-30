@@ -31,7 +31,6 @@ const { singleCase } = Astro.props;
       <p>{singleCase.index_p1}</p>
     </div>
 
-    <!-- Vimeo video med hover-effekt -->
     <iframe id="autoplayVideo" src={`${singleCase.resultsvid_left}?autoplay=1&muted=1&loop=1&background=1`} allow="autoplay; fullscreen"></iframe>
   </div>
 
@@ -115,7 +114,7 @@ const { singleCase } = Astro.props;
 
   iframe {
     width: 100%;
-    aspect-ratio: 16 / 9; /* holder proportioner */
+    aspect-ratio: 16 / 9;
     border: none;
     display: block;
   }
