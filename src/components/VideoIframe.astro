@@ -90,6 +90,9 @@ const thumbnailUrl = `https://vumbnail.com/${videoId}.jpg`;
 </div>
 
 <style>
+  .none {
+    display: none;
+  }
   .span2 {
     grid-column: span 2;
   }
@@ -132,8 +135,85 @@ const thumbnailUrl = `https://vumbnail.com/${videoId}.jpg`;
   .play-button:hover {
     background: rgba(0, 0, 0, 0.8);
   }
+  @media (width >= 1024px) {
+    .none {
+      display: block;
+    }
+  }
 </style>
 
+<script is:inline>
+  document.addEventListener("DOMContentLoaded", () => {
+    const options = {
+      root: null,
+      rootMargin: "0px",
+      threshold: 0.5,
+    };
+
+    const observer = new IntersectionObserver((entries) => {
+      entries.forEach((entry) => {
+        const wrapper = entry.target;
+        const autoplay = wrapper.dataset.autoplayOnView === "true";
+        const videoId = wrapper.dataset.videoId;
+
+        if (entry.isIntersecting && autoplay && !wrapper.classList.contains("is-playing")) {
+          // Indsæt iframe og markér som "is-playing"
+          const iframe = document.createElement("iframe");
+          iframe.setAttribute("src", `https://player.vimeo.com/video/${videoId}?autoplay=1&muted=1`);
+          iframe.setAttribute("frameborder", "0");
+          iframe.setAttribute("allow", "autoplay; fullscreen; picture-in-picture");
+          iframe.setAttribute("title", "Videoafspiller – Vimeo video");
+          iframe.style.width = "100%";
+          iframe.style.height = "100%";
+
+          wrapper.innerHTML = "";
+          wrapper.appendChild(iframe);
+          wrapper.classList.add("is-playing");
+        } else if (!entry.isIntersecting && autoplay && wrapper.classList.contains("is-playing")) {
+          // Fjern iframe og genskab thumbnail + play-button
+          wrapper.classList.remove("is-playing");
+          wrapper.innerHTML = `
+            <img src="https://vumbnail.com/${videoId}.jpg" alt="Video thumbnail" style="width: 100%; height: 100%; object-fit: cover;" />
+            <div class="play-button" aria-label="Play video">
+              <svg width="30" height="30" viewBox="0 0 24 24" fill="#fff">
+                <path d="M8 5v14l11-7z"></path>
+              </svg>
+            </div>
+          `;
+        }
+      });
+    }, options);
+
+    // Observer kun autoplay-videoer
+    document.querySelectorAll(".video-wrapper[data-autoplay-on-view='true']").forEach((el) => {
+      observer.observe(el);
+    });
+
+    // Klik-afspilning for alle videoer
+    document.querySelectorAll(".video-wrapper").forEach((wrapper) => {
+      wrapper.addEventListener("click", () => {
+        // Undgå at afspille to gange
+        if (wrapper.classList.contains("is-playing")) return;
+
+        const videoId = wrapper.dataset.videoId;
+        const iframe = document.createElement("iframe");
+        iframe.setAttribute("src", `https://player.vimeo.com/video/${videoId}?autoplay=1&muted=1`);
+        iframe.setAttribute("frameborder", "0");
+        iframe.setAttribute("allow", "autoplay; fullscreen; picture-in-picture");
+        const title = wrapper.dataset.title || "Videoafspiller – Vimeo video";
+        iframe.setAttribute("title", title);
+        iframe.style.width = "100%";
+        iframe.style.height = "100%";
+
+        wrapper.innerHTML = "";
+        wrapper.appendChild(iframe);
+        wrapper.classList.add("is-playing");
+      });
+    });
+  });
+</script>
+
+<!-- 
 <script is:inline>
   document.addEventListener("DOMContentLoaded", () => {
     // hele dit script her
@@ -156,7 +236,7 @@ const thumbnailUrl = `https://vumbnail.com/${videoId}.jpg`;
             iframe.setAttribute("src", `https://player.vimeo.com/video/${videoId}?autoplay=1&muted=1`);
             iframe.setAttribute("frameborder", "0");
             iframe.setAttribute("allow", "autoplay; fullscreen; picture-in-picture");
-            iframe.setAttribute("allowfullscreen", "");
+            iframe.setAttribute("title", "Videoafspiller – Vimeo video");
             iframe.style.width = "100%";
             iframe.style.height = "100%";
 
@@ -183,6 +263,8 @@ const thumbnailUrl = `https://vumbnail.com/${videoId}.jpg`;
           iframe.setAttribute("frameborder", "0");
           iframe.setAttribute("allow", "autoplay; fullscreen; picture-in-picture");
           iframe.setAttribute("allowfullscreen", "");
+          const title = wrapper.dataset.title || "Videoafspiller – Vimeo video";
+          iframe.setAttribute("title", title);
           iframe.style.width = "100%";
           iframe.style.height = "100%";
 
@@ -192,4 +274,4 @@ const thumbnailUrl = `https://vumbnail.com/${videoId}.jpg`;
       });
     });
   });
-</script>
+</script> -->

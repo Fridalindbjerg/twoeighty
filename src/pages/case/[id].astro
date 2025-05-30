@@ -77,17 +77,18 @@ const { singleCase } = Astro.props;
   <section class="grid_2_1">
     <div>
       <h3>results</h3>
+
       <p>{singleCase.results_text}</p>
+
       <VideoIframe videoId={singleCase.resultsvid_left} autoplayOnView={true} />
     </div>
+
     <VideoIframe videoId={singleCase.resultsvid_right} autoplayOnView={false} />
   </section>
   <div class="btn_last button2">
     <ButtonArchive />
   </div>
 </Layout>
-
-<script src="https://player.vimeo.com/api/player.js"></script>
 
 <style>
   .btn_last {
