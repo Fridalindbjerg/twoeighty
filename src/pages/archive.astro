@@ -1,28 +1,22 @@
 ---
-import Button from "../components/Button.astro";
 import Layout from "../layouts/Layout.astro";
+import Button from "../components/Button.astro";
+import VideoIframe from "../components/VideoIframe.astro";
 ---
 
 <Layout>
-  <h1>
-    <!-- <span class="title">twoeighty production co.</span> -->
-
-    full archive
-  </h1>
+  <h1>full archive</h1>
   <div class="centered">
     <Button />
   </div>
   <div class="gap">
-    <script src="https://player.vimeo.com/api/player.js"></script>
-
     <section>
-      <div class="span4" style="padding:56.25% 0 0 0;position:relative;"><iframe src="https://player.vimeo.com/video/1009499573?badge=0&autopause=0&player_id=0&app_id=58479&autoplay=1" frameborder="0" allow="autoplay; fullscreen; picture-in-picture; clipboard-write; encrypted-media" style="position:absolute;top:0;left:0;width:100%;height:100%;" title="Running Insoles - Legs Physio"></iframe></div>
+      <VideoIframe videoId="1009499573" autoplayOnView={false} span="span4" />
 
       <img class="span2" src="https://freight.cargo.site/w/1000/q/75/i/02f98ffc4f43d06a01d04b199e8e7f2292e749b36485b7c4cd4fdd1e3032afce/DSC_9073_web_1.jpg" alt="man in white shirt" />
       <img class="span2" src="https://freight.cargo.site/w/1000/q/75/i/3aec979f451831658a214cd737d7b3a4a0ca0cdc4dc61458e389b46b4f59a05f/DSC_9949_web.jpg" alt="man without pant standing in water" />
-      <div class="span4" style="padding:50% 0 0 0;position:relative;">
-        <iframe src="https://player.vimeo.com/video/260068158?badge=0&autopause=0&player_id=0&app_id=58479&autoplay=1" frameborder="0" allow="autoplay; fullscreen; picture-in-picture; clipboard-write; encrypted-media" style="position:absolute;top:0;left:0;width:100%;height:100%;" title="Naturmanden"> </iframe>
-      </div>
+
+      <VideoIframe videoId="260068158" autoplayOnView={false} span="span4" />
       <!-- Fatmoose -->
 
       <img src="https://freight.cargo.site/w/1000/q/75/i/da7015edb87bcd77406650d9b3415a28163ec5a7ff1e158a79ace4be513b9c39/Fatmoose_AW21_0297.jpg" alt="man i a winther jacket" />
@@ -30,34 +24,67 @@ import Layout from "../layouts/Layout.astro";
       <img class="aspect span2" src="https://freight.cargo.site/w/12000/q/75/i/d5e8d80681449c12b7aa1f01a4e24974d72dc24745c502f11e8629f8ef1e3413/Fatmoose_AW21.jpg" alt="man in flannel infront of a container" />
 
       <!-- Fatmoose -->
+
       <!-- thykassen -->
 
-      <div class="span3" style="padding:56.25% 0 0 0;position:relative;"><iframe src="https://player.vimeo.com/video/739581016?badge=0&autopause=0&player_id=0&app_id=58479" frameborder="0" allow="autoplay; fullscreen; picture-in-picture; clipboard-write; encrypted-media" style="position:absolute;top:0;left:0;width:100%;height:100%;" title="Hippie - Thykassen"></iframe></div>
+      <VideoIframe videoId="739581016" autoplayOnView={false} span="span3" />
+
       <img class="aspect" src="https://freight.cargo.site/w/600/q/75/i/c2f5deac0638fec933a0ac0b1e852affcdab08404b67c9347c06b4835fe1e9d5/thykassen_web.jpg" alt="grøntsagskasse på græs" />
       <!-- thykassen -->
+      <!-- Denne video afspilles kun når brugeren klikker -->
+
       <!-- urbangym -->
       <img class="aspect" src="https://freight.cargo.site/w/900/q/94/i/5eeb59c6077a7ff21dde21bd8dfec4e69820b565b9bed021e333018ad8f08bab/UrbanGym_Mikela_280cph-copy.jpg" alt="fitnesskvinde med vægte i hænderne" />
 
-      <div class="span3" style="padding:56.25% 0 0 0;position:relative;"><iframe src="https://player.vimeo.com/video/353551674?badge=0&autopause=0&player_id=0&app_id=58479" frameborder="0" allow="autoplay; fullscreen; picture-in-picture; clipboard-write; encrypted-media" style="position:absolute;top:0;left:0;width:100%;height:100%;" title='UrbanGym - "Mikela"'></iframe></div>
+      <VideoIframe videoId="353551674" autoplayOnView={false} span="span3" />
 
       <!-- urbangym -->
 
-      <div class="span4" style="padding:56.25% 0 0 0;position:relative;"><iframe src="https://player.vimeo.com/video/285877252?badge=0&autopause=0&player_id=0&app_id=58479&autoplay=1" frameborder="0" allow="autoplay; fullscreen; picture-in-picture; clipboard-write; encrypted-media" style="position:absolute;top:0;left:0;width:100%;height:100%;" title='UrbanGym - "Mikela"'></iframe></div>
+      <VideoIframe videoId="285877252" autoplayOnView={false} span="span4" />
 
-      <div class="span2" style="padding:56.25% 0 0 0;position:relative;"><iframe src="https://player.vimeo.com/video/1069897374?badge=0&autopause=0&player_id=0&app_id=58479" frameborder="0" allow="autoplay; fullscreen; picture-in-picture; clipboard-write; encrypted-media" style="position:absolute;top:0;left:0;width:100%;height:100%;" title="interview viplay"></iframe></div>
-
-      <div class="span2" style="padding:56.25% 0 0 0;position:relative;"><iframe src="https://player.vimeo.com/video/1069906212?badge=0&autopause=0&player_id=0&app_id=58479" frameborder="0" allow="autoplay; fullscreen; picture-in-picture; clipboard-write; encrypted-media" style="position:absolute;top:0;left:0;width:100%;height:100%;" title="04_Tom_Online_1080 _SFX_30s"></iframe></div>
-
-      <div class="span4 margin_b" style="padding:56.25% 0 0 0;position:relative;"><iframe src="https://player.vimeo.com/video/507469248?badge=0&autopause=0&player_id=0&app_id=58479" frameborder="0" allow="autoplay; fullscreen; picture-in-picture; clipboard-write; encrypted-media" style="position:absolute;top:0;left:0;width:100%;height:100%;" title='"Mig og min scooter" - Vild Is'></iframe></div>
+      <VideoIframe videoId="1069897374" autoplayOnView={false} span="span2" />
+      <VideoIframe videoId="1069906212" autoplayOnView={false} span="span2" />
+      <VideoIframe videoId="507469248" autoplayOnView={false} span="span4" />
     </section>
+    <!-- ny test -->
   </div>
+
+  <!-- Denne video autoplay'er når den er i viewport -->
 
   <div class="centered1">
     <Button />
-  </div></Layout
->
+  </div>
+</Layout>
 
 <style>
+  .play-button {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 80px;
+    height: 80px;
+    background: rgba(0, 0, 0, 0.6);
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+  .video-wrapper {
+    position: relative;
+    width: 100%;
+    aspect-ratio: 16 / 9;
+    cursor: pointer;
+    overflow: hidden;
+    background: #000;
+  }
+  .video-wrapper img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
+  }
+
   h1 {
     margin-bottom: 1rem;
   }
@@ -87,12 +114,6 @@ import Layout from "../layouts/Layout.astro";
     grid-column: span 2;
   }
 
-  .span3 {
-    grid-column: span 3;
-  }
-  .span4 {
-    grid-column: span 4;
-  }
   h1 {
     margin-top: 6rem;
   }
@@ -129,3 +150,36 @@ import Layout from "../layouts/Layout.astro";
     }
   }
 </style>
+<!-- 
+<script>
+  const options = {
+    root: null,
+    rootMargin: "0px",
+    threshold: 0.5,
+  };
+
+  const observer = new IntersectionObserver((entries, obs) => {
+    entries.forEach((entry) => {
+      if (entry.isIntersecting) {
+        const wrapper = entry.target;
+        const videoId = wrapper.dataset.videoId;
+
+        // Lav iframe og autoplay video
+        const iframe = document.createElement("iframe");
+        iframe.setAttribute("src", `https://player.vimeo.com/video/${videoId}?autoplay=1&muted=1`);
+        iframe.setAttribute("frameborder", "0");
+        iframe.setAttribute("allow", "autoplay; fullscreen; picture-in-picture");
+        iframe.setAttribute("allowfullscreen", "");
+        iframe.style.width = "100%";
+        iframe.style.height = "100%";
+
+        wrapper.innerHTML = ""; // Fjern thumbnail + play knap
+        wrapper.appendChild(iframe);
+
+        obs.unobserve(wrapper); // Stop med at observere
+      }
+    });
+  }, options);
+
+  document.querySelectorAll(".video-wrapper").forEach((el) => observer.observe(el));
+</script> -->
