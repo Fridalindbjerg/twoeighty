@@ -1,6 +1,7 @@
 ---
 import ButtonArchive from "../../components/ButtonArchive.astro";
 import Layout from "../../layouts/Layout.astro";
+import VideoIframe from "../../components/VideoIframe.astro";
 
 export async function getStaticPaths() {
   const curl = "https://lescamgejebsqtwecrww.supabase.co/rest/v1/twoeighty_cases?select=*";
@@ -76,15 +77,10 @@ const { singleCase } = Astro.props;
   <section class="grid_2_1">
     <div>
       <h3>results</h3>
-
       <p>{singleCase.results_text}</p>
-      <div style="padding:56.25% 0 0 0;position:relative;">
-        <iframe src={`${singleCase.resultsvid_left}?autoplay=1&muted=1`} loading="lazy" allow="autoplay; fullscreen; picture-in-picture" style="position:absolute;top:0;left:0;width:100%;height:100%;" title={`commercial video for ${singleCase}`}></iframe>
-      </div>
+      <VideoIframe videoId={singleCase.resultsvid_left} autoplayOnView={true} />
     </div>
-    <div style="padding:56.25% 0 0 0;position:relative;">
-      <iframe src={`${singleCase.resultsvid_right}?autoplay=0&title=0&byline=0&portrait=0`} loading="lazy" allow="autoplay; fullscreen; picture-in-picture" style="position:absolute;top:0;left:0;width:100%;height:100%;" title={`commercial video for ${singleCase}`}></iframe>
-    </div>
+    <VideoIframe videoId={singleCase.resultsvid_right} autoplayOnView={false} />
   </section>
   <div class="btn_last button2">
     <ButtonArchive />
