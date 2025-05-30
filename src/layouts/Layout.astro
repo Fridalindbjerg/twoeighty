@@ -87,186 +87,192 @@ import ButtonFooter from "../components/ButtonFooter.astro";
     </footer>
     <script src="/burger.js" defer></script>
   </body>
+</html>
 
-  <style>
-    /**** HEADER ****/
-    header {
-      position: fixed;
-      top: 0;
-      width: 100%;
-      z-index: 1000;
-      background-color: var(--background-color);
-    }
+<style>
+  /**** HEADER ****/
+  header {
+    position: fixed;
+    top: 0;
+    width: 100%;
+    z-index: 1000;
+    background-color: var(--background-color);
+  }
 
-    nav {
-      max-width: 2000px;
-      margin: 0 auto;
-    }
+  nav {
+    max-width: 2000px;
+    margin: 0 auto;
+  }
 
-    header img {
-      width: clamp(40px, 6vw, 50px);
-    }
+  header img {
+    width: clamp(40px, 6vw, 50px);
+  }
 
-    header a {
-      text-decoration: none;
-      color: black;
-    }
+  header a {
+    text-decoration: none;
+    color: black;
+  }
 
-    header a:hover {
-      transform: scale(1.1); /* zoom 20% op */
-      transition: transform 0.4s ease-in-out;
-    }
+  header a:hover {
+    transform: scale(1.1); /* zoom 20% op */
+    transition: transform 0.4s ease-in-out;
+  }
 
-    .nav-container {
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-      margin: 10px 30px;
-    }
+  .nav-container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin: 10px 30px;
+  }
 
-    /* Venstre side: burger og/eller links */
-    .nav-left {
-      display: flex;
-      align-items: center;
-      gap: 20px;
-    }
+  /* Venstre side: burger og/eller links */
+  .nav-left {
+    display: flex;
+    align-items: center;
+    gap: 20px;
+  }
 
-    .nav-center {
-      position: absolute;
-      left: 50%;
-      transform: translateX(-50%);
-    }
-    /* Højre side: knap */
-    .nav-right {
-      display: flex;
-      justify-content: flex-end;
-      align-items: center;
-    }
+  .nav-center {
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%);
+  }
+  /* Højre side: knap */
+  .nav-right {
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+  }
 
-    /* Skjul desktop-knap på mobil */
-    .button-desktop {
-      display: none;
-    }
+  /* Skjul desktop-knap på mobil */
+  .button-desktop {
+    display: none;
+  }
 
-    .button-mobile button {
-      font-size: 1rem;
-    }
+  .button-mobile button {
+    font-size: 1rem;
+  }
 
-    /**** BURGER MENU ****/
-    .burger {
-      display: flex;
-      flex-direction: column;
-      gap: 5px;
-      cursor: pointer;
-      z-index: 4000;
-    }
+  /**** BURGER MENU ****/
+  .burger {
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
+    cursor: pointer;
+    z-index: 4000;
+  }
 
-    .burger span {
-      display: block;
-      width: 22px;
-      height: 2px;
-      background: black;
-      transition: 0.3s;
-      border-radius: 2px;
-    }
+  .burger span {
+    display: block;
+    width: 22px;
+    height: 2px;
+    background: black;
+    transition: 0.3s;
+    border-radius: 2px;
+  }
 
-    .burger.open span:nth-child(1) {
-      transform: translateY(6.1px) rotate(45deg);
-    }
-    .burger.open span:nth-child(2) {
-      opacity: 0;
-    }
-    .burger.open span:nth-child(3) {
-      transform: translateY(-8.1px) rotate(-45deg);
-    }
+  .burger.open span:nth-child(1) {
+    transform: translateY(6.1px) rotate(45deg);
+  }
+  .burger.open span:nth-child(2) {
+    opacity: 0;
+  }
+  .burger.open span:nth-child(3) {
+    transform: translateY(-8.1px) rotate(-45deg);
+  }
 
-    /**** MOBIL DROPDOWN MENU ****/
-    .menu {
-      display: none;
-      flex-direction: column;
-      position: absolute;
-      align-items: center;
-      top: 35px;
-      left: 0;
-      background-color: var(--background-color);
-      padding: 20px;
-      z-index: 3000;
-      width: 100vw;
-    }
+  /**** MOBIL DROPDOWN MENU ****/
+  .menu {
+    display: none;
+    flex-direction: column;
+    position: absolute;
+    align-items: center;
+    top: 35px;
+    left: 0;
+    background-color: var(--background-color);
+    padding: 20px;
+    z-index: 3000;
+    width: 100vw;
+  }
 
-    .menu.open {
-      display: flex;
-      flex-direction: row;
-      gap: 30px;
-      left: 14px;
-    }
+  .menu.open {
+    display: flex;
+    flex-direction: row;
+    gap: 30px;
+    left: 14px;
+  }
 
-    /**** FOOTER ****/
+  /**** FOOTER ****/
 
-    footer {
-      padding: 60px;
-      display: flex;
-      justify-content: center;
-    }
+  footer {
+    padding: 60px;
+    display: flex;
+    justify-content: center;
+  }
 
-    h5 {
-      margin-bottom: 50px;
-      text-align: center;
-    }
+  h5 {
+    margin-bottom: 50px;
+    text-align: center;
+  }
 
+  .footer-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-template-rows: 2;
+    row-gap: 70px;
+    gap: 70px;
+  }
+
+  .footer-container {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    text-align: left;
+  }
+
+  .icon-container {
+    display: flex;
+    flex-direction: row;
+    gap: 15px;
+  }
+
+  @media (width >= 768px) {
     .footer-grid {
-      display: grid;
-      grid-template-columns: 1fr 1fr;
-      grid-template-rows: 2;
-      row-gap: 70px;
-      gap: 70px;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 120px;
     }
 
-    .footer-container {
-      display: flex;
-      flex-direction: column;
-      gap: 20px;
-      text-align: left;
+    .burger {
+      display: none;
     }
 
-    .icon-container {
+    .menu {
       display: flex;
+      position: static;
       flex-direction: row;
       gap: 15px;
+      padding: 0;
+      background: none;
+      width: auto;
     }
 
-    @media (width >= 768px) {
-      .footer-grid {
-        grid-template-columns: repeat(4, 1fr);
-        gap: 120px;
-      }
-
-      .burger {
-        display: none;
-      }
-
-      .menu {
-        display: flex;
-        position: static;
-        flex-direction: row;
-        gap: 15px;
-        padding: 0;
-        background: none;
-        width: auto;
-      }
-
-      .menu a {
-        padding: 0;
-      }
-
-      .button-desktop {
-        display: block;
-      }
-
-      /* Skjul mobil-knappen som udgangspunkt */
-      .button-mobile {
-        display: none;
-      }
+    .menu a {
+      padding: 0;
     }
-  </style>
-</html>
+
+    .button-desktop {
+      display: block;
+    }
+
+    /* Skjul mobil-knappen som udgangspunkt */
+    .button-mobile {
+      display: none;
+    }
+  }
+</style>
+
+<script>
+  document.querySelectorAll("img").forEach((img) => {
+    img.loading = "lazy";
+  });
+</script>
