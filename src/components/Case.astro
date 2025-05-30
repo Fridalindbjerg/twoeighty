@@ -2,28 +2,6 @@
 const { singleCase } = Astro.props;
 ---
 
-<!-- <section class="case_grid">
-  <div class="case_left">
-    <div>
-      <h3>{product.name}</h3>
-      <p>
-        {product.index_p1}
-      </p>
-    </div>
-    <iframe src={product.resultsvid_left} muted allow="autoplay;"></iframe>
-  </div>
-
-  <div class="case_right">
-    <iframe class="none" src={product.resultsvid_right} muted allow="autoplay;"></iframe>
-    <div class="right_split">
-      <img src="https://picsum.photos/seed/picsum/900/1600" alt="" />
-      <div class="space">
-        <p>{product.index_p2}</p>
-        <a href={"case/" + product.id}>Full project</a>
-      </div>
-    </div>
-  </div>
-</section> -->
 <section class="case_grid">
   <div class="case_left">
     <div>
@@ -31,11 +9,11 @@ const { singleCase } = Astro.props;
       <p>{singleCase.index_p1}</p>
     </div>
 
-    <iframe id="autoplayVideo" src={`${singleCase.resultsvid_left}?autoplay=1&muted=1&loop=1&background=1`} allow="autoplay; fullscreen"></iframe>
+    <iframe id="autoplayVideo" src={`${singleCase.resultsvid_left}?autoplay=1&muted=1&loop=1&background=1`} allow="autoplay; fullscreen" title={`commercial video for ${single_case}`}></iframe>
   </div>
 
   <div class={singleCase.class}>
-    <iframe id="hoverVideo" class="none" src={`${singleCase.resultsvid_right}?&muted=1&loop=1`} allow="autoplay;"></iframe>
+    <iframe class="none" src={`${singleCase.resultsvid_right}?&muted=1&loop=1`} allow="autoplay;" title={`commercial video for ${single_case}`}></iframe>
 
     <div class="right_split">
       <img src={singleCase.hiro_left} alt="" />
@@ -46,45 +24,6 @@ const { singleCase } = Astro.props;
     </div>
   </div>
 </section>
-
-<!-- Vimeo Player Script -->
-
-<!-- <script type="module" is:browser>
-  import Player from "https://player.vimeo.com/api/player.js";
-
-  const autoplayIframe = document.getElementById("autoplayVideo"); // din altid-afspillende video
-  const hoverIframe = document.getElementById("hoverVideo"); // din hover-video
-
-  const autoplayPlayer = new Player(autoplayIframe);
-  const hoverPlayer = new Player(hoverIframe);
-
-  hoverIframe.parentElement.addEventListener("mouseenter", () => {
-    hoverPlayer.play();
-    autoplayPlayer.pause();
-  });
-
-  hoverIframe.parentElement.addEventListener("mouseleave", () => {
-    hoverPlayer.pause();
-    autoplayPlayer.play();
-  });
-</script> -->
-
-<!-- <script src="https://player.vimeo.com/api/player.js"></script>
-<script>
-  // Vent til DOM er loaded
-  document.addEventListener("DOMContentLoaded", function () {
-    const iframe = document.getElementById("hoverVideo");
-    const player = new Vimeo.Player(iframe);
-
-    iframe.addEventListener("mouseenter", () => {
-      player.play();
-    });
-
-    iframe.addEventListener("mouseleave", () => {
-      player.pause();
-    });
-  });
-</script> -->
 
 <style>
   /***********OVERORDNET *********/
