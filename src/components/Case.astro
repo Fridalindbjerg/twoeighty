@@ -9,11 +9,11 @@ const { singleCase } = Astro.props;
       <p>{singleCase.index_p1}</p>
     </div>
 
-    <iframe id="autoplayVideo" src={`${singleCase.resultsvid_left}?autoplay=1&muted=1&loop=1&background=1`} allow="autoplay; fullscreen" title={`commercial video for ${single_case}`}></iframe>
+    <iframe id="autoplayVideo" src={`${singleCase.resultsvid_left}?autoplay=1&muted=1&loop=1&background=1`} allow="autoplay; fullscreen" title={`commercial video for ${singleCase}`}></iframe>
   </div>
 
   <div class={singleCase.class}>
-    <iframe class="none" src={`${singleCase.resultsvid_right}?&muted=1&loop=1`} allow="autoplay;" title={`commercial video for ${single_case}`}></iframe>
+    <iframe class="none" src={`${singleCase.resultsvid_right}?&muted=1&loop=1`} allow="autoplay;" title={`commercial video for ${singleCase}`}></iframe>
 
     <div class="right_split">
       <img src={singleCase.hiro_left} alt="" />
