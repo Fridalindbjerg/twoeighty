@@ -5,11 +5,10 @@ import Layout from "../layouts/Layout.astro";
 
 <Layout>
   <h1>
-    <span class="title">introducing</span>
-    <br />
-    Twoeighty's
+    <!-- <span class="title">twoeighty production co.</span> -->
+
+    full archive
   </h1>
-  <h3>full archive</h3>
   <div class="centered">
     <Button />
   </div>
@@ -59,9 +58,13 @@ import Layout from "../layouts/Layout.astro";
 >
 
 <style>
+  h1 {
+    margin-bottom: 1rem;
+  }
   .centered {
     text-align: center;
-    margin-bottom: 25px;
+    margin-top: 1rem;
+    margin-bottom: 4rem;
   }
 
   .centered1 {
@@ -114,6 +117,13 @@ import Layout from "../layouts/Layout.astro";
   }
 
   @media (width >= 600px) {
+    h1 {
+      margin-bottom: 3rem;
+    }
+    .centered {
+      display: none;
+    }
+
     section {
       gap: 25px;
     }
