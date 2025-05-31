@@ -1,5 +1,6 @@
 ---
 const { singleCase } = Astro.props;
+import VideoIframe from "../components/VideoIframe.astro";
 ---
 
 <section class="case_grid">
@@ -8,13 +9,14 @@ const { singleCase } = Astro.props;
       <h3>{singleCase.name}</h3>
       <p>{singleCase.index_p1}</p>
     </div>
-
-    <iframe id="autoplayVideo" src={`${singleCase.resultsvid_left}?autoplay=1&muted=1&loop=1&background=1`} allow="autoplay; fullscreen" title={`commercial video for ${singleCase}`}></iframe>
+    <VideoIframe videoId={singleCase.resultsvid_right} autoplayOnView={true} />
   </div>
 
   <div class={singleCase.class}>
-    <iframe class="none" src={`${singleCase.resultsvid_right}?&muted=1&loop=1`} allow="autoplay;" title={`commercial video for ${singleCase.name}`}></iframe>
+    <iframe class="none" src={`${singleCase.resultsvid_right}?&muted=1&loop=1`} allow="autoplay;" title={`commercial video for ${singleCase}`}></iframe>
 
+  <div class="case_right">
+    <VideoIframe videoId={singleCase.resultsvid_left} autoplayOnView={false} span="none" />
     <div class="right_split">
       <img src={singleCase.hiro_left} alt={`Image from shoot with ${singleCase.name}`} />
       <div class="space">
