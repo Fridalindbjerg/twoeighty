@@ -12,7 +12,7 @@ import Button from "../components/Button.astro";
     </h1>
   </section>
 
-  <section class="grid_1">
+  <section class="about_text">
     <article class="who">
       <h3>Who is 280</h3>
       <p>
@@ -120,14 +120,14 @@ import Button from "../components/Button.astro";
 </Layout>
 
 <style>
-  article {
+  /* article {
     margin-bottom: 150px;
-  }
+  } */
 
-  article:first-of-type {
+  /* article:first-of-type {
     margin-bottom: 150px;
     margin-top: 150px;
-  }
+  } */
 
   .intro {
     display: grid;
@@ -151,30 +151,29 @@ import Button from "../components/Button.astro";
     text-align: center;
   }
 
+  h1 {
+    font-size: clamp(1.5rem, 6vw, 5rem);
+  }
+
   h2 {
     margin-bottom: 20px;
   }
-  .grid_1 {
+
+  .about_text {
     display: grid;
-    grid-template-columns: repeat(5, 1fr);
+    grid-template-columns: repeat(7, 1fr);
+    grid-row-gap: 150px;
+    margin: 150px 0;
   }
 
   .who {
-    grid-column: 1 / span 4;
+    grid-column: 1/6;
     grid-row: 1;
-    max-width: 450px;
   }
 
   .philosophy {
-    grid-column: 2 / span 4;
+    grid-column: 3/8;
     grid-row: 2;
-    max-width: 450px;
-    text-align: left;
-  }
-
-  .who h3,
-  .philosophy h3 {
-    margin-bottom: 0;
   }
 
   .who p,
@@ -243,10 +242,6 @@ import Button from "../components/Button.astro";
     }
   }
 
-  .philosophy {
-    grid-column: 3 / span 3;
-  }
-
   .grid_2 {
     grid-template-columns: repeat(3, 1fr);
   }
@@ -256,33 +251,23 @@ import Button from "../components/Button.astro";
     grid-column: 1 / span 3;
     padding: 100px;
   }
-
-  @media (width >= 1024px) {
-    .philosophy,
+  @media (width >= 768px) {
     .who {
-      max-width: 550px;
+      grid-column: 1/5;
     }
 
+    .philosophy {
+      grid-column: 4/8;
+    }
+  }
+
+  @media (width >= 1024px) {
     .slider-track img {
       width: 13em;
     }
 
     .background {
       height: 380px;
-    }
-
-    .grid_1 {
-      display: grid;
-      grid-template-columns: repeat(7, 1fr);
-    }
-
-    .philosophy {
-      grid-column: 4 / 8;
-    }
-
-    .philosophy,
-    .who {
-      max-width: 700px;
     }
 
     .slider-track img {
