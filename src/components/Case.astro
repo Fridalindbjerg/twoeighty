@@ -11,10 +11,14 @@ import VideoIframe from "../components/VideoIframe.astro";
     </div>
     <VideoIframe videoId={singleCase.resultsvid_right} autoplayOnView={true} />
   </div>
+
+  <div class={singleCase.class}>
+    <iframe class="none" src={`${singleCase.resultsvid_right}?&muted=1&loop=1`} allow="autoplay;" title={`commercial video for ${singleCase}`}></iframe>
+
   <div class="case_right">
     <VideoIframe videoId={singleCase.resultsvid_left} autoplayOnView={false} span="none" />
     <div class="right_split">
-      <img src={singleCase.hiro_left} alt="" />
+      <img src={singleCase.hiro_left} alt={`Image from shoot with ${singleCase.name}`} />
       <div class="space">
         <p>{singleCase.index_p2}</p>
         <a href={"case/" + singleCase.id}>Full project</a>
