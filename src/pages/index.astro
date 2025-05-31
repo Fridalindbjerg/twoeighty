@@ -6,11 +6,9 @@ import Case from "../components/Case.astro";
 import ButtonArchive from "../components/ButtonArchive.astro";
 import Button from "../components/Button.astro";
 
-const curl =
-  "https://lescamgejebsqtwecrww.supabase.co/rest/v1/twoeighty_cases?selected=eq.true";
+const curl = "https://lescamgejebsqtwecrww.supabase.co/rest/v1/twoeighty_cases?selected=eq.true";
 
-const apikey =
-  "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6Imxlc2NhbWdlamVic3F0d2Vjcnd3Iiwicm9sZSI6ImFub24iLCJpYXQiOjE3NDczMDI3MTcsImV4cCI6MjA2Mjg3ODcxN30.aoF4F4HWliGv7dB5WhKHov5-LFWZ-xm_RIfgX_L0Ul8";
+const apikey = "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6Imxlc2NhbWdlamVic3F0d2Vjcnd3Iiwicm9sZSI6ImFub24iLCJpYXQiOjE3NDczMDI3MTcsImV4cCI6MjA2Mjg3ODcxN30.aoF4F4HWliGv7dB5WhKHov5-LFWZ-xm_RIfgX_L0Ul8";
 
 const options = {
   headers: {
@@ -25,26 +23,13 @@ const data = await fetch(curl, options).then((response) => response.json());
     <div class="hero_text">
       <Typewriter />
       <div class="paragraph">
-        <p>
-          A Copenhagen-based production company crafting bold, human stories
-          across film, photography, and creative direction. We partner with
-          brands, agencies, and artists to create work that feels honest,
-          playful, and visually striking.
-        </p>
+        <p>A Copenhagen-based production company crafting bold, human stories across film, photography, and creative direction. We partner with brands, agencies, and artists to create work that feels honest, playful, and visually striking.</p>
 
         <a href="/about">Learn more</a>
       </div>
     </div>
     <div class="img_container">
-      <video
-        autoplay
-        loop
-        muted
-        playsinline
-        preload:
-        "none"
-        class="img_hero"
-        src="/index_smaller.mp4"></video>
+      <video autoplay loop muted playsinline preload: "none" class="img_hero" src="/index_smaller.mp4"></video>
     </div>
   </section>
 
@@ -64,15 +49,6 @@ const data = await fetch(curl, options).then((response) => response.json());
       <div>
         <p class="margin_r">We are TWOEIGHTY — a Copenhagen-based production company driven by curiosity, collaboration and craft. We work with brands, agencies and artists to create visually striking, emotionally honest storytelling — from commercials and branded content to music videos and experimental formats. Our work is rooted in a playful, conceptual approach and a belief in the power of real people and real moments.</p>
 
-        <p class="margin_r">
-          We are TWOEIGHTY — a Copenhagen-based production company driven by
-          curiosity, collaboration and craft. We work with brands, agencies and
-          artists to create visually striking, emotionally honest storytelling —
-          from commercials and branded content to music videos and experimental
-          formats. Our work is rooted in a playful, conceptual approach and a
-          belief in the power of real people and real moments.
-        </p>
-
         <a class="a-white" href="/about">Learn more</a>
       </div>
       <div class="grid_9_1">
@@ -81,8 +57,6 @@ const data = await fetch(curl, options).then((response) => response.json());
       </div>
 
       <p class="bottom">Behind every frame is a team that values process as much as product. We’re not just here to deliver — we’re here to co-create. With strong emphasis on creative sparring, visual identity and human connection, we strive to make every collaboration feel intuitive, transparent and full of energy.</p>
-
-
     </div>
   </section>
   <Socials />
