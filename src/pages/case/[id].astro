@@ -194,6 +194,11 @@ const { singleCase } = Astro.props;
     text-align: center;
   }
 
+  .centertext p {
+    max-width: 500px;
+    margin: 0 auto;
+  }
+
   .button {
     text-align: center;
     grid-column: 7 / 13;
@@ -236,6 +241,10 @@ const { singleCase } = Astro.props;
   @media (width >= 900px) {
     .image_r {
       margin-top: 9rem;
+    }
+
+    .centertext p {
+      max-width: 800px;
     }
   }
 </style>
