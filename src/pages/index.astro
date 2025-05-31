@@ -62,6 +62,8 @@ const data = await fetch(curl, options).then((response) => response.json());
   <section class="full-width">
     <div class="grid_3_1 black">
       <div>
+        <p class="margin_r">We are TWOEIGHTY — a Copenhagen-based production company driven by curiosity, collaboration and craft. We work with brands, agencies and artists to create visually striking, emotionally honest storytelling — from commercials and branded content to music videos and experimental formats. Our work is rooted in a playful, conceptual approach and a belief in the power of real people and real moments.</p>
+
         <p class="margin_r">
           We are TWOEIGHTY — a Copenhagen-based production company driven by
           curiosity, collaboration and craft. We work with brands, agencies and
@@ -70,19 +72,17 @@ const data = await fetch(curl, options).then((response) => response.json());
           formats. Our work is rooted in a playful, conceptual approach and a
           belief in the power of real people and real moments.
         </p>
+
         <a class="a-white" href="/about">Learn more</a>
       </div>
       <div class="grid_9_1">
-        <img src="/280_1.webp" alt="anders og morten" />
+        <img src="/280_1.webp" alt="anders and morten" />
         <p class="vertical">twoeighty</p>
       </div>
-      <p class="bottom">
-        Behind every frame is a team that values process as much as product.
-        We’re not just here to deliver — we’re here to co-create. With strong
-        emphasis on creative sparring, visual identity and human connection, we
-        strive to make every collaboration feel intuitive, transparent and full
-        of energy.
-      </p>
+
+      <p class="bottom">Behind every frame is a team that values process as much as product. We’re not just here to deliver — we’re here to co-create. With strong emphasis on creative sparring, visual identity and human connection, we strive to make every collaboration feel intuitive, transparent and full of energy.</p>
+
+
     </div>
   </section>
   <Socials />
@@ -166,19 +166,24 @@ const data = await fetch(curl, options).then((response) => response.json());
     padding: 5%;
     margin-bottom: 150px;
   }
+  video {
+    max-width: 100%;
+  }
 
   .grid_9_1 {
     display: grid;
-    grid-template-columns: 9fr 1fr;
+    grid-template-columns: 9fr 2fr;
     margin: auto 0;
   }
   .vertical {
     writing-mode: vertical-rl;
-    font-size: clamp(4.5rem, 5vw, 12rem);
-    margin-right: 2rem;
-    margin-left: -2rem;
+    /* font-size: 4rem; */
+    font-size: clamp(4rem, 17vw, 12rem);
+    margin-right: clamp(2rem, 8vw, 5rem);
+    /* margin-left: -2rem; */
     font-family: Friz;
     text-transform: uppercase;
+    line-height: 0;
   }
 
   @media (width >= 768px) {
@@ -196,14 +201,22 @@ const data = await fetch(curl, options).then((response) => response.json());
       grid-template-columns: 1fr 2fr 1fr;
     }
     .vertical {
-      margin-right: 0rem;
-    }
-    .bottom {
-      margin-left: -2rem;
+      margin-right: 2rem;
+      font-size: clamp(4rem, 9vw, 4rem);
     }
   }
 
   @media (width >= 1024px) {
+    .grid_9_1 {
+      display: grid;
+      grid-template-columns: 9fr 1fr;
+      margin: auto 0;
+    }
+
+    /* .vertical { */
+    /* margin-right: 50px; */
+    /* font-size: clamp(3rem, 5vw, 6rem); */
+    /* } */
     .hero {
       display: grid;
       grid-template-columns: 1fr 2fr;
@@ -242,6 +255,15 @@ const data = await fetch(curl, options).then((response) => response.json());
 
     .case_grid {
       grid-template-columns: 1fr 1fr;
+    }
+  }
+
+  @media (width >= 1340px) {
+    .vertical {
+      font-size: 6rem;
+    }
+    .bottom {
+      margin-left: -3rem;
     }
   }
 </style>

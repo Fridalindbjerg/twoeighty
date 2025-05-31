@@ -80,10 +80,10 @@ const { singleCase } = Astro.props;
 
       <p>{singleCase.results_text}</p>
 
-      <VideoIframe videoId={singleCase.resultsvid_left} autoplayOnView={true} />
+      <VideoIframe videoId={singleCase.resultsvid_left} autoplayOnView={true} title={`video commercial for ${singleCase}`} />
     </div>
 
-    <VideoIframe videoId={singleCase.resultsvid_right} autoplayOnView={false} />
+    <VideoIframe videoId={singleCase.resultsvid_right} autoplayOnView={false} title={`video commercial for ${singleCase}`} />
   </section>
   <div class="btn_last button2">
     <ButtonArchive />
