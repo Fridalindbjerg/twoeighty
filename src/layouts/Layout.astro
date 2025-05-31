@@ -58,7 +58,7 @@ import ButtonFooter from "../components/ButtonFooter.astro";
     </main>
 
     <footer>
-      <article>
+      <article class="footer-content">
         <h5>Twoeighty production co.</h5>
 
         <div class="footer-grid">
@@ -74,9 +74,16 @@ import ButtonFooter from "../components/ButtonFooter.astro";
           <div class="footer-container">
             <h6>SOCIALS</h6>
             <div class="icon-container">
-              <a href="https://www.instagram.com/280cph/"><img src="/insta_white.webp" alt="Instagram logo" /></a>
-              <a href="https://vimeo.com/280cph"><img src="/vimeo_white.webp" alt="Vimeo logo" /></a>
-              <a href="https://www.linkedin.com/company/280cph/?originalSubdomain=dk"><img src="/linkedin_white.webp" alt="LinkedIn logo" /></a>
+              <a href="https://www.instagram.com/280cph/"
+                ><img src="/insta_white.webp" alt="Instagram logo" /></a
+              >
+              <a href="https://vimeo.com/280cph"
+                ><img src="/vimeo_white.webp" alt="Vimeo logo" /></a
+              >
+              <a
+                href="https://www.linkedin.com/company/280cph/?originalSubdomain=dk"
+                ><img src="/linkedin_white.webp" alt="LinkedIn logo" /></a
+              >
             </div>
           </div>
           <div class="button">
@@ -210,16 +217,21 @@ import ButtonFooter from "../components/ButtonFooter.astro";
     justify-content: center;
   }
 
+  .footer-content {
+    margin: 0 auto;
+    width: 95%;
+    max-width: 2000px;
+  }
+
   h5 {
-    margin-bottom: 50px;
+    margin-bottom: 70px;
     text-align: center;
   }
 
   .footer-grid {
     display: grid;
-    grid-template-columns: 1fr 1fr;
-    grid-template-rows: 2;
-    row-gap: 70px;
+    grid-template-columns: repeat(2, auto);
+    justify-content: center;
     gap: 70px;
   }
 
@@ -238,8 +250,9 @@ import ButtonFooter from "../components/ButtonFooter.astro";
 
   @media (width >= 768px) {
     .footer-grid {
-      grid-template-columns: repeat(4, 1fr);
-      gap: 120px;
+      grid-template-columns: repeat(4, auto);
+      justify-content: space-between;
+      gap: 0;
     }
 
     .burger {
