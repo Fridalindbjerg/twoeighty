@@ -13,10 +13,10 @@ const { singleCase } = Astro.props;
   </div>
 
   <div class={singleCase.class}>
-    <iframe class="none" src={`${singleCase.resultsvid_right}?&muted=1&loop=1`} allow="autoplay;" title={`commercial video for ${singleCase}`}></iframe>
+    <iframe class="none" src={`${singleCase.resultsvid_right}?&muted=1&loop=1`} allow="autoplay;" title={`commercial video for ${singleCase.name}`}></iframe>
 
     <div class="right_split">
-      <img src={singleCase.hiro_left} alt="" />
+      <img src={singleCase.hiro_left} alt={`Image from shoot with ${singleCase.name}`} />
       <div class="space">
         <p>{singleCase.index_p2}</p>
         <a href={"case/" + singleCase.id}>Full project</a>
