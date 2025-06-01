@@ -9,13 +9,25 @@ import VideoIframe from "../components/VideoIframe.astro";
       <h3>{singleCase.name}</h3>
       <p>{singleCase.index_p1}</p>
     </div>
-    <VideoIframe videoId={singleCase.resultsvid_right} autoplayOnView={true} title={`video commercial for ${singleCase}`} />
+    <VideoIframe
+      videoId={singleCase.resultsvid_right}
+      autoplayOnView={true}
+      title={`video commercial for ${singleCase}`}
+    />
   </div>
 
   <div class="case_right">
-    <VideoIframe videoId={singleCase.resultsvid_left} autoplayOnView={false} span="none" title={`video commercial for ${singleCase}`} />
+    <VideoIframe
+      videoId={singleCase.resultsvid_left}
+      autoplayOnView={false}
+      span="none"
+      title={`video commercial for ${singleCase}`}
+    />
     <div class="right_split">
-      <img src={singleCase.hiro_left} alt={`Image from shoot with ${singleCase.name}`} />
+      <img
+        src={singleCase.hiro_left}
+        alt={`Image from shoot with ${singleCase.name}`}
+      />
       <div class="space">
         <p>{singleCase.index_p2}</p>
         <a href={"case/" + singleCase.id}>Full project</a>
@@ -27,7 +39,7 @@ import VideoIframe from "../components/VideoIframe.astro";
 <style>
   /***********OVERORDNET *********/
   h3 {
-    margin: 0 0 25px 0;
+    margin: 0 0 20px 0;
   }
   h2 {
     text-align: center;
@@ -36,9 +48,7 @@ import VideoIframe from "../components/VideoIframe.astro";
   p {
     padding-bottom: 25px;
   }
-  a {
-    padding-top: 50px;
-  }
+
   /**************CASES **************/
   .case_grid {
     display: grid;

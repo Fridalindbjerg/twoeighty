@@ -91,20 +91,16 @@ h3,
 
 h1 {
   font-size: clamp(2.5rem, 5vw, 5rem);
-  line-height: clamp(1.7rem, 5.5vw, 5rem);
+  line-height: 1;
   text-align: center;
-}
-
-p,
-a {
-  font-size: clamp(0.875rem, 1.5vw, 1.125rem);
-  line-height: clamp(1.5rem, 5vw, 1.8rem);
 }
 
 h2 {
   font-size: clamp(1.875rem, 8vw, 3.5rem);
-  line-height: clamp(1.6rem, 8vw, 2rem);
+  line-height: 1;
 }
+
+
 h3, .title {
   font-size: clamp(1.125rem, 2.2vw, 2.5rem);
 }
@@ -127,6 +123,12 @@ h6 {
   font-size: clamp(1rem, 1.5vw, 1.25rem);
 }
 
+p,
+a {
+  font-size: clamp(0.875rem, 1.5vw, 1.125rem);
+  line-height: 1.5;
+}
+
 .span1 {
   font-size: clamp(1.25rem, 8vw, 1.875rem);
 }
@@ -141,7 +143,9 @@ a {
   cursor: pointer;
 }
 
-img{width: 100%;}
+img{
+width: 100%;
+}
 
 /***************FOOTER ***********/
 footer {

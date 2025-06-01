@@ -6,9 +6,11 @@ import Case from "../components/Case.astro";
 import ButtonArchive from "../components/ButtonArchive.astro";
 import Button from "../components/Button.astro";
 
-const curl = "https://lescamgejebsqtwecrww.supabase.co/rest/v1/twoeighty_cases?selected=eq.true";
+const curl =
+  "https://lescamgejebsqtwecrww.supabase.co/rest/v1/twoeighty_cases?selected=eq.true";
 
-const apikey = "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6Imxlc2NhbWdlamVic3F0d2Vjcnd3Iiwicm9sZSI6ImFub24iLCJpYXQiOjE3NDczMDI3MTcsImV4cCI6MjA2Mjg3ODcxN30.aoF4F4HWliGv7dB5WhKHov5-LFWZ-xm_RIfgX_L0Ul8";
+const apikey =
+  "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6Imxlc2NhbWdlamVic3F0d2Vjcnd3Iiwicm9sZSI6ImFub24iLCJpYXQiOjE3NDczMDI3MTcsImV4cCI6MjA2Mjg3ODcxN30.aoF4F4HWliGv7dB5WhKHov5-LFWZ-xm_RIfgX_L0Ul8";
 
 const options = {
   headers: {
@@ -23,13 +25,26 @@ const data = await fetch(curl, options).then((response) => response.json());
     <div class="hero_text">
       <Typewriter />
       <div class="paragraph">
-        <p>A Copenhagen-based production company crafting bold, human stories across film, photography, and creative direction. We partner with brands, agencies, and artists to create work that feels honest, playful, and visually striking.</p>
+        <p>
+          A Copenhagen-based production company crafting bold, human stories
+          across film, photography, and creative direction. We partner with
+          brands, agencies, and artists to create work that feels honest,
+          playful, and visually striking.
+        </p>
 
         <a href="/about">Learn more</a>
       </div>
     </div>
     <div class="img_container">
-      <video autoplay loop muted playsinline preload: "none" class="img_hero" src="/index_smaller.mp4"></video>
+      <video
+        autoplay
+        loop
+        muted
+        playsinline
+        preload:
+        "none"
+        class="img_hero"
+        src="/index_smaller.mp4"></video>
     </div>
   </section>
 
@@ -46,8 +61,15 @@ const data = await fetch(curl, options).then((response) => response.json());
 
   <section class="full-width">
     <div class="grid_3_1 black">
-      <div>
-        <p class="margin_r">We are TWOEIGHTY — a Copenhagen-based production company driven by curiosity, collaboration and craft. We work with brands, agencies and artists to create visually striking, emotionally honest storytelling — from commercials and branded content to music videos and experimental formats. Our work is rooted in a playful, conceptual approach and a belief in the power of real people and real moments.</p>
+      <div class="left_text">
+        <p class="margin_r">
+          We are TWOEIGHTY — a Copenhagen-based production company driven by
+          curiosity, collaboration and craft. We work with brands, agencies and
+          artists to create visually striking, emotionally honest storytelling —
+          from commercials and branded content to music videos and experimental
+          formats. Our work is rooted in a playful, conceptual approach and a
+          belief in the power of real people and real moments.
+        </p>
 
         <a class="a-white" href="/about">Learn more</a>
       </div>
@@ -56,7 +78,13 @@ const data = await fetch(curl, options).then((response) => response.json());
         <p class="vertical">twoeighty</p>
       </div>
 
-      <p class="bottom">Behind every frame is a team that values process as much as product. We’re not just here to deliver — we’re here to co-create. With strong emphasis on creative sparring, visual identity and human connection, we strive to make every collaboration feel intuitive, transparent and full of energy.</p>
+      <p class="bottom">
+        Behind every frame is a team that values process as much as product.
+        We’re not just here to deliver — we’re here to co-create. With strong
+        emphasis on creative sparring, visual identity and human connection, we
+        strive to make every collaboration feel intuitive, transparent and full
+        of energy.
+      </p>
     </div>
   </section>
   <Socials />
@@ -67,10 +95,6 @@ const data = await fetch(curl, options).then((response) => response.json());
 
 <style>
   /***********OVERORDNET *********/
-
-  /* .hero_text a {
-    padding-top: 50px;
-  } */
 
   button section {
     margin-bottom: 150px;
@@ -84,13 +108,10 @@ const data = await fetch(curl, options).then((response) => response.json());
     text-align: center;
     margin-bottom: 150px;
   }
-  /* h3 {
-    margin: 0;
-  } */
 
   h2 {
     text-align: center;
-    margin: 150px 0 15px 0px;
+    margin: 150px 0 10px 0px;
   }
 
   .a-white {
@@ -101,7 +122,6 @@ const data = await fetch(curl, options).then((response) => response.json());
   .hero {
     display: grid;
     gap: 30px;
-    /* margin-top: 50px; */
   }
   .hero_text {
     text-align: center;
@@ -130,9 +150,6 @@ const data = await fetch(curl, options).then((response) => response.json());
   .bottom {
     margin-top: 25px;
   }
-  img {
-    width: 100%;
-  }
 
   .black {
     background-color: var(--black);
@@ -144,6 +161,13 @@ const data = await fetch(curl, options).then((response) => response.json());
     max-width: 100%;
   }
 
+  .left_text {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    margin-bottom: 20px;
+  }
+
   .grid_9_1 {
     display: grid;
     grid-template-columns: 9fr 2fr;
@@ -151,10 +175,8 @@ const data = await fetch(curl, options).then((response) => response.json());
   }
   .vertical {
     writing-mode: vertical-rl;
-    /* font-size: 4rem; */
     font-size: clamp(4rem, 17vw, 12rem);
     margin-right: clamp(2rem, 8vw, 5rem);
-    /* margin-left: -2rem; */
     font-family: Friz;
     text-transform: uppercase;
     line-height: 0;
@@ -188,10 +210,6 @@ const data = await fetch(curl, options).then((response) => response.json());
       margin: auto 0;
     }
 
-    /* .vertical { */
-    /* margin-right: 50px; */
-    /* font-size: clamp(3rem, 5vw, 6rem); */
-    /* } */
     .hero {
       display: grid;
       grid-template-columns: 1fr 2fr;
