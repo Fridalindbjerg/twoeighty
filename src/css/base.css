@@ -141,6 +141,8 @@ a {
   cursor: pointer;
 }
 
+img{width: 100%;}
+
 /***************FOOTER ***********/
 footer {
   background-color: #040404;
@@ -156,9 +158,15 @@ footer a {
   color: white;
 }
 
+  .icon-container {
+    display: flex;
+    flex-direction: row;
+    gap: 15px;
+  }
+
 .icon-container img {
-  width: 24px;
-  height: 24px;
+  max-width: 24px;
+  height: auto;
   object-fit: contain;
   transition: transform 0.2s ease-in-out;
 }

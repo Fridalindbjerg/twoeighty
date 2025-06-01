@@ -5,6 +5,18 @@ import "/src/css/base.css";
 <section>
   <h2>twoeighty's</h2>
   <h3>socials</h3>
+  <div class="icon-container">
+    <a href="https://www.instagram.com/280cph/"
+      ><img src="/insta_black.webp" alt="instagram logo" /></a
+    >
+    <a href="https://vimeo.com/280cph"
+      ><img src="/vimeo_black.webp" alt="vimeo logo" /></a
+    >
+    <a href="https://www.linkedin.com/company/280cph/"
+      ><img src="/linkedind_black.webp" alt="linkedin logo" /></a
+    >
+  </div>
+
   <div class="grid_3_1">
     <a class="margin_r none" href="https://www.instagram.com/p/C3kQ29NIzbn/"
       ><img src="/socials/socials_1.webp" alt="to modeller med kasket" /></a
@@ -15,21 +27,8 @@ import "/src/css/base.css";
         alt="behind the scenes på et filmset"
       /></a
     >
-
     <div>
-      <div class="flexCol center">
-        <a href="https://www.instagram.com/280cph/"
-          ><img src="/insta_black.webp" alt="instagram logo" /></a
-        >
-        <a href="https://vimeo.com/280cph"
-          ><img src="/vimeo_black.webp" alt="vimeo logo" /></a
-        >
-        <a href="https://www.linkedin.com/company/280cph/"
-          ><img src="/linkedind_black.webp" alt="linkedin logo" /></a
-        >
-      </div>
-
-      <div class="flexRow">
+      <div class="flexRow margin_r">
         <a href="https://www.instagram.com/p/CwXbkogMti7/">
           <img
             class="margin_b"
@@ -61,57 +60,7 @@ import "/src/css/base.css";
 <style>
   section {
     margin-bottom: 150px;
-  }
-
-  .flexRow {
-    display: flex;
-    flex-direction: column;
-    gap: 5px;
-  }
-  .none {
-    display: none;
-  }
-  .grid_3_1 {
-    display: grid;
-    grid-template-columns: repeat(3, 1fr);
-    gap: 10px;
-    margin-top: 50px;
-  }
-  .flexCol {
-    padding: 0 20%;
-    display: flex;
-    flex-direction: row;
-    justify-content: space-between;
-    margin-top: 1rem;
-  }
-
-  .flexCol img {
-    transition: transform 0.2s ease-in-out;
-  }
-
-  .flexCol img:hover {
-    transform: scale(1.1); /* zoom 20% op */
-  }
-
-  .margin_r {
-    margin-top: 35%;
-  }
-
-  img {
-    max-width: 100%;
-  }
-
-  .flexCol a img {
-    margin-bottom: 10px;
-    display: block;
-    width: 100%;
-    height: auto;
-  }
-
-  .flexCol a {
-    display: block;
-    max-width: 20px;
-    /* height: auto; */
+    position: relative;
   }
 
   h2,
@@ -119,42 +68,51 @@ import "/src/css/base.css";
     text-align: center;
   }
 
-  h3 {
-    margin: 0;
+  .none {
+    display: none;
   }
 
-  h2 {
-    margin-bottom: 0;
+  .icon-container {
+    justify-content: center;
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%);
+    top: 70px;
   }
 
-  @media (width >= 750px) {
+  .flexRow {
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
+  }
+
+  .grid_3_1 {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 10px;
+    margin-top: 50px;
+  }
+
+  .margin_r {
+    margin-top: 35%;
+  }
+
+  @media (width >= 768px) {
     .grid_3_1 {
       grid-template-columns: repeat(5, 1fr);
       gap: 25px;
     }
-    .flexCol {
-      margin-top: 3rem;
-      padding: 0 5%;
-    }
+
     .flexRow {
       gap: 15px;
-    }
-    .flexCol a {
-      max-width: 40px;
-    }
-    .flexCol a img {
-      margin-bottom: 20px;
     }
 
     .none {
       display: block;
     }
-  }
 
-  @media (width >= 1300px) {
-    .flexCol {
-      margin-top: 3rem;
-      padding: 0 15%;
+    .icon-container {
+      top: 100px;
     }
   }
 </style>
